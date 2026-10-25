@@ -2,6 +2,8 @@
 
 Prepared 25 October 2026 for Ijlal. This is a recommendation and execution plan, not an implemented application or a commitment to the full scope. Read alongside the original brief. Current task status lives in [05_DECISIONS_AND_PROGRESS.md](05_DECISIONS_AND_PROGRESS.md).
 
+M0 was subsequently implemented in source commit `d8e9de71c9b2f9debb788d57fe2f9de632514efa`. The text below preserves the planning baseline; current evidence and the next M1 task are in document 05. Private inspection steps are in [the preview guide](../docs/PRIVATE_PREVIEW.md).
+
 ## Inspection and reconciliation
 
 The inspected baseline is commit `d8a589db9c0b59092c7f009bcf27e1089b722041` on `main`, in `/workspace/media-one-connect`. The checkout initially contained README.md and seven context Markdown files, with no local changes. There is no application code, package manifest, lockfile, database schema, CI workflow, test runner or root AGENTS.md. Root working instructions are added by this planning task, preserving the original template and handoff.

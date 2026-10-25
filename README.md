@@ -50,3 +50,5 @@ Branding and the architectural illustration are original concept treatments, not
 ### Inspect without starting a preview
 
 Screenshots from the verified M0 build: [desktop homepage](docs/screenshots/desktop-home.png), [phone homepage](docs/screenshots/mobile-home.png), [concierge demonstration](docs/screenshots/concierge.png), and [staff shell](docs/screenshots/staff.png). These are static captures, not live preview links.
+
+Access preparation for later slices is tracked in [the access checklist](docs/ACCESS_CHECKLIST.md). Current implementation and test evidence remain in [document 05](media-one-context/05_DECISIONS_AND_PROGRESS.md).
