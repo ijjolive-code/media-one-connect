@@ -107,3 +107,14 @@ Owner: Codex, at Ijlal's request to proceed with M0. Build reference: `d8e9de71c
 | Early access preparation | Checklist recorded | `docs/ACCESS_CHECKLIST.md`; missing owners, content, database/model and separate test-number route are explicit. No credentials requested or provider contact made. |
 
 A01 has partial M0 evidence only; A02–A32 are not claimed passed. Full hotel facts, real AI, permissions, concurrent redemption and live-channel tests await their implementation gates. M0 owner inspection is pending; M1–M6 remain planned. No paid accounts, production deployment, main-number use, supplier contact, real guest data or public review actions occurred. Documentation/evidence changes after the source commit do not change the tested application.
+
+
+## Codespaces image correction — 25 October 2026
+
+Owner-provided Codespaces creation log at 15:30 UTC failed before project setup: `No manifest found for mcr.microsoft.com/devcontainers/javascript-node:1-24-bookworm`. GitHub opened its Alpine recovery container, explaining `npm: command not found`.
+
+Changed only the devcontainer image reference to `mcr.microsoft.com/devcontainers/javascript-node:24-bookworm`. Kept Node 24, Debian Bookworm, the non-root node user, port 3000 and `npm ci` unchanged. Registry verification from the troubleshooting environment returned HTTP 404 for the old tag and HTTP 200 for the replacement manifest, including linux/amd64 and linux/arm64 entries. The replacement resolved to manifest digest `sha256:16eb68aa0d17eedaaf2566b180854fe4e506478e35aadf790fb02aa089024f13` at verification time; the configuration uses the moving Node 24/Bookworm tag, not a digest pin.
+
+Configuration JSON parsed successfully; the changed field is isolated to the image tag. No application code was changed and the previously reported application tests were not rerun for this image-reference-only fix. Container execution, dependency installation and owner preview remain UNVERIFIED after the correction; no Codespace was launched or rebuilt by this troubleshooting task.
+
+Next action: in the owner's existing Codespace on `m0/media-one-foundation`, run `git pull --ff-only` (do not discard local changes if it fails), then use `Codespaces: Rebuild Container`. Once normal setup and `npm ci` complete, run `npm run build && npm run start` and open port 3000 with Private visibility. Confirm actual startup before marking the private-preview gate passed. Feed the correction back into reusable environment instructions if they contain the old tag.
