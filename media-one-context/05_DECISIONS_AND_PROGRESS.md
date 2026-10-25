@@ -217,3 +217,14 @@ Owner-provided logs confirm `npm ci`, local Supabase setup and production build/
 - Executed Node 24 imports of the actual revised TypeScript config with `CODESPACES=true`, `false` and unset. The exact origin allowance appears only for true; existing security/noindex headers and poweredByHeader setting are preserved. These configuration checks passed.
 - The full application/database/browser suites were not rerun in this separate troubleshooting environment, and a forwarded Codespaces sign-in was not accessible here. The earlier M1 suites remain historical evidence; this fix is configuration-checked, owner workflow confirmation pending.
 - Updated the M1 private review guide with the exact diagnosis and pull/build/restart steps. Next: owner stops only the app, pulls this branch, rebuilds the application and restarts it, reloads sign-in, and verifies sign-in/save/sign-out. No devcontainer rebuild or database setup/reset is needed for this fix.
+
+
+## Owner M1 workflow review passed — 25 October 2026
+
+Ijlal confirmed in the private Codespaces preview that he signed in as authorised test staff, edited the fictional offer and saw the updated guest content persist after reloading the page. His attached Safari screenshot shows the changed guest offer and its fictional/test labels. A second screenshot shows the signed-in unauthorised test account receiving **Access not granted**, without an editor.
+
+- Owner-observed result: requested M1 staff-edit → persistent guest display workflow passed, and unauthorised-account UI denial passed in desktop Safari.
+- The Codespaces sign-in blocker is resolved for this observed workflow after the origin configuration fix. Manual screenshots/user observation supplement, rather than rerun or replace, the previously recorded automated database/browser tests.
+- This owner review does not independently establish database-restart persistence, direct API policy enforcement, all-device compatibility or general production readiness; those claims retain their separately recorded evidence/limits.
+- Preserve the latest M1 branch, including `cadbd86` and subsequent documentation, as the baseline for the next task. Keep the corrected container image and scoped origin configuration when branching.
+- Next proposed implementation slice: M2A managed hotel knowledge and free-text concierge using published, venue-specific facts and current offers. Check existing runtime configuration and model access; explain any required secure account/key setup and budget before billable calls. Continue labelled fictional records until approved hotel content is supplied. Test staff content changes through subsequent concierge answers, missing facts, draft/expiry filtering and factual price/condition preservation. Requests/handover follow in M2B; no live booking, WhatsApp, loyalty or full reputation milestone is claimed here.
