@@ -1,0 +1,3050 @@
+{
+  "schema_version": "1.0",
+  "collected_on": "2026-10-25",
+  "timezone": "Asia/Dubai",
+  "collection_status": "provisional",
+  "use_scope": "private prototype only; user authorised temporary sourced information",
+  "production_approved": false,
+  "source_hierarchy": [
+    "Current owner-approved hotel records (none granted by this collection)",
+    "Hotel-owned published page or full public venue experience",
+    "Corroborated public listing plus current internal PR",
+    "Older FAQ or working draft (review cautiously)",
+    "Affiliate listing (cross-check; never override hotel silently)"
+  ],
+  "coverage": {
+    "official_pages": 18,
+    "public_sevenrooms_pages": 8,
+    "affiliated_listing": 1,
+    "drive_documents": 4,
+    "live_availability": false,
+    "private_sevenrooms_access": false,
+    "guest_records_collected": false,
+    "website_public_faq_page_found": false,
+    "faq_origin": "Internal Drive FAQ; no standalone published FAQ page discovered in mapped navigation",
+    "menus": "Linked PDF index only; contents and allergens not verified"
+  },
+  "sources": [
+    {
+      "id": "W01",
+      "url": "https://mediaonehotel.com",
+      "title": "4 Star Hotel Dubai | Media One Hotel | Media City",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-09-01T10:10:02+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W02",
+      "url": "https://mediaonehotel.com/get-in-touch",
+      "title": "Contact Us | Make A Reservation | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-07-24T13:43:19+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W03",
+      "url": "https://mediaonehotel.com/hotel-facilities",
+      "title": "Media One Hotel Facilities | Media One Hotel Gym",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2025-06-13T05:14:27+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W04",
+      "url": "https://mediaonehotel.com/hotel-rooms",
+      "title": "Media One Hotel Rooms | Hotels Near Dubai Marina | Media One",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-03-18T07:56:04+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W05",
+      "url": "https://mediaonehotel.com/room-offers",
+      "title": "Room Offers | Affordable Hotel Dubai | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-10-14T12:35:24+00:00",
+      "coverage": "Title only; offers not extractable",
+      "approved_for_production": false
+    },
+    {
+      "id": "W06",
+      "url": "https://mediaonehotel.com/hotel-restaurants",
+      "title": "Bars & Restaurants in Media City | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-08-31T10:37:18+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W07",
+      "url": "https://mediaonehotel.com/hotel-restaurants/ciao-bella",
+      "title": "Experience Italy's Finest at Ciao Bella | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-10-14T07:10:46+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W08",
+      "url": "https://mediaonehotel.com/hotel-restaurants/qwerty",
+      "title": "Qwerty | Outdoor Dining in Dubai | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-09-30T12:40:53+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W09",
+      "url": "https://mediaonehotel.com/hotel-restaurants/garden-on-8",
+      "title": "Garden On 8 | Sports Bar | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-09-30T07:07:55+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W10",
+      "url": "https://mediaonehotel.com/hotel-restaurants/coco-lounge",
+      "title": "Coco Lounge | Pool Bar in Dubai | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-10-21T07:52:49+00:00",
+      "coverage": "Page body and links retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W11",
+      "url": "https://mediaonehotel.com/hotel-restaurants/m12go",
+      "title": "M12GO Cafe | Media One Cafe Dubai",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2025-07-10T07:47:17+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W12",
+      "url": "https://mediaonehotel.com/hotel-restaurants/p7arena",
+      "title": "P7 Arena Club | Event Venues in Dubai | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2025-11-20T11:47:52+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W13",
+      "url": "https://mediaonehotel.com/7-squared",
+      "title": "7-Squared | Premium Meeting Rooms in Dubai | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2025-06-24T15:24:13+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W14",
+      "url": "https://mediaonehotel.com/hotel-rooms/people-of-determination",
+      "title": "Accessible Room | Media One Hotel Dubai - Comfort & Convenience",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2024-10-04T11:45:45+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W15",
+      "url": "https://mediaonehotel.com/hotel-rooms/hip-room",
+      "title": "Hip Room | Affordable Hotel Dubai | Media One Hotel Dubai",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-03-18T06:55:01+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W16",
+      "url": "https://mediaonehotel.com/hotel-rooms/cool-room",
+      "title": "Cool Room | Affordable Hotel Dubai | Media One Hotel Dubai",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-03-18T08:04:52+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W17",
+      "url": "https://mediaonehotel.com/hotel-rooms/calm-suite",
+      "title": "Calm Suite | Affordable Hotel Dubai | Media One Hotel Dubai",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-03-18T08:13:10+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "W18",
+      "url": "https://mediaonehotel.com/hotel-rooms/chill-out-suite",
+      "title": "Chill Out Suite | Affordable Hotel Dubai | Media One Hotel",
+      "type": "official_website",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-03-18T08:27:22+00:00",
+      "coverage": "guest facts retrieved",
+      "approved_for_production": false
+    },
+    {
+      "id": "S01",
+      "url": "https://sevn.ly/x7BV6Ppr",
+      "title": "Ciao Bella | Offers",
+      "type": "public_sevenrooms_listing",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Experience list and teaser descriptions; not availability or complete booking terms",
+      "approved_for_production": false
+    },
+    {
+      "id": "S02",
+      "url": "https://sevn.ly/xNstq8Ao",
+      "title": "Qwerty | Offers",
+      "type": "public_sevenrooms_listing",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Experience list and teaser descriptions; not availability or complete booking terms",
+      "approved_for_production": false
+    },
+    {
+      "id": "S03",
+      "url": "https://sevn.ly/xvghHdM2",
+      "title": "garden on 8 | Offers",
+      "type": "public_sevenrooms_listing",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Experience list and teaser descriptions; not availability or complete booking terms",
+      "approved_for_production": false
+    },
+    {
+      "id": "S04",
+      "url": "https://sevn.ly/x2Yey0it",
+      "title": "Coco Lounge | Offers",
+      "type": "public_sevenrooms_listing",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Experience list and teaser descriptions; not availability or complete booking terms",
+      "approved_for_production": false
+    },
+    {
+      "id": "S05",
+      "url": "https://www.sevenrooms.com/experiences/ciaobelladubai/bellas-friday-late-brunch-from-aperitivo-to-after-dark-5057495979114496?client_id=baf29ff8b356ce8b06c213cffe12dea3f1d7acb333bacec81cc4e21098e2dd328529bdae9e0bbfc753899ab8bae406c8418555bb0b4b59043f595fe72227c62b",
+      "title": "Ciao Bella | Bella's Friday Late Brunch – From Aperitivo to After Dark",
+      "type": "public_sevenrooms_experience",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Full public experience description; reservation/payment modal not submitted",
+      "approved_for_production": false
+    },
+    {
+      "id": "S06",
+      "url": "https://www.sevenrooms.com/experiences/qwerty/grill-chill-sundays-5893498039812096?client_id=dda085dcbd7fe2c4a30e7d47d9f6d44140c070c96c8e303863efdb4063a87d5d549ea24c90fa481e4aa1da5770e7aa2bc4e53dc4dd356c5ba629ac350da89809",
+      "title": "Qwerty | Grill & Chill Sundays",
+      "type": "public_sevenrooms_experience",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Full public experience description; reservation/payment modal not submitted",
+      "approved_for_production": false
+    },
+    {
+      "id": "S07",
+      "url": "https://www.sevenrooms.com/experiences/cocolounge/pool-day-pass-evening-pass-5771421720985600?client_id=22431d072e7e199745fbea7667d9fc4eff732813b2dbde78fc30ca3f298de7e1726e28b388cb2e867eb9f1cbe0b98ddfc2bfd4af46fae98f6ec3258b0de37f3c",
+      "title": "Coco Lounge | Pool Day Pass & Evening Pass",
+      "type": "public_sevenrooms_experience",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Full public experience description; reservation/payment modal not submitted",
+      "approved_for_production": false
+    },
+    {
+      "id": "S08",
+      "url": "https://www.sevenrooms.com/experiences/gardenon8/lunch-time-deal-5225143689920512?client_id=20a43e61498953a94af8f70f2349d56cb6d02836a4ac21c57cbcd72907f80d01edd62b4afd14589dafd9981fa02eb9c0707af98d9c97df9b9a9928f989b410d7",
+      "title": "garden on 8 | Lunch Time Deal",
+      "type": "public_sevenrooms_experience",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Full public experience description; reservation/payment modal not submitted",
+      "approved_for_production": false
+    },
+    {
+      "id": "L01",
+      "url": "https://www.bestwestern.com/en_US/book/hotels-in-dubai/media-one-hotel-dubai-worldhotels-crafted/propertyCode.86132.html",
+      "title": "WorldHotels/Best Western property listing",
+      "type": "affiliated_listing",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": null,
+      "coverage": "Property facts and policies; conflicting outlet/parking data excluded",
+      "approved_for_production": false
+    },
+    {
+      "id": "D01",
+      "url": "https://docs.google.com/document/d/1aZEgmp1ymqKvDHE8AsEwLm0qC7sET_4WV-K-U2mSzrY/edit",
+      "title": "01 - FAQ",
+      "type": "internal_drive_document",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2025-06-03T07:30:04.293Z",
+      "coverage": "Read document; selected guest-facing claims only",
+      "approved_for_production": false
+    },
+    {
+      "id": "D02",
+      "url": "https://docs.google.com/document/d/1GQubSpwZ7MM6muWXrBp95IUGh5pCDv6yMGq2HdMzFGQ/edit",
+      "title": " Main Press Release - Media One Hotel",
+      "type": "internal_drive_document",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-10-19T11:21:24.367Z",
+      "coverage": "Read document; selected guest-facing claims only",
+      "approved_for_production": false
+    },
+    {
+      "id": "D03",
+      "url": "https://docs.google.com/document/d/1WSGaJvJw0zCiuqAQ6fNGoANA68Vt3Cvo5Pz4aSj6fZI/edit",
+      "title": "November 2026 - Media One Hotel",
+      "type": "internal_drive_document",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-10-21T07:51:38.931Z",
+      "coverage": "November 2026 seasonal promotion draft/source; selected claims reviewed",
+      "approved_for_production": false
+    },
+    {
+      "id": "D04",
+      "url": "https://docs.google.com/document/d/1RzgOUO-G9BdyW2I_xhcIFGCKjLkPMZLLf9lmryWw-pU/edit",
+      "title": "03 - NEW Website copy",
+      "type": "internal_drive_document",
+      "retrieved_at": "2026-10-25T19:47:40.916Z",
+      "source_modified_at": "2026-07-14T14:38:47.787Z",
+      "coverage": "Website-copy working draft; ideas, old offers and placeholders; not approved",
+      "approved_for_production": false
+    }
+  ],
+  "records": [
+    {
+      "id": "K001",
+      "venue_key": "media-one-hotel",
+      "category": "overview",
+      "language": "en",
+      "question": "Where is Media One Hotel?",
+      "answer": "Media One Hotel is on Al Falak Street in Dubai Media City, Al Sufouh 2, Dubai, United Arab Emirates.",
+      "source_ids": [
+        "W02",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K002",
+      "venue_key": "media-one-hotel",
+      "category": "contact",
+      "language": "en",
+      "question": "How can I contact the hotel?",
+      "answer": "Call +971 4 427 1000 or email hello@mediaonehotel.com.",
+      "source_ids": [
+        "W02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K003",
+      "venue_key": "media-one-hotel",
+      "category": "contact",
+      "language": "en",
+      "question": "What is the published hotel WhatsApp contact?",
+      "answer": "The hotel's contact page links to https://wa.me/971582099401. This is a published contact link, not this prototype's connected WhatsApp channel.",
+      "source_ids": [
+        "W02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Do not message or connect this number during development.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K004",
+      "venue_key": "media-one-hotel",
+      "category": "transport",
+      "language": "en",
+      "question": "Which metro station is nearest?",
+      "answer": "The hotel contact page identifies Al Khail Metro Station, approximately 500 metres away.",
+      "source_ids": [
+        "W02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Walking time varies; do not promise an exact travel time.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K005",
+      "venue_key": "media-one-hotel",
+      "category": "transport",
+      "language": "en",
+      "question": "Is parking available?",
+      "answer": "Valet and self-parking are listed on the hotel contact page. Confirm charges and validation with the hotel.",
+      "source_ids": [
+        "W02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Do not claim free parking or AED 25; see C02.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K006",
+      "venue_key": "media-one-hotel",
+      "category": "transport",
+      "language": "en",
+      "question": "Is guest parking free?",
+      "answer": "Parking charges need confirmation: the older internal FAQ says complimentary guest parking, while the affiliated listing states AED 25 per night.",
+      "source_ids": [
+        "D01",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C02"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C02"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K007",
+      "venue_key": "media-one-hotel",
+      "category": "overview",
+      "language": "en",
+      "question": "What kind of hotel is Media One?",
+      "answer": "Media One is a four-star lifestyle hotel in Dubai Media City, with rooms, dining, business and event facilities.",
+      "source_ids": [
+        "W01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K008",
+      "venue_key": "media-one-hotel",
+      "category": "overview",
+      "language": "en",
+      "question": "How many rooms are listed?",
+      "answer": "The official homepage and hotel press release describe 264 rooms and suites.",
+      "source_ids": [
+        "W01",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K009",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "What time are check-in and check-out?",
+      "answer": "Standard check-in is listed as 14:00 and check-out as 12:00, in Dubai time. Rate-specific arrangements may differ.",
+      "source_ids": [
+        "D01",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K010",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "Can I arrive early or leave late?",
+      "answer": "The existing hotel FAQ says early check-in and late check-out depend on availability and may incur a charge. Ask reservations to confirm your specific booking.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K011",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "What is the cancellation policy?",
+      "answer": "Cancellation conditions depend on the booked rate. Check your reservation confirmation or ask reservations; no universal free-cancellation period is supplied.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K012",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "How can I modify a reservation?",
+      "answer": "The existing FAQ directs reservation changes to the reservations team at cu@mediaonehotel.com. This app cannot change a booking.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K013",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "Is breakfast included?",
+      "answer": "Breakfast depends on the rate plan. Check your booking confirmation or ask the hotel before assuming inclusion.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K014",
+      "venue_key": "media-one-hotel",
+      "category": "amenity",
+      "language": "en",
+      "question": "Is Wi-Fi available?",
+      "answer": "Complimentary Wi-Fi is listed for guest rooms and hotel public areas.",
+      "source_ids": [
+        "D01",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K015",
+      "venue_key": "media-one-hotel",
+      "category": "amenity",
+      "language": "en",
+      "question": "Is room service available?",
+      "answer": "The hotel FAQ lists 24-hour in-room dining. This prototype cannot place an order.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K016",
+      "venue_key": "media-one-hotel",
+      "category": "amenity",
+      "language": "en",
+      "question": "Is there an in-room safe?",
+      "answer": "The existing hotel FAQ lists an in-room safe in all guest rooms.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K017",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "Are connecting rooms available?",
+      "answer": "The existing FAQ says there are no connecting rooms; neighbouring rooms may be requested subject to availability.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K018",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "Are guest rooms non-smoking?",
+      "answer": "The hotel FAQ describes guest rooms as non-smoking; the affiliated listing describes a smoke-free hotel. Ask staff about designated smoking areas.",
+      "source_ids": [
+        "D01",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K019",
+      "venue_key": "media-one-hotel",
+      "category": "transport",
+      "language": "en",
+      "question": "Can airport transfers be arranged?",
+      "answer": "The existing FAQ says transfers can be arranged on request for an additional charge. Contact concierge@mediaonehotel.com to confirm options and pricing.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K020",
+      "venue_key": "media-one-hotel",
+      "category": "accessibility",
+      "language": "en",
+      "question": "Does the hotel have accessible rooms?",
+      "answer": "The official site lists People of Determination rooms with city views. Discuss individual accessibility requirements with the hotel before booking.",
+      "source_ids": [
+        "W14"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K021",
+      "venue_key": "media-one-hotel",
+      "category": "accessibility",
+      "language": "en",
+      "question": "What accessible-room features are described?",
+      "answer": "The room page describes wheelchair-friendly layouts, handrails, a shower seat and a hearing-impaired flasher. Confirm suitability and current room availability directly.",
+      "source_ids": [
+        "W14"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Descriptions do not guarantee a particular room or compliance certification.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K022",
+      "venue_key": "media-one-hotel",
+      "category": "rooms",
+      "language": "en",
+      "question": "What room categories are listed?",
+      "answer": "The room pages list Hip Rooms, Premium Cool Room, Junior Calm Suite, One-Bedroom Chill Out Suite and accessible rooms.",
+      "source_ids": [
+        "W04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K023",
+      "venue_key": "media-one-hotel",
+      "category": "rooms",
+      "language": "en",
+      "question": "What Hip Room options are listed?",
+      "answer": "The Hip Room page lists Standard Hip Urban, Standard Hip City, Hip Room Plus Palm and Executive Hip Room.",
+      "source_ids": [
+        "W15"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K024",
+      "venue_key": "media-one-hotel",
+      "category": "rooms",
+      "language": "en",
+      "question": "What is the Premium Cool Room?",
+      "answer": "The published room page describes a 35-square-metre room with a work desk and an enclosed bathroom with a power shower.",
+      "source_ids": [
+        "W16"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K025",
+      "venue_key": "media-one-hotel",
+      "category": "rooms",
+      "language": "en",
+      "question": "What is the Junior Calm Suite?",
+      "answer": "The published room page describes a 50-square-metre suite with floor-to-ceiling windows, a work desk and an enclosed bathroom.",
+      "source_ids": [
+        "W17"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K026",
+      "venue_key": "media-one-hotel",
+      "category": "rooms",
+      "language": "en",
+      "question": "What is the One-Bedroom Chill Out Suite?",
+      "answer": "The published room page lists 70 square metres, a separate living room, bathtub and power shower.",
+      "source_ids": [
+        "W18"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K027",
+      "venue_key": "media-one-hotel",
+      "category": "rooms",
+      "language": "en",
+      "question": "Can you quote room prices or availability?",
+      "answer": "Room prices and availability require a dated search through the approved booking engine or reservations team. This collected content contains no live room inventory.",
+      "source_ids": [
+        "W02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Capability boundary, not a room-price fact. Do not reuse prices from search snippets.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K028",
+      "venue_key": "media-one-hotel",
+      "category": "facilities",
+      "language": "en",
+      "question": "Does the hotel have a pool?",
+      "answer": "A rooftop swimming pool is listed beside Coco Lounge. The facilities page describes complimentary access for in-house guests.",
+      "source_ids": [
+        "W03",
+        "W10"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K029",
+      "venue_key": "media-one-hotel",
+      "category": "facilities",
+      "language": "en",
+      "question": "Does the hotel have a gym?",
+      "answer": "The gym is on the eighth floor and is listed as open 24 hours, with complimentary access for in-house guests.",
+      "source_ids": [
+        "W03",
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K030",
+      "venue_key": "media-one-hotel",
+      "category": "facilities",
+      "language": "en",
+      "question": "Are sauna and steam facilities listed?",
+      "answer": "The facilities page lists sauna and steam-room access among the wellness facilities. Ask the hotel about current access conditions.",
+      "source_ids": [
+        "W03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K031",
+      "venue_key": "media-one-hotel",
+      "category": "hours",
+      "language": "en",
+      "question": "What are the pool opening hours?",
+      "answer": "Published sources disagree: the facilities page contains 07:00–23:00, 07:00–19:00 and 10:00–19:00; Coco and its public pass listing show 09:00–23:00. Ask the hotel to confirm.",
+      "source_ids": [
+        "W03",
+        "W10",
+        "S07",
+        "D04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C01"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C01"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K032",
+      "venue_key": "media-one-hotel",
+      "category": "price",
+      "language": "en",
+      "question": "Can non-residents buy a pool pass?",
+      "answer": "The published Coco pass is AED 99 per person, fully redeemable on food and drinks. Gym access is listed as an extra AED 50. Confirm current terms and availability with Coco Lounge.",
+      "source_ids": [
+        "W03",
+        "W10",
+        "S07"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Opening hours withheld separately. No guaranteed lounger or reservation.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K033",
+      "venue_key": "media-one-hotel",
+      "category": "facilities",
+      "language": "en",
+      "question": "Are external gym memberships offered?",
+      "answer": "The facilities page offers monthly, quarterly, six-month and annual gym memberships.",
+      "source_ids": [
+        "W03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K034",
+      "venue_key": "media-one-hotel",
+      "category": "price",
+      "language": "en",
+      "question": "What gym membership prices are published?",
+      "answer": "The facilities page lists AED 499 monthly; AED 999 quarterly; AED 1,799 for six months; AED 2,999 annually. Additional benefits and terms must be confirmed before purchase.",
+      "source_ids": [
+        "W03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Do not grant any listed reward, discount or stay. These are scraped prices, not approved app entitlements.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K035",
+      "venue_key": "media-one-hotel",
+      "category": "meetings",
+      "language": "en",
+      "question": "Are meeting and coworking spaces available?",
+      "answer": "7² on the seventh floor provides meeting and coworking spaces. Larger event spaces are also described on the 42nd floor.",
+      "source_ids": [
+        "W13"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K036",
+      "venue_key": "media-one-hotel",
+      "category": "meetings",
+      "language": "en",
+      "question": "What meeting rooms are named?",
+      "answer": "The meeting page names Brainstorm, Creation, Idea, Network, Think Tank, Viral, Instagram and Webinar.",
+      "source_ids": [
+        "W13"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K037",
+      "venue_key": "media-one-hotel",
+      "category": "meetings",
+      "language": "en",
+      "question": "How can I enquire about an event?",
+      "answer": "Contact the hotel to be connected with the meetings and events team. The app cannot confirm a room, capacity, quotation or event booking.",
+      "source_ids": [
+        "W02",
+        "W13"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K038",
+      "venue_key": "media-one-hotel",
+      "category": "events",
+      "language": "en",
+      "question": "What is P7 Arena?",
+      "answer": "P7 Arena is Media One's underground multipurpose event space. The hotel page advertises over 1,200 square metres; ask the event team about layouts and approved capacities.",
+      "source_ids": [
+        "W12"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Do not promise the page's maximum 2,000 capacity for a specific event.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K039",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "Are long stays available?",
+      "answer": "The hotel contact page says reservations can advise on seasonal and long-stay rates.",
+      "source_ids": [
+        "W02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K040",
+      "venue_key": "media-one-hotel",
+      "category": "stay",
+      "language": "en",
+      "question": "Are laundry services available?",
+      "answer": "The existing FAQ lists laundry and dry cleaning. Confirm charges and turnaround with the hotel.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K041",
+      "venue_key": "media-one-hotel",
+      "category": "transport",
+      "language": "en",
+      "question": "Can the hotel help with tours?",
+      "answer": "The existing FAQ describes a lobby travel desk and concierge help for excursions. Confirm any itinerary and charges directly.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K042",
+      "venue_key": "media-one-hotel",
+      "category": "celebration",
+      "language": "en",
+      "question": "Can I request a cake, flowers or a room setup?",
+      "answer": "The existing FAQ says celebration arrangements may be possible, may incur charges and require at least 24 hours' notice. The hotel must confirm the request.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Do not represent submitting a chat message as an accepted arrangement.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K043",
+      "venue_key": "media-one-hotel",
+      "category": "policies",
+      "language": "en",
+      "question": "Can children stay at the hotel?",
+      "answer": "The older FAQ describes an adult-oriented hotel without child-specific facilities. Exact age, occupancy and child-stay conditions need confirmation.",
+      "source_ids": [
+        "D01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [],
+      "notes": "Adult-oriented does not mean adults-only. Do not infer a ban on children.",
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K044",
+      "venue_key": "media-one-hotel",
+      "category": "policies",
+      "language": "en",
+      "question": "Are pets allowed in rooms or venues?",
+      "answer": "The old FAQ excludes pets generally; Qwerty's current Sunday event explicitly describes a pet-friendly terrace. Room, venue and day-specific rules need confirmation.",
+      "source_ids": [
+        "D01",
+        "S06"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C06"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C06"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K045",
+      "venue_key": "media-one-hotel",
+      "category": "policies",
+      "language": "en",
+      "question": "Are balconies available?",
+      "answer": "An older draft FAQ claims balcony rooms, but no corresponding balcony category was confirmed in the collected current room pages. Ask reservations.",
+      "source_ids": [
+        "D01",
+        "W04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C14"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C14"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K046",
+      "venue_key": "media-one-hotel",
+      "category": "policies",
+      "language": "en",
+      "question": "What payment and check-in ID rules apply?",
+      "answer": "Confirm these directly with reservations. The affiliated listing supplies card/ID/age restrictions that were not verified against a current hotel policy.",
+      "source_ids": [
+        "D01",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [],
+      "notes": "Do not turn an affiliate's US military-ID language or no-cash statement into hotel policy.",
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K047",
+      "venue_key": "media-one-hotel",
+      "category": "loyalty",
+      "language": "en",
+      "question": "What are the current loyalty benefits?",
+      "answer": "Current membership terms must be supplied and approved. Legacy website-copy loyalty points, tiers and rewards are excluded from this dataset's answer candidates.",
+      "source_ids": [
+        "D04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C12"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C12"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K048",
+      "venue_key": "media-one-hotel",
+      "category": "dining",
+      "language": "en",
+      "question": "Which dining venues can I explore?",
+      "answer": "Collected venue pages cover Ciao Bella, Qwerty, garden on 8, Coco Lounge and M12go. P7 Arena is separately described as an event venue.",
+      "source_ids": [
+        "W06"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "This is a sourced list, not an assertion of the hotel's total number of outlets.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K049",
+      "venue_key": "ciao-bella",
+      "category": "overview",
+      "language": "en",
+      "question": "What is Ciao Bella?",
+      "answer": "Ciao Bella is Media One's Italian restaurant, serving breakfast, lunch and dinner, with an outdoor terrace called Sicily.",
+      "source_ids": [
+        "W07"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K050",
+      "venue_key": "ciao-bella",
+      "category": "hours",
+      "language": "en",
+      "question": "When is Ciao Bella open?",
+      "answer": "The venue page lists Monday–Friday 07:00–23:00 and Saturday–Sunday 09:00–23:00, Dubai time.",
+      "source_ids": [
+        "W07",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K051",
+      "venue_key": "ciao-bella",
+      "category": "booking",
+      "language": "en",
+      "question": "How can I book Ciao Bella?",
+      "answer": "Use the published SevenRooms link: https://sevn.ly/x7BV6Ppr. The link opens the venue's booking service; it does not itself confirm a table.",
+      "source_ids": [
+        "W07",
+        "S01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K052",
+      "venue_key": "ciao-bella",
+      "category": "contact",
+      "language": "en",
+      "question": "How can I contact Ciao Bella?",
+      "answer": "The current press release and public experience give +971 52 144 7349. The press release also lists ciaobella@mediaonehotel.com.",
+      "source_ids": [
+        "D02",
+        "S05"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K053",
+      "venue_key": "ciao-bella",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Ciao Bella's business lunch?",
+      "answer": "Published listings describe a starter and main for AED 95, Monday–Friday 12:00–15:00, with an optional glass of wine for AED 35.",
+      "source_ids": [
+        "W07",
+        "S01",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K054",
+      "venue_key": "ciao-bella",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Ciao Bella's aperitivo?",
+      "answer": "Salute is listed daily 17:00–19:00, with selected drinks from AED 39.",
+      "source_ids": [
+        "W07",
+        "S01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K055",
+      "venue_key": "ciao-bella",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Bella's Friday Late Brunch?",
+      "answer": "A two-hour sharing brunch is listed on Fridays from 18:30. Bella Zero is AED 149 per person with non-alcoholic beverages; Bella Frizzante is AED 199 with selected alcoholic beverages. A further hour is listed at AED 90 per person.",
+      "source_ids": [
+        "S05",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Menu rotates; do not guarantee every dish or unlimited duration.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K056",
+      "venue_key": "qwerty",
+      "category": "overview",
+      "language": "en",
+      "question": "What is Qwerty?",
+      "answer": "Qwerty is a restaurant, bar and terrace with globally influenced food, cocktails and wine.",
+      "source_ids": [
+        "W08",
+        "S02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K057",
+      "venue_key": "qwerty",
+      "category": "hours",
+      "language": "en",
+      "question": "When is Qwerty open?",
+      "answer": "The website lists 12:00–midnight daily, but the current press release lists weekend opening at 12:30. The affiliated listing incorrectly shows closure all week. Confirm weekend opening.",
+      "source_ids": [
+        "W08",
+        "D02",
+        "L01"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C03"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C03"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K058",
+      "venue_key": "qwerty",
+      "category": "booking",
+      "language": "en",
+      "question": "How can I book Qwerty?",
+      "answer": "Use the published SevenRooms link: https://sevn.ly/xNstq8Ao. Reservation confirmation is handled by the venue's booking service.",
+      "source_ids": [
+        "W08",
+        "S02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K059",
+      "venue_key": "qwerty",
+      "category": "contact",
+      "language": "en",
+      "question": "What is Qwerty's phone number?",
+      "answer": "The public Grill & Chill page gives +971 52 144 7348; the press release gives +971 52 144 7438. Use the hotel contact route until the correct number is confirmed.",
+      "source_ids": [
+        "S06",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C04"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C04"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K060",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "What is The Lunch Edit?",
+      "answer": "Qwerty's public listing gives AED 95 per person, Monday–Friday 12:00–15:00. Confirm the current menu and inclusions with the venue.",
+      "source_ids": [
+        "W08",
+        "S02",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K061",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "When is Qwerty's happy hour?",
+      "answer": "Off the Record is listed daily 16:00–19:00, with selected cocktails, wine and other drinks from AED 39.",
+      "source_ids": [
+        "W08",
+        "S02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K062",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Gyoza & G&T Tuesdays?",
+      "answer": "The published offer pairs chicken gyoza with a gin and tonic for AED 69, Tuesdays from 18:00.",
+      "source_ids": [
+        "W08",
+        "S02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K063",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "What is The Thursday Edit?",
+      "answer": "The public listing advertises a Thursday ladies' night with free-flow white, rosé and red wine, 18:00–midnight. Price and eligibility conditions were not supplied in the retrieved listing.",
+      "source_ids": [
+        "W08",
+        "S02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Never describe the experience as free merely because the price is missing.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K064",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "What entertainment is listed at Qwerty?",
+      "answer": "The Sound Edit lists Thursday and Friday DJs from 18:30; the venue page gives sets through 23:00. Check the current performer schedule.",
+      "source_ids": [
+        "W08",
+        "S02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Do not promise a named performer on an arbitrary future date.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K065",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Grill & Chill Sundays?",
+      "answer": "The public experience describes Sunday mixed grills and live acoustic music from 18:00–22:30. Conflicting package prices need venue confirmation.",
+      "source_ids": [
+        "S06",
+        "D03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C07"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C07"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K066",
+      "venue_key": "qwerty",
+      "category": "offer",
+      "language": "en",
+      "question": "When is The South American Dispatch?",
+      "answer": "The website says Fridays from 19:00; the public SevenRooms listing and press release say 18:00. Confirm the start time and package.",
+      "source_ids": [
+        "W08",
+        "S02",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C08"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C08"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K067",
+      "venue_key": "garden-on-8",
+      "category": "overview",
+      "language": "en",
+      "question": "What is garden on 8?",
+      "answer": "garden on 8 is an eighth-floor urban rooftop sports bar with indoor and outdoor viewing areas and a pub-style food menu.",
+      "source_ids": [
+        "W09",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K068",
+      "venue_key": "garden-on-8",
+      "category": "hours",
+      "language": "en",
+      "question": "When is garden on 8 open?",
+      "answer": "The venue page and press release list Sunday–Thursday 12:00–01:00 the following day, and Friday–Saturday 12:00–02:00 the following day.",
+      "source_ids": [
+        "W09",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Do not use the affiliate's conflicting 16:00 weekday opening.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K069",
+      "venue_key": "garden-on-8",
+      "category": "booking",
+      "language": "en",
+      "question": "How can I book garden on 8?",
+      "answer": "Use the published SevenRooms link: https://sevn.ly/xvghHdM2. Bookings remain subject to the venue's confirmation.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K070",
+      "venue_key": "garden-on-8",
+      "category": "contact",
+      "language": "en",
+      "question": "How can I contact garden on 8?",
+      "answer": "Public experience and press-release contacts list +971 52 144 7438 and gardenon8@mediaonehotel.com.",
+      "source_ids": [
+        "S08",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K071",
+      "venue_key": "garden-on-8",
+      "category": "sports",
+      "language": "en",
+      "question": "Can I watch live sport at garden on 8?",
+      "answer": "The venue page advertises football, rugby, F1 and UFC on indoor and outdoor big screens. Confirm the specific fixture, screen and seating with the venue.",
+      "source_ids": [
+        "W09"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K072",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "When is garden on 8 happy hour?",
+      "answer": "Published listings give daily 16:00–20:00, with selected drinks from AED 34.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K073",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "When is Jackpot Bingo?",
+      "answer": "The regular listing gives Tuesdays 20:00–22:00 with free entry. Date-specific themed events may replace the regular format.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Do not promise a current jackpot amount or prize.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K074",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "When is the regular Quiz Night?",
+      "answer": "The regular listing gives Wednesdays 20:00–22:00 with free entry, hosted by Jono and Rich. Check for date-specific themed editions.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K075",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Brunch on 8?",
+      "answer": "The regular public listing gives Saturdays 13:00–16:00, with three-course sharing food and beverage packages: AED 199 non-alcoholic, AED 299 house and AED 399 premium.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Check themed-event pricing; unlimited beverages apply to the listed three-hour package.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K076",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "What is the garden Sunday roast?",
+      "answer": "Published listings give Sundays from 12:00, priced AED 135, with an optional house drink for AED 39. The website names pork, beef, chicken and cauliflower options, subject to availability.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K077",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "What is the garden lunch deal?",
+      "answer": "The detailed public experience gives Monday–Friday 12:00–15:00: one main dish with a soft drink AED 79 or a house drink AED 99; a chef-selected dessert is advertised for AED 20 extra.",
+      "source_ids": [
+        "S08",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [
+        "C10"
+      ],
+      "notes": "Use detailed weekday schedule; the website card's generic 'Daily' footer conflicts and is not used.",
+      "conflicts": [
+        "C10"
+      ],
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K078",
+      "venue_key": "garden-on-8",
+      "category": "offer",
+      "language": "en",
+      "question": "What are Meat Mondays?",
+      "answer": "Published listings describe Monday grills from 18:00, starting at AED 135, and an Old Fashioned add-on at AED 45. The wine add-on differs between sources and is withheld.",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [
+        "C09"
+      ],
+      "notes": "Do not quote the disputed wine add-on; other stated components are corroborated.",
+      "conflicts": [
+        "C09"
+      ],
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K079",
+      "venue_key": "coco-lounge",
+      "category": "overview",
+      "language": "en",
+      "question": "What is Coco Lounge?",
+      "answer": "Coco Lounge is Media One's rooftop poolside lounge, with Miami-inspired styling and Japanese-influenced food.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K080",
+      "venue_key": "coco-lounge",
+      "category": "hours",
+      "language": "en",
+      "question": "When is Coco Lounge open?",
+      "answer": "The venue page and press release list the lounge Sunday–Thursday 09:00–23:00 and Friday–Saturday 09:00–00:00. Pool operating hours are separately disputed.",
+      "source_ids": [
+        "W10",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Lounge opening is not proof of swimming access.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K081",
+      "venue_key": "coco-lounge",
+      "category": "booking",
+      "language": "en",
+      "question": "How can I book Coco Lounge?",
+      "answer": "Use the published SevenRooms link: https://sevn.ly/x2Yey0it. Confirm the selected pass, table or experience with the venue.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K082",
+      "venue_key": "coco-lounge",
+      "category": "contact",
+      "language": "en",
+      "question": "What is Coco Lounge's phone number?",
+      "answer": "The public pass page and press release list +971 52 144 7437.",
+      "source_ids": [
+        "S07",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K083",
+      "venue_key": "coco-lounge",
+      "category": "contact",
+      "language": "en",
+      "question": "What is Coco Lounge's email address?",
+      "answer": "The facilities page lists coco@mediaonehotel.com; the press release lists cocolounge@mediaonehotel.com. Confirm the preferred monitored inbox.",
+      "source_ids": [
+        "W03",
+        "D02"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C05"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C05"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K084",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "When are Kanpai Hours?",
+      "answer": "The venue page and public listing give weekdays 17:00–19:00 and weekends 15:00–19:00, with selected drinks from AED 34.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K085",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "What is the Bento Box lunch?",
+      "answer": "The published Bento Box lunch is AED 75, Monday–Friday 12:00–16:00.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K086",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "What is T&T Fridays?",
+      "answer": "The public offer lists Fridays from 18:00: AED 149 for two hours of unlimited margaritas and a taco selection. An old Thursday reference remains in the listing copy and requires confirmation.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "review_queue_only",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "before_use",
+      "conflict_ids": [
+        "C17"
+      ],
+      "notes": "",
+      "conflicts": [
+        "C17"
+      ],
+      "publication_status": "draft",
+      "risk_level": "needs_resolution"
+    },
+    {
+      "id": "K087",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "What is Rolling on Rice?",
+      "answer": "The public listing advertises Thursdays from 18:00, AED 179 per person for two hours of unlimited maki sushi, Asahi draft and sake.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Package information retrieved from the public listing summary; confirm full terms.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K088",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "What are Sakura Sundays?",
+      "answer": "The public listing advertises a Sunday ladies' pool pass from 12:00–19:00 with complimentary access, two drinks and 30% off the à la carte menu. Conditions and current eligibility need confirmation.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "A scraped offer does not grant an entitlement; general pool hours remain disputed.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K089",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "What are Solé Sunset Sessions?",
+      "answer": "The venue page and November release describe Saturday sunset sessions, 17:00–22:00, with a complimentary tapas token for arrivals 17:00–18:30. Check the current food format and performance lineup.",
+      "source_ids": [
+        "W10",
+        "D03",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "Do not reuse older 'first drink free', society-only terms or a guaranteed chef without current event evidence.",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K090",
+      "venue_key": "coco-lounge",
+      "category": "offer",
+      "language": "en",
+      "question": "Is live DJ entertainment listed?",
+      "answer": "The venue and public listing advertise DJ Leysan on Thursdays and Fridays, 18:00–22:00. Confirm the current event schedule.",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "time_sensitive"
+    },
+    {
+      "id": "K091",
+      "venue_key": "m12go",
+      "category": "overview",
+      "language": "en",
+      "question": "What is M12go?",
+      "answer": "M12go is a grab-and-go café in the Media One office-tower lobby, with coffee, smoothies and a changing lunch menu.",
+      "source_ids": [
+        "W11"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K092",
+      "venue_key": "m12go",
+      "category": "hours",
+      "language": "en",
+      "question": "When is M12go open?",
+      "answer": "The venue page lists Monday–Friday 07:00–17:00, closed Saturday and Sunday.",
+      "source_ids": [
+        "W11"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-01",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K093",
+      "venue_key": "m12go",
+      "category": "dining",
+      "language": "en",
+      "question": "What is on today's M12go lunch menu?",
+      "answer": "The venue page says the lunch menu changes daily. Ask the café for today's dishes; no daily menu feed was retrieved.",
+      "source_ids": [
+        "W11"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "single_source",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K094",
+      "venue_key": "media-one-hotel",
+      "category": "booking",
+      "language": "en",
+      "question": "Can this app confirm a table or room?",
+      "answer": "This content pack supplies information and published links only. A reservation is confirmed only by the hotel or booking provider.",
+      "source_ids": [
+        "W02",
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Prototype capability boundary.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    },
+    {
+      "id": "K095",
+      "venue_key": "media-one-hotel",
+      "category": "dietary",
+      "language": "en",
+      "question": "Can you confirm a dish is safe for my allergy?",
+      "answer": "Ask the venue team to verify ingredients and cross-contact controls. Menu links are supplied, but their PDFs and current kitchen practices were not validated in this collection.",
+      "source_ids": [
+        "W07",
+        "W08",
+        "W09",
+        "W10"
+      ],
+      "approval_status": "provisional",
+      "production_approved": false,
+      "allowed_use": "private_prototype_candidate",
+      "source_confidence": "corroborated",
+      "valid_from": null,
+      "valid_to": null,
+      "timezone": "Asia/Dubai",
+      "review_after": "2026-11-24",
+      "conflict_ids": [],
+      "notes": "Do not infer allergen-free status from dish names or menu abbreviations.",
+      "publication_status": "draft",
+      "risk_level": "standard"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "C01",
+      "topic": "Pool opening hours",
+      "severity": "high",
+      "source_ids": [
+        "W03",
+        "W10",
+        "S07",
+        "D04"
+      ],
+      "observations": "Facilities page itself shows 07:00–23:00, 07:00–19:00 and a 10:00–19:00 paragraph; Coco/public pass show 09:00–23:00. Draft says 07:00–19:00.",
+      "action": "Hold all exact swimming hours; distinguish lounge access, day-pass entry and lifeguarded swimming. Facilities/Coco owner to confirm.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C02",
+      "topic": "Parking charges",
+      "severity": "high",
+      "source_ids": [
+        "D01",
+        "L01",
+        "W02"
+      ],
+      "observations": "Older FAQ says complimentary valet/self-parking for hotel guests; affiliate lists AED 25 per night. Contact page confirms parking but not charges.",
+      "action": "Answer availability only; confirm guest/visitor tariffs, validation and free periods.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C03",
+      "topic": "Qwerty and affiliate opening hours",
+      "severity": "medium",
+      "source_ids": [
+        "W08",
+        "D02",
+        "L01"
+      ],
+      "observations": "Website says 12:00 daily; current press release says weekends 12:30. Affiliate shows Qwerty closed every day and earlier weekday garden hours.",
+      "action": "Do not use affiliate outlet hours. Confirm Qwerty weekend start; other garden hours use hotel venue page + current release.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C04",
+      "topic": "Qwerty contact number",
+      "severity": "medium",
+      "source_ids": [
+        "S06",
+        "D02"
+      ],
+      "observations": "Public experience uses +971 52 144 7348; release uses +971 52 144 7438, also used for garden on 8.",
+      "action": "Hold Qwerty phone; use general hotel contact pending correction.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C05",
+      "topic": "Coco email routing",
+      "severity": "medium",
+      "source_ids": [
+        "W03",
+        "D02"
+      ],
+      "observations": "Facilities page lists coco@mediaonehotel.com; press release lists cocolounge@mediaonehotel.com.",
+      "action": "Both may be valid; confirm canonical monitored inbox. Public Coco phone is separately corroborated.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C06",
+      "topic": "Pet policy scope",
+      "severity": "high",
+      "source_ids": [
+        "D01",
+        "S06",
+        "D04"
+      ],
+      "observations": "Old FAQ excludes pets in all venues/rooms; current Qwerty Sunday event calls the terrace pet-friendly; website draft limits terrace access to weekends.",
+      "action": "Confirm guest rooms separately from terrace, permitted days, species and other rules; no hotel-wide pet-friendly claim.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C07",
+      "topic": "Grill & Chill package scope/pricing",
+      "severity": "high",
+      "source_ids": [
+        "S06",
+        "D03"
+      ],
+      "observations": "Public SevenRooms says AED 190 mixed grill + wine; November release says from AED 75 per person. November content may represent a changed menu.",
+      "action": "Confirm effective date, individual dishes, package inclusions and final price before quoting.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C08",
+      "topic": "South American Dispatch start time",
+      "severity": "medium",
+      "source_ids": [
+        "W08",
+        "S02",
+        "D02"
+      ],
+      "observations": "Qwerty website says Fridays 19:00; SevenRooms/release say 18:00.",
+      "action": "Hold start time until venue confirmation.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C09",
+      "topic": "Meat Mondays wine add-on",
+      "severity": "medium",
+      "source_ids": [
+        "W09",
+        "S03"
+      ],
+      "observations": "Website gives AED 150 for the wine bottle; SevenRooms gives AED 149.",
+      "action": "Withhold wine price only; core meal and cocktail prices agree.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C10",
+      "topic": "Garden lunch day label",
+      "severity": "medium",
+      "source_ids": [
+        "W09",
+        "S08",
+        "D02"
+      ],
+      "observations": "Website body says Monday–Friday but card footer says Daily; detailed SevenRooms and release say Monday–Friday.",
+      "action": "Use corroborated weekday schedule provisionally; log and correct generic footer.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C11",
+      "topic": "M12go lunch day label",
+      "severity": "medium",
+      "source_ids": [
+        "W11"
+      ],
+      "observations": "Page says café closed weekends, but lunch promotion says Daily 12:00–15:00.",
+      "action": "Keep explicit Monday–Friday café opening; do not promise weekend lunch.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C12",
+      "topic": "Legacy loyalty terms",
+      "severity": "high",
+      "source_ids": [
+        "D04"
+      ],
+      "observations": "Working website copy advertises points/four tiers, rewards and join flows. Current project brief says past paid programme stopped and new rules require approval.",
+      "action": "Exclude all legacy points, tiers, earned benefits and sign-up claims until owner supplies actual programme rules.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C13",
+      "topic": "Stale/malformed SynXis navigation",
+      "severity": "high",
+      "source_ids": [
+        "W01"
+      ],
+      "observations": "Full navigation links contain fixed February/July 2023 dates and some malformed child/currency encoding. Public link contains chain=21125 and hotel=3792.",
+      "action": "Do not ship dated/malformed URLs. Validate a clean approved booking handoff separately; identifiers are observed public values, not API access.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C14",
+      "topic": "Older FAQ and inherited room claims",
+      "severity": "high",
+      "source_ids": [
+        "D01",
+        "W04",
+        "W14",
+        "W15"
+      ],
+      "observations": "FAQ contains unreviewed balcony claims, contradictory minibar text, placeholders and references to an already-existing mobile app. Room icons advertise smartphone/elevator controls.",
+      "action": "Hold balconies, exact minibar promises, digital keys/controls and unsupported claims. None imply capabilities in the new app.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C15",
+      "topic": "Outlet count and unverified venues",
+      "severity": "medium",
+      "source_ids": [
+        "W01",
+        "W06",
+        "D04"
+      ],
+      "observations": "Homepage/directory say eight venues but directory links six entries including P7; working copy names additional venues not corroborated in this collection.",
+      "action": "List verified venue pages without a total; do not add Papafuku/Velvet Social from draft alone.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C16",
+      "topic": "Meetings contact label/link mismatch",
+      "severity": "medium",
+      "source_ids": [
+        "W13"
+      ],
+      "observations": "Meeting page shows one mobile label linked to a different tel number; page also names a staff contact whose current ownership is not verified.",
+      "action": "Use main hotel/events enquiry route until contact owner and number are confirmed.",
+      "status": "unresolved",
+      "approved_resolution": null
+    },
+    {
+      "id": "C17",
+      "topic": "T&T Friday/Thursday copy mismatch",
+      "severity": "medium",
+      "source_ids": [
+        "W10",
+        "S04"
+      ],
+      "observations": "Current heading/day is Friday; SevenRooms description/slug retains a Thursday reference.",
+      "action": "Hold day/package answer for owner confirmation; do not infer dates from slug.",
+      "status": "unresolved",
+      "approved_resolution": null
+    }
+  ],
+  "menu_links": [
+    {
+      "venue_key": "ciao-bella",
+      "label": "Breakfast menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2025/06/Media-One-Hotel-Ciao-Bella-Breakfast-Menu.pdf",
+      "source_id": "W07",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "ciao-bella",
+      "label": "À La Carte Menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/Ciao-Bella-Menu-13th-Aug-26-1.pdf",
+      "source_id": "W07",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "ciao-bella",
+      "label": "Business Lunch Menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/Business-Lunch-Ciao-Bella-24.pdf",
+      "source_id": "W07",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "ciao-bella",
+      "label": "Happy Hour Menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/Happy-Hour-Menu-Print-File.pdf",
+      "source_id": "W07",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "qwerty",
+      "label": "À la carte menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/08/Low-res-Qwerty-Menu_A-La-Carte-AUG-2026.pdf",
+      "source_id": "W08",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "qwerty",
+      "label": "Business Lunch",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/08/Sept-Qw.pdf",
+      "source_id": "W08",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "qwerty",
+      "label": "Happy Hour",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/08/Low-Res-Happy-Hour-Menu.pdf",
+      "source_id": "W08",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "garden-on-8",
+      "label": "A la carte menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/06/Menu_garden-on-8_A-La-Carte_A3-8-Allergens_MAY-2026.pdf",
+      "source_id": "W09",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "garden-on-8",
+      "label": "Sunday Roast menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/TRADITIONAL-SUNDAY-ROAST-Menu-updated.pdf",
+      "source_id": "W09",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "garden-on-8",
+      "label": "Brunch menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/Brunch-on-8-menu-2026-8-allergens.pdf",
+      "source_id": "W09",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "garden-on-8",
+      "label": "Drinks menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2025/07/Menu_garden-on-8_Drinks_A3-8-Allergens_July2025-1-2-2.pdf",
+      "source_id": "W09",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "coco-lounge",
+      "label": "A la carte menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/Menu_Coco-Lounge_A-la-Carte_A3-High-Res.pdf",
+      "source_id": "W10",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "coco-lounge",
+      "label": "Kanpai hour menu",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/01/Kanpai-Hour-Menu-Coco-Lounge-7.pdf",
+      "source_id": "W10",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    },
+    {
+      "venue_key": "coco-lounge",
+      "label": "Coco-Lounge-Bento-Box-Menu-Final.pdf",
+      "url": "https://mediaonehotel.com/wp-content/uploads/2026/09/Coco-Lounge-Bento-Box-Menu-Final.pdf",
+      "source_id": "W10",
+      "retrieved_at": "2026-10-25T19:51:54.191Z",
+      "content_read": false,
+      "allergens_verified": false,
+      "notes": "Linked menu only; PDF not parsed or checked for currency/allergens."
+    }
+  ],
+  "excluded_claims": [
+    "Legacy loyalty points/tiers and automatic benefit promises",
+    "Live room rates, inventory and confirmed reservations",
+    "Digital room keys or elevator/TV control in this app",
+    "Balcony availability and exact minibar stocking",
+    "Personal guest/staff records, login details and private system endpoints",
+    "Third-party numeric distance error: affiliate lists metro as 750 kilometres",
+    "Specific allergen-free or food-safety promises",
+    "Expired 2025/early-2026 draft room offers and unsigned November promotion assumptions"
+  ],
+  "integration_notes": {
+    "source_date_is_not_validity": true,
+    "do_not_import_review_queue_into_model_context": true,
+    "do_not_treat_draft_as_approved": true,
+    "do_not_publish_or_send_automatically": true,
+    "private_prototype_candidates_require_clear_provisional_label": true,
+    "existing_fictional_test_offers_must_remain_distinct": true,
+    "replacement": "Maintain stable record IDs, preserve imported source versions and use supersedes links when staff replace content; approved current content must take precedence over sourced provisional text."
+  }
+}
