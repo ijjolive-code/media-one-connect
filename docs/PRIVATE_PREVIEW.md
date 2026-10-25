@@ -56,3 +56,17 @@ See [the screenshot review sheet](screenshots/brand-pass/README.md) for phone/de
 ## Local-computer alternative
 
 Only if you choose to run it on your own computer: install Node 24, clone/switch to this branch, then run `npm ci` and `npm run dev` in the checkout. In that case, the localhost address printed in your own computer's terminal is accessible from that computer. This is separate from the browser-only Codespaces method above.
+
+## Recovery mode: npm command not found
+
+If Codespaces reports recovery mode and `npm: command not found`, diagnose the container creation failure before running app commands. The branded branch previously retained the invalid image tag `javascript-node:1-24-bookworm`; it was corrected on 25 October 2026 to `mcr.microsoft.com/devcontainers/javascript-node:24-bookworm`. The old tag returned HTTP 404 and the replacement manifest HTTP 200 at verification. Registry availability is not proof that a Codespace completed startup.
+
+In the existing recovery terminal, while on `design/brand-reference-pass`:
+
+1. Run `git status --short`; preserve any reported local edits.
+2. Run `git pull --ff-only origin design/brand-reference-pass`. If this fails, stop and share the error rather than forcing or resetting.
+3. Use Cmd/Ctrl+Shift+P → **Codespaces: Rebuild Container**. A Full Rebuild is not required for this fix.
+4. After successful rebuild, open a new terminal and run `node --version` and `npm --version`.
+5. Run `npm ci`, then `npm run build && npm run start`. Wait for readiness, then reopen **Private** port 3000.
+
+If recovery mode returns, open **Codespaces: View Creation Log** and share the first error and surrounding lines. Do not install Node manually into the recovery container as a substitute for fixing the configuration. Actual recovery and private preview must be confirmed in the owner's Codespace.
