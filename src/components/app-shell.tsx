@@ -53,7 +53,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             aria-label="Staff demo home"
           >
             <strong>Staff workspace</strong>
-            <span>Read-only demonstration</span>
+            <span>Authenticated test workspace</span>
           </Link>
         ) : (
           <Link

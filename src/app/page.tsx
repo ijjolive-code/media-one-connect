@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { GuestOffers } from "@/components/guest-offers";
+export const dynamic = "force-dynamic";
 import Image from "next/image";
 import { Icon } from "@/components/icon";
 
@@ -88,6 +90,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <GuestOffers />
       <p className="home-footnote">
         This is a demonstration. Bookings, requests and membership are not
         connected.

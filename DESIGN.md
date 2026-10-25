@@ -69,3 +69,10 @@ The app shell follows the visual viewport (`100dvh` plus VisualViewport resize/o
 ## Scope and evidence
 
 No backend functionality changes: all requests, booking, membership, WhatsApp, staff auth and real AI remain unavailable/planned. Real logo/photo do not turn sample policies or scripted replies into live services. Preserve privacy/noindex metadata and Codespaces Private port 3000; no public deployment or live hotel number. Verify build/lint/types, existing browser tests, phone widths down to 320px, desktop, image loading/optimisation, logo geometry, keyboard layout and no horizontal overflow. Save current screenshots and authoritative results in document 05. Native iOS/Android and official brand approval remain owner checks.
+
+
+## M1 staff/content extension
+
+The later M1 slice adds real local Supabase Auth, venue-scoped permissions and persistent **fictional** offers. Earlier wording above about no backend changes describes the brand pass, not the current implementation. Staff now enters through a separate sign-in and editor, with 16px labelled fields, 48px controls, readable errors, explicit save state and guest-review guidance. No fake login, live promotion or booking is implied. Guest Home/Hotel information display persisted published/in-date demo offers on reload. Broader account/member/booking/request modules remain planned.
+
+Keep actor/revision metadata in the staff workflow and clear fictional labels in the guest view. Missing/unreachable data must not be replaced with a fixture claimed as saved. Full M1 evidence is in the authoritative progress record, and current private setup/review is in `docs/M1_PRIVATE_REVIEW.md`.

@@ -75,24 +75,22 @@ test("scripted concierge replies honestly, resets and does not persist on reload
   await expect(log).not.toContainText("YOUR DEMO MESSAGE");
 });
 
-test("staff shell is explicitly unauthenticated with no operational controls", async ({
+test("staff workspace requires sign-in and exposes no anonymous editor", async ({
   page,
 }) => {
   await page.goto("/staff");
+  await expect(page).toHaveURL(/\/staff\/sign-in$/);
   await expect(
-    page.getByRole("heading", { name: "A place for the team." }),
+    page.getByRole("heading", { name: "Staff sign-in" }),
   ).toBeVisible();
   await expect(
-    page.getByText("No staff authentication or private records yet", {
-      exact: true,
-    }),
-  ).toBeVisible();
+    page.getByRole("button", { name: "Save demo offer" }),
+  ).toHaveCount(0);
   await expect(
-    page.getByLabel("Service connection status").getByText("Not connected"),
-  ).toHaveCount(3);
-  await expect(page.locator("input, textarea, form, button")).toHaveCount(0);
-  await page.getByRole("link", { name: "See the guest demo" }).click();
-  await expect(page).toHaveURL(/\/concierge$/);
+    page.getByRole("navigation", { name: "Guest navigation" }),
+  ).toHaveCount(0);
+  await page.getByRole("link", { name: "Return to guest app" }).click();
+  await expect(page).toHaveURL(/\/profile$/);
 });
 
 test("all routes fit the viewport and expose a main heading", async ({
@@ -210,7 +208,7 @@ test("five guest destinations persist, highlight hotel under Explore and separat
   ).toHaveAttribute("aria-current", "page");
   await nav.getByRole("link", { name: "Profile", exact: true }).click();
   await page
-    .getByRole("link", { name: "Staff workspace demo", exact: true })
+    .getByRole("link", { name: "Staff offer workspace", exact: true })
     .click();
   await expect(nav).toHaveCount(0);
   await page.getByRole("link", { name: "Return to guest app" }).click();

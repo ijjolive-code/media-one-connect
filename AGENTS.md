@@ -22,7 +22,7 @@ These instructions apply throughout this repository. They were adapted from `med
 
 - Use one shared backend for web, WhatsApp and future native clients. Reuse content, identity, permissions, loyalty and action rules. Channel-specific presentation can differ.
 - Prefer a simple modular application over premature microservices. Codex is the development tool; the deployed guest-facing model, hosting and WhatsApp connection are separate services.
-- Treat Supabase, GitHub and a TypeScript web application as the proposed starting direction, not evidence of accounts or completed setup. Document the final choice and current dependencies before installation.
+- M1 uses local Supabase Postgres/Auth for persistent fictional offers and authenticated staff access. Read `docs/M1_PRIVATE_REVIEW.md` and the progress record before setup. Runtime uses unprivileged key plus verified user session and venue-scoped RLS; never give the app a service/secret key. Local provisioning and tests refuse remote targets. Preserve `.env.local`, ignored credentials and database volumes; never print or commit their values or run a blind database reset. Other integrations remain proposed and unverified.
 - Keep provider calls behind explicit server-side interfaces. Add mock adapters for unavailable services and visibly label simulated data. Never invent API endpoints, credentials, contracts, real-time availability or successful actions.
 
 ## Business correctness

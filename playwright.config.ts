@@ -1,3 +1,5 @@
+import { existsSync } from "node:fs";
+if (existsSync(".env.local")) process.loadEnvFile(".env.local");
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
@@ -14,8 +16,24 @@ export default defineConfig({
       : {},
   },
   projects: [
-    { name: "desktop-chromium", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 1000 } } },
-    { name: "mobile-chromium", use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } } },
+    {
+      name: "desktop-chromium",
+      testIgnore: "**/m1-workflow.spec.ts",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1440, height: 1000 },
+      },
+    },
+    {
+      name: "mobile-chromium",
+      testIgnore: "**/m1-workflow.spec.ts",
+      use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } },
+    },
+    {
+      name: "m1-workflow",
+      testMatch: "**/m1-workflow.spec.ts",
+      use: { ...devices["Desktop Chrome"], trace: "off" },
+    },
   ],
   webServer: {
     command: "npm run start -- --port 3100",

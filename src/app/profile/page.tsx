@@ -40,9 +40,9 @@ export default function Profile() {
       <section className="staff-utility">
         <span className="eyebrow">FOR THE HOTEL TEAM</span>
         <Link className="utility-link" href="/staff">
-          Staff workspace demo <Icon name="arrow" />
+          Staff offer workspace <Icon name="arrow" />
         </Link>
-        <p>Separate read-only shell · No staff authentication</p>
+        <p>Separate staff sign-in · Authorised test users only</p>
       </section>
     </div>
   );

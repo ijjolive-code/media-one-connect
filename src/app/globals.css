@@ -1535,3 +1535,242 @@ h3 {
     min-height: 28px;
   }
 }
+
+/* M1: persistent fictional offers and authenticated staff workflow. */
+.offer-card {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+.offer-card h3 {
+  font-size: 22px;
+  margin: 10px 0;
+}
+.offer-card > p {
+  font-size: 16px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.offer-validity {
+  padding: 12px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+.offer-validity small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.offer-card summary {
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--teal);
+  cursor: pointer;
+}
+.offer-card details p {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.offer-card .offer-disclaimer,
+.offer-empty {
+  font-size: 14px;
+  color: var(--muted);
+}
+.staff-page {
+  max-width: 1120px;
+}
+.staff-intro {
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+.staff-intro p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+.staff-auth-card {
+  max-width: 480px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: white;
+}
+.staff-auth-card h2 {
+  margin-bottom: 24px;
+}
+.staff-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.staff-form label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.staff-form input:not([type="hidden"]):not([type="checkbox"]),
+.staff-form textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  font: inherit;
+  font-size: 16px;
+  padding: 12px;
+  border: 1px solid #a9b8bf;
+  border-radius: 8px;
+  color: var(--charcoal);
+  background: #fff;
+}
+.staff-form textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+.staff-form .button {
+  border: 0;
+  cursor: pointer;
+  margin-top: 12px;
+}
+.form-error {
+  background: #fcecef;
+  color: #8e1731;
+  border-left: 3px solid var(--pink);
+  padding: 12px;
+  font-size: 14px;
+}
+.form-success {
+  background: #eaf4f6;
+  color: var(--charcoal);
+  border-left: 3px solid var(--teal);
+  padding: 12px;
+  font-size: 14px;
+}
+.form-hint {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.staff-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.staff-page-header p {
+  margin: 0;
+}
+.staff-editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 24px;
+  margin-top: 24px;
+}
+.staff-editor-layout > section {
+  min-width: 0;
+}
+.offer-editor {
+  padding: 24px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.editor-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+.editor-heading h2 {
+  font-size: 24px;
+}
+.date-fields {
+  min-width: 0;
+  padding: 16px 0;
+  border: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.date-fields > div {
+  min-width: 0;
+}
+.date-fields legend {
+  padding: 12px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.date-fields label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  cursor: pointer;
+}
+.checkbox-label input {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  accent-color: var(--pink);
+}
+.checkbox-label small {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 6px;
+}
+.editor-save {
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+  padding-top: 12px;
+}
+.editor-save span {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.editor-guide {
+  padding: 20px;
+  align-self: start;
+  background: var(--blue-tint);
+  border-radius: 12px;
+}
+.editor-guide h2 {
+  font-size: 20px;
+}
+.editor-guide h3 {
+  font-size: 16px;
+  margin-top: 24px;
+}
+.editor-guide p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+@media (max-width: 900px) {
+  .staff-editor-layout {
+    grid-template-columns: 1fr;
+  }
+  .staff-auth-card {
+    padding: 20px;
+  }
+  .offer-editor {
+    padding: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .date-fields {
+    grid-template-columns: 1fr;
+  }
+  .editor-heading {
+    flex-wrap: wrap;
+  }
+}

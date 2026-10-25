@@ -1,4 +1,5 @@
 # media-one-connect
+
 media one connect
 
 This repository contains the Media One Connect project handoff, implementation plan and runnable M0 demonstration for the Media One Hotel pilot.
@@ -8,60 +9,50 @@ This repository contains the Media One Connect project handoff, implementation p
 - Check [current decisions and progress](media-one-context/05_DECISIONS_AND_PROGRESS.md) for actual status and the next task.
 - Follow [repository working instructions](AGENTS.md) during development.
 
-## M0 application — app-first redesign
+## M1 — persistent fictional offers and authenticated staff
 
-M0 now has an app-first guest interface on the Next.js/TypeScript foundation for the **Media One Hotel** pilot, using fictional data only.
+One complete development workflow now works: an authorised test staff user signs in, edits a fictional Media One Hotel offer, saves it in Supabase Postgres and sees it in the guest app after reload. Row-level policies independently deny anonymous, non-staff and cross-venue writes. The branded guest interface and scripted concierge are preserved.
 
-| Route | Working now | Deliberately unavailable |
-| --- | --- | --- |
-| `/` | Compact guest home, hotel guide and planned-journey links | Live hotel services |
-| `/hotel` | Fictional hotel information | Confirmed hotel facts, availability, booking |
-| `/concierge` | Conversation layout, four scripted replies, local-only text composer/fallback and reset | Free-text AI, saved conversations, staff contact |
-| `/staff` | Read-only dashboard shell | Authentication, private records, editing or operational actions |
-| `/explore` | Hotel guide entry and five planned-module explanations | Live discovery/booking/review workflows |
-| `/my-stay` | Clear placeholders for bookings and requests | Reservations, request creation and real stay records |
-| `/profile` | Membership placeholder, demo/asset notes and separate staff access | Sign-in, member identity and benefits |
+**Start with [the M1 private review guide](docs/M1_PRIVATE_REVIEW.md).** Manual Codespaces actions are listed separately there. Use branch `feature/m1-staff-offers`; no hosted Supabase account is required for the verified local workflow.
 
-**Using Codex web? Start with [the private preview guide](docs/PRIVATE_PREVIEW.md).** A server inside Codex does not supply a browser-accessible preview by itself. A Codespaces configuration is prepared; owner account access and launch are still required. No public site was deployed.
+| Route                              | Current behaviour                                                                             |
+| ---------------------------------- | --------------------------------------------------------------------------------------------- |
+| `/`, `/hotel`                      | Branded guest screens plus current published, in-date fictional offers from the database      |
+| `/staff/sign-in`                   | Supabase email/password sign-in for privately provisioned test users                          |
+| `/staff`                           | Authorised venue-scoped offer editor; anonymous users redirected and non-staff denied editing |
+| `/concierge`                       | Existing scripted/local-only demonstration; no live AI                                        |
+| `/explore`, `/my-stay`, `/profile` | Existing navigation/planned areas; staff access remains separate in Profile                   |
 
-### Development and checks
+### Local development
 
-Use Node 24 (`.nvmrc`) and npm. Dependencies are pinned in `package-lock.json`; no environment variables or external accounts are required for M0. The npm cache is placed under `/tmp` for cloud filesystem compatibility. TLS and package integrity verification remain enabled.
+Requires Node 24, npm and a working Docker daemon. The corrected `javascript-node:24-bookworm` devcontainer image is retained, with Docker support added for M1. Initial image downloads can take several minutes. Runtime database settings and random test credentials are generated privately, never committed:
 
 ```sh
 npm ci
+npm run setup:local
 npm run dev
 ```
 
-For the production build and browser tests:
+Setup uses the pinned Supabase CLI, official GHCR images and supported slim Postgres images, applies migrations and inserts only missing fictional fixtures. It preserves edited offer fields and does not reset the database. Test sign-in details are in ignored `.local/review-credentials.json`; open that file only inside your private editor. `.env.local` contains server-only URL/unprivileged key, never an app admin key. HTTPS Codespaces review sets secure cookies automatically.
+
+For verification:
 
 ```sh
 npm run lint
 npm run build
 npm run typecheck
+npm run test:permissions
 npx playwright install chromium
 npm run test:e2e
 ```
 
-If Chromium is already provided by your environment, use `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e` instead of downloading another browser. The tests start and stop their own production server on port 3100. Do not have another process on that port. The normal preview uses port 3000. Browser/system dependencies may need installation on a new machine; `npx playwright install --with-deps chromium` is Playwright's supported Linux setup where system-package installation is permitted.
+Prepared Codex uses `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e`. Browser tests manage their own production server on port 3100. M1 workflow tests require the local stack and ignored test identities; they run serially and restore original offer fields. The database suite also checks persistence across a real Postgres restart. Credential-bearing traces are disabled. Never share raw setup/status logs containing keys.
 
-`src/modules/content/hotel.ts` is the shared fictional content fixture. `src/modules/concierge/demo.ts` contains scripted replies derived from it. Pages use small shared components; future server-side application services and provider adapters remain planned. There is no backend persistence, model connection or secret handling in M0. Do not enter real guest information into this prototype.
+### Review artifacts and boundaries
 
-The current [design system](DESIGN.md) records source pages from the supplied V1.02 manual, the original white reverse logo and real lobby photograph. These assets are used provisionally for private review, with temporary system typography because official fonts/licences are still missing. No logo is redrawn or recoloured; no public approval is claimed. The staff route is intentionally accessible with explicit demo labelling; access controls must be implemented before real staff data or actions are added.
-
-### Inspect without starting a preview
-
-Historical screenshots from the original M0 build: [desktop homepage](docs/screenshots/desktop-home.png), [phone homepage](docs/screenshots/mobile-home.png), [concierge demonstration](docs/screenshots/concierge.png), and [staff shell](docs/screenshots/staff.png). These are static captures, not live preview links.
-
-Access preparation for later slices is tracked in [the access checklist](docs/ACCESS_CHECKLIST.md). Current implementation and test evidence remain in [document 05](media-one-context/05_DECISIONS_AND_PROGRESS.md).
-
-
-## Review the app-first direction
-
-Use branch `design/brand-reference-pass`. [Current phone/desktop screenshots](docs/screenshots/brand-pass/README.md) and [updated private-preview steps](docs/PRIVATE_PREVIEW.md) cover this redesign. Guest navigation is Home, Explore, Concierge, My Stay and Profile; on phones it stays at the bottom, and desktop uses a sidebar. Staff access is a separate utility in Profile.
-
-[Design system and asset register](DESIGN.md): the actual manual excerpt, supplied reverse logo and real lobby photograph are now included. The manual is provisional, not newly approved. Chartwell Bars/Geomanist font files and licences are still missing; the system fallback is labelled in Profile. Source notes and task instructions are at the repository root; the PDF stays outside `public/`.
-
-Keyboard handling uses the visible viewport to keep the conversation and tabs available. Automated checks simulate smaller viewport space while the input is focused; real iOS/Android keyboard behaviour still needs the owner review in the preview checklist. No database, live AI, authentication or business action was added by the redesign.
-
-The original uploaded reference pack is preserved under `Media_One_Brand_Reference_Pack/`; its contents are also installed at the root paths requested by the pack. [Brand reference provenance](BRAND_REFERENCE_README.md) records the Drive source/date caveats. Runtime images are in `public/brand/`, served responsively through Next.js image optimisation. Real imagery does not make the demo hotel details current or connect any live services.
+- [Eight M1 screenshots](docs/screenshots/m1/README.md) show sign-in, the editor, save confirmation, guest reload and non-staff denial.
+- [Current design system](DESIGN.md), [brand provenance](BRAND_REFERENCE_README.md) and [authoritative progress](media-one-context/05_DECISIONS_AND_PROGRESS.md) remain the sources for continuation.
+- `supabase/migrations/` contains RLS, column grants and actor/revision auditing; `scripts/setup-local.mjs` performs trusted local provisioning. Runtime code uses only anon key plus verified user sessions, not service_role.
+- Persistence is in the local development database volume, not browser memory. Reloads and service/database restarts preserve it; deleting a Codespace/volume does not. A hosted database/backup/production deployment is not claimed.
+- Only the existing fictional offer can be edited. AI, WhatsApp, membership, real booking and promotion entitlements remain outside this task. No public deployment or live number was connected.
+- The brand reference is still provisional, with labelled temporary system typography. Official font files/licences remain outstanding. Earlier M0/app-first/brand screenshot sets are historical.

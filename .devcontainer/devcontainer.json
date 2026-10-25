@@ -1,5 +1,5 @@
 {
-  "name": "Media One Connect · private M0 preview",
+  "name": "Media One Connect · private M1 preview",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
   "forwardPorts": [3000],
   "portsAttributes": {
@@ -7,8 +7,19 @@
       "label": "Media One Connect · demonstration",
       "onAutoForward": "notify",
       "requireLocalPort": false
+    },
+    "54321": {
+      "label": "Supabase API · internal only",
+      "onAutoForward": "ignore"
+    },
+    "54322": {
+      "label": "Postgres · internal only",
+      "onAutoForward": "ignore"
     }
   },
   "postCreateCommand": "npm ci",
-  "remoteUser": "node"
+  "remoteUser": "node",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  }
 }
