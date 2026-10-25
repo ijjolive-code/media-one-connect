@@ -162,3 +162,13 @@ D12 — The asset-gap answer is now received: logo, real lobby photo and provisi
 D13 — Use manual p23 Web values, rather than its conflicting printed RGB entries. Use p16's permitted white reverse treatment with actual supplied artwork. Adapt print sizing/tracking/alignment for readable mobile controls and chat; do not recreate the media graphic device or fetch similarly named fonts as substitutes.
 
 Remaining for brand completion: actual licensed Chartwell Bars/Geomanist webfonts with internal names/rendered samples verified; Arabic type/review if that interface is selected; a broader authorised/current photo selection; current approval/public-use confirmation. These gaps do not block this requested private, labelled development pass. No broader functional milestone is claimed complete.
+
+
+## Branded-branch Codespaces recovery fix — 25 October 2026
+
+Ijlal reported recovery mode on `design/brand-reference-pass`, with `npm: command not found` after rebuilding. Inspection found this branch still used `mcr.microsoft.com/devcontainers/javascript-node:1-24-bookworm`; the earlier M0-branch fix had not reached this branch.
+
+- Corrected the image to `mcr.microsoft.com/devcontainers/javascript-node:24-bookworm` in commit `7d875598fa8d1a7bc36a55f03eab53a82837b613`.
+- Verification: official Microsoft registry manifest requests returned 404 for the old tag and 200 for the replacement, digest `sha256:16eb68aa0d17eedaaf2566b180854fe4e506478e35aadf790fb02aa089024f13`. Updated JSON parses successfully. No application source/dependencies changed; app tests were not rerun for this configuration/documentation repair.
+- Updated `docs/PRIVATE_PREVIEW.md` with pull/rebuild/version/start instructions and creation-log fallback. The owner's Codespace is not accessible here, so successful image pull, container setup, npm install and private preview remain unverified.
+- Next action: owner pulls this branch in the recovery terminal, runs **Codespaces: Rebuild Container**, verifies Node/npm in a new terminal and starts the private preview. If recovery recurs, inspect the creation log before further changes.
