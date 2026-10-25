@@ -13,6 +13,11 @@ These instructions apply throughout this repository. They were adapted from `med
 - Read `media-one-context/06_ARCHITECTURE_AND_IMPLEMENTATION_PLAN.md` for the recommended architecture, milestone gates and next task. Use `media-one-context/05_DECISIONS_AND_PROGRESS.md` as the authoritative implementation status; planning checkboxes are not completion evidence.
 - Use the existing checkout in this isolated cloud task. Do not create a Git worktree unless explicitly requested.
 
+## Guest interface design
+
+- Before UI changes read `docs/DESIGN_SYSTEM.md`. Use the supplied older palette provisionally; newer approved guidance takes precedence. Do not invent official logos, fonts or photographs. Keep temporary substitutions explicit.
+- Guest navigation is Home, Explore, Concierge, My Stay and Profile. Keep staff access separate. Preserve clear demo/planned labels and test viewport/keyboard accessibility without claiming simulated layouts prove physical-device behaviour.
+
 ## Product architecture
 
 - Use one shared backend for web, WhatsApp and future native clients. Reuse content, identity, permissions, loyalty and action rules. Channel-specific presentation can differ.

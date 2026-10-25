@@ -1,5 +1,8 @@
 import type { CSSProperties } from "react";
 const paths = {
+  stay: "M3 20V8m18 12V8M3 17h18M3 12h18v5M5 12V8h6v4m2 0V8h6v4",
+  request: "M5 3h14v18H5V3Zm4 5h6m-6 4h6m-6 4h4",
+  member: "M3 5h18v14H3V5Zm4 5h3m-3 4h7m3-4h1",
   arrow: "M5 12h14m-6-6 6 6-6 6",
   home: "m3 10 9-7 9 7v10H3V10Zm6 10v-7h6v7",
   hotel: "M5 21V3h14v18M3 21h18M9 7h1m4 0h1M9 11h1m4 0h1M10 21v-5h4v5",
