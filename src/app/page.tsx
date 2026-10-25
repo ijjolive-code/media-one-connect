@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "@/components/icon";
 
 const journeys = [
@@ -48,13 +49,21 @@ export default function Home() {
           </Link>
         </div>
         <Link className="hotel-summary" href="/hotel">
-          <span className="icon-tile">
-            <Icon name="hotel" />
+          <span className="hotel-photo">
+            <Image
+              src="/brand/media-one-lobby.jpg"
+              alt="Seating and ring pendant lights in the Media One Hotel lobby"
+              width={1730}
+              height={974}
+              sizes="(max-width: 360px) 96px, (max-width: 900px) 128px, 176px"
+            />
           </span>
           <span>
             <strong>Hotel information</strong>
-            <span>Arrival, departure & useful details</span>
-            <span className="sample-label">Fictional sample information</span>
+            <span>Your hotel guide</span>
+            <span className="sample-label">
+              Sample details · Real lobby photo
+            </span>
           </span>
           <Icon name="arrow" />
         </Link>

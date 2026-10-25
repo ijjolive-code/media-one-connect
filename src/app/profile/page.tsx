@@ -27,11 +27,14 @@ export default function Profile() {
           scripted and conversations clear on reload. No bookings, requests or
           staff messages are sent.
         </p>
-        <h3>Temporary brand substitutions</h3>
+        <h3>Brand reference & temporary type</h3>
         <p>
-          The hotel name is a plain text label, not an official logo. Typography
-          uses a temporary system font. No official logo, licensed fonts,
-          photography or newer approved brand guide has been supplied.
+          The header uses the supplied Media One Hotel logo and Home shows a
+          real lobby photograph. The supplied older manual is a provisional
+          reference; newer approval and public-use rights are not confirmed.
+          Typography still uses a temporary system fallback: Chartwell Bars and
+          Geomanist webfont files and licences have not been supplied or
+          installed.
         </p>
       </section>
       <section className="staff-utility">

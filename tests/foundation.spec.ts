@@ -10,7 +10,7 @@ test("guest navigation, fictional content and future modules are usable", async 
     "Welcome to your stay.",
   );
   await expect(
-    page.getByText("Fictional hotel data · No live services or bookings"),
+    page.getByText("Demo information · No live services or bookings"),
   ).toBeVisible();
   await page.getByRole("link", { name: /Hotel information/ }).click();
   await expect(page).toHaveURL(/\/hotel$/);
@@ -290,4 +290,62 @@ test("local composer is honest, scrolls to the reply and remains above navigatio
     ).toBeVisible();
     await nav.getByRole("link", { name: "Concierge", exact: true }).click();
   }
+});
+
+test("supplied brand artwork stays proportional and imagery is optimised without serving the manual", async ({
+  page,
+  request,
+}) => {
+  await page.goto("/");
+  const logo = page.getByRole("img", { name: "Media One Hotel", exact: true });
+  const photo = page.getByRole("img", {
+    name: "Seating and ring pendant lights in the Media One Hotel lobby",
+  });
+  for (const image of [logo, photo]) {
+    await expect(image).toBeVisible();
+    await expect
+      .poll(async () =>
+        image.evaluate(
+          (el) =>
+            (el as HTMLImageElement).complete &&
+            (el as HTMLImageElement).naturalWidth > 0,
+        ),
+      )
+      .toBe(true);
+  }
+  for (const viewport of [
+    { width: 390, height: 844 },
+    { width: 320, height: 460 },
+    { width: 1440, height: 1000 },
+  ]) {
+    await page.setViewportSize(viewport);
+    const box = await logo.boundingBox();
+    expect(box!.width / box!.height).toBeCloseTo(2424 / 1062, 1);
+    // Visible source artwork is 1702px wide inside the untouched 2424px canvas.
+    expect((box!.width * 1702) / 2424).toBeGreaterThanOrEqual(95);
+    expect(await logo.evaluate((el) => getComputedStyle(el).filter)).toBe(
+      "none",
+    );
+  }
+  const photoBox = await photo.boundingBox();
+  expect(photoBox!.width / photoBox!.height).toBeCloseTo(1730 / 974, 1);
+  const optimised = await request.get(
+    "/_next/image?url=%2Fbrand%2Fmedia-one-lobby.jpg&w=384&q=75",
+    { headers: { Accept: "image/webp" } },
+  );
+  expect(optimised.status()).toBe(200);
+  expect(optimised.headers()["content-type"]).toContain("image/webp");
+  expect((await optimised.body()).length).toBeLessThan(2001221);
+  expect(
+    (
+      await request.get("/brand-reference/Media_One_Design_Manual_Excerpt.pdf")
+    ).status(),
+  ).toBe(404);
+  await page.goto("/profile");
+  await expect(
+    page.getByText("Chartwell Bars and Geomanist", { exact: false }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("not been supplied or installed", { exact: false }),
+  ).toBeVisible();
 });

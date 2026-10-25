@@ -47,7 +47,7 @@ If Chromium is already provided by your environment, use `PLAYWRIGHT_CHROMIUM_EX
 
 `src/modules/content/hotel.ts` is the shared fictional content fixture. `src/modules/concierge/demo.ts` contains scripted replies derived from it. Pages use small shared components; future server-side application services and provider adapters remain planned. There is no backend persistence, model connection or secret handling in M0. Do not enter real guest information into this prototype.
 
-The [design system](docs/DESIGN_SYSTEM.md) records the supplied older Media One palette, temporary system typography and missing official assets. The invented M0 mark and promotional illustration have been removed. Plain text identifies the hotel; no official logo or photography is substituted. The staff route is intentionally accessible with explicit demo labelling; access controls must be implemented before real staff data or actions are added.
+The current [design system](DESIGN.md) records source pages from the supplied V1.02 manual, the original white reverse logo and real lobby photograph. These assets are used provisionally for private review, with temporary system typography because official fonts/licences are still missing. No logo is redrawn or recoloured; no public approval is claimed. The staff route is intentionally accessible with explicit demo labelling; access controls must be implemented before real staff data or actions are added.
 
 ### Inspect without starting a preview
 
@@ -58,8 +58,10 @@ Access preparation for later slices is tracked in [the access checklist](docs/AC
 
 ## Review the app-first direction
 
-Use branch `design/app-first-guest`. [Current phone/desktop screenshots](docs/screenshots/app-first/README.md) and [updated private-preview steps](docs/PRIVATE_PREVIEW.md) cover this redesign. Guest navigation is Home, Explore, Concierge, My Stay and Profile; on phones it stays at the bottom, and desktop uses a sidebar. Staff access is a separate utility in Profile.
+Use branch `design/brand-reference-pass`. [Current phone/desktop screenshots](docs/screenshots/brand-pass/README.md) and [updated private-preview steps](docs/PRIVATE_PREVIEW.md) cover this redesign. Guest navigation is Home, Explore, Concierge, My Stay and Profile; on phones it stays at the bottom, and desktop uses a sidebar. Staff access is a separate utility in Profile.
 
-[Design system and asset register](docs/DESIGN_SYSTEM.md): the supplied older palette is provisional; newer approved guidance takes precedence. No official manual file, logo, font licence/files or photography was supplied in the workspace. The system font and text identity are explicitly temporary.
+[Design system and asset register](DESIGN.md): the actual manual excerpt, supplied reverse logo and real lobby photograph are now included. The manual is provisional, not newly approved. Chartwell Bars/Geomanist font files and licences are still missing; the system fallback is labelled in Profile. Source notes and task instructions are at the repository root; the PDF stays outside `public/`.
 
 Keyboard handling uses the visible viewport to keep the conversation and tabs available. Automated checks simulate smaller viewport space while the input is focused; real iOS/Android keyboard behaviour still needs the owner review in the preview checklist. No database, live AI, authentication or business action was added by the redesign.
+
+The original uploaded reference pack is preserved under `Media_One_Brand_Reference_Pack/`; its contents are also installed at the root paths requested by the pack. [Brand reference provenance](BRAND_REFERENCE_README.md) records the Drive source/date caveats. Runtime images are in `public/brand/`, served responsively through Next.js image optimisation. Real imagery does not make the demo hotel details current or connect any live services.

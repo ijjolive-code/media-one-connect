@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
 import { Navigation } from "./navigation";
@@ -45,18 +46,31 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         Skip to content
       </a>
       <header className="app-header">
-        <Link
-          href={isStaff ? "/staff" : "/"}
-          className="property-label"
-          aria-label={isStaff ? "Staff demo home" : "Media One Connect home"}
-        >
-          <strong>{isStaff ? "Staff workspace" : "Media One Hotel"}</strong>
-          <span>
-            {isStaff
-              ? "Read-only demonstration"
-              : "Text-only identity · logo pending"}
-          </span>
-        </Link>
+        {isStaff ? (
+          <Link
+            href="/staff"
+            className="property-label"
+            aria-label="Staff demo home"
+          >
+            <strong>Staff workspace</strong>
+            <span>Read-only demonstration</span>
+          </Link>
+        ) : (
+          <Link
+            href="/"
+            className="brand-logo"
+            aria-label="Media One Connect home"
+          >
+            <Image
+              src="/brand/media-one-logo.png"
+              alt="Media One Hotel"
+              width={2424}
+              height={1062}
+              sizes="(max-height: 540px) 144px, (max-width: 900px) 180px, 208px"
+              priority
+            />
+          </Link>
+        )}
         {isStaff ? (
           <Link className="utility-link" href="/profile">
             Return to guest app
@@ -66,7 +80,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         )}
       </header>
       <div className="demo-banner">
-        Fictional hotel data · No live services or bookings
+        Demo information · No live services or bookings
       </div>
       <div className="app-workspace">
         {!isStaff && <Navigation />}

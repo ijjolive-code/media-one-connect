@@ -15,7 +15,7 @@ These instructions apply throughout this repository. They were adapted from `med
 
 ## Guest interface design
 
-- Before UI changes read `docs/DESIGN_SYSTEM.md`. Use the supplied older palette provisionally; newer approved guidance takes precedence. Do not invent official logos, fonts or photographs. Keep temporary substitutions explicit.
+- Before UI changes read root `DESIGN.md`, `BRAND_REFERENCE_README.md` and `CODEX_NEXT_TASK.md`. `docs/DESIGN_SYSTEM.md` points to the current canonical system. Use the supplied V1.02 manual provisionally; newer approved guidance takes precedence. Use the provided logo/photograph unchanged with documented clearance and natural aspect ratio. Official font binaries/licences remain missing; keep the fallback explicit and do not invent assets.
 - Guest navigation is Home, Explore, Concierge, My Stay and Profile. Keep staff access separate. Preserve clear demo/planned labels and test viewport/keyboard accessibility without claiming simulated layouts prove physical-device behaviour.
 
 ## Product architecture

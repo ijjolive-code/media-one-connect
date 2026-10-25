@@ -1,13 +1,13 @@
-# Review the app-first guest interface privately
+# Review the branded mobile guest interface privately
 
 The app running inside a Codex cloud task is not automatically reachable from your browser. A localhost address printed in this chat or task terminal belongs to the cloud machine, not your computer. No live preview URL has been issued by this Codex session: no port-sharing or private-hosting tool is available here.
 
 ## Browser-only method: your own GitHub Codespace
 
-Prepared branch: `design/app-first-guest` in `ijjolive-code/media-one-connect`. This method does not require installing tools on your computer or publishing a website. It requires GitHub access to the branch, Codespaces enabled for your account/repository, and available Codespaces quota or billing. No paid resource is created by this task. The container configuration is included, but a new Codespaces launch has not been verified from this environment.
+Prepared branch: `design/brand-reference-pass` in `ijjolive-code/media-one-connect`. This method does not require installing tools on your computer or publishing a website. It requires GitHub access to the branch, Codespaces enabled for your account/repository, and available Codespaces quota or billing. No paid resource is created by this task. The container configuration is included, but a new Codespaces launch has not been verified from this environment.
 
-1. Sign in to GitHub with the account that can access this repository. Open the [redesign branch](https://github.com/ijjolive-code/media-one-connect/tree/design/app-first-guest). The final task report confirms the branch push. This is a source-code branch, not a deployed website.
-2. On that branch, select the green **Code** button, then **Codespaces**, then **Create codespace on design/app-first-guest**. If GitHub asks about billing or Codespaces is disabled, stop there; account quota/access must be resolved before this preview method can work. You can still inspect the screenshots in this branch without Codespaces.
+1. Sign in to GitHub with the account that can access this repository. Open the [redesign branch](https://github.com/ijjolive-code/media-one-connect/tree/design/brand-reference-pass). The final task report confirms the branch push. This is a source-code branch, not a deployed website.
+2. On that branch, select the green **Code** button, then **Codespaces**, then **Create codespace on design/brand-reference-pass**. If GitHub asks about billing or Codespaces is disabled, stop there; account quota/access must be resolved before this preview method can work. You can still inspect the screenshots in this branch without Codespaces.
 3. Wait for the browser editor and terminal to load. The included `.devcontainer/devcontainer.json` selects Node 24, installs locked dependencies with `npm ci`, and requests port 3000 forwarding. Wait for dependency installation to finish. If it failed, open **Terminal → New Terminal**, run `npm ci` and read the error before continuing.
 4. In the terminal, paste:
 
@@ -35,12 +35,12 @@ For a clean checkout, run:
 
 ```sh
 git fetch origin
-git switch --track origin/design/app-first-guest
+git switch --track origin/design/brand-reference-pass
 npm ci
 npm run build && npm run start
 ```
 
-If the redesign branch already exists locally, use `git switch design/app-first-guest` and `git pull --ff-only` in place of the `git switch --track` line. A failed switch/pull needs diagnosis; do not force it. Confirm port 3000 is still **Private** and reopen its browser link. Reload the preview tab. The first screen should say “Welcome to your stay.” with pink concierge access and Home / Explore / Concierge / My Stay / Profile navigation, rather than the earlier promotional hero. If it still shows the old layout, confirm `git branch --show-current` reports `design/app-first-guest` and that the old server stopped before the new build/start.
+If the redesign branch already exists locally, use `git switch design/brand-reference-pass` and `git pull --ff-only` in place of the `git switch --track` line. A failed switch/pull needs diagnosis; do not force it. Confirm port 3000 is still **Private** and reopen its browser link. Reload the preview tab. The first screen should show the supplied white Media One Hotel logo on charcoal, “Welcome to your stay.”, pink concierge access, the real lobby thumbnail and Home / Explore / Concierge / My Stay / Profile navigation. If it still shows the old layout, confirm `git branch --show-current` reports `design/brand-reference-pass` and that the old server stopped before the new build/start.
 
 ## Short inspection checklist
 
@@ -49,9 +49,9 @@ If the redesign branch already exists locally, use `git switch design/app-first-
 - [ ] In Concierge, open **Try a sample question** and try all four examples. Reset/reload should clear history. A different typed message must say the demo cannot perform actions; it must not claim to book or contact staff.
 - [ ] On a real phone, tap the composer to open the keyboard. Check the composer and all five navigation tabs remain reachable; send a sample message, scroll the transcript and dismiss the keyboard. Repeat in landscape. This native keyboard check is still pending; automated reduced-height tests are not physical-device evidence.
 - [ ] Go to Profile → **For the hotel team → Staff workspace demo**. Staff access is separate from guest navigation; it remains read-only and unauthenticated. Return to the guest app through its explicit link.
-- [ ] Review temporary text-only identity and system typography. Confirm any newer approved brand guide, official logo/fonts and authorised photographs before treating the interface as final branding.
+- [ ] Review the actual logo on charcoal and the real lobby thumbnail. Check that the photo is not labelled fictional. System typography remains temporary: Chartwell Bars/Geomanist files and licences are still needed. The supplied older manual remains provisional; newer approval and public-use rights have not been verified.
 
-See [the screenshot review sheet](screenshots/app-first/README.md) for phone/desktop captures and a clearly labelled reduced-height simulation. Original M0 images elsewhere in `docs/screenshots/` are historical, not the current design.
+See [the screenshot review sheet](screenshots/brand-pass/README.md) for phone/desktop captures and a clearly labelled reduced-height simulation. Earlier M0 and app-first images elsewhere in `docs/screenshots/` are historical, not the current branded pass. The supplied PDF and source notes remain outside `public/`. Do not expose the preview publicly merely because real logo/photo assets are now present.
 
 ## Local-computer alternative
 

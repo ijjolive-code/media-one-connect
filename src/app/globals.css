@@ -1430,3 +1430,108 @@ h3 {
 .guest-navigation > a[aria-current="page"] .nav-icon {
   color: var(--pink);
 }
+
+/* Supplied provisional brand assets: original reverse PNG and natural lobby photo. */
+.app-header {
+  min-height: 92px;
+  padding: env(safe-area-inset-top) 24px 0 4px;
+  background: var(--charcoal);
+  color: #fff;
+  border-bottom: 0;
+}
+.brand-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 64px;
+}
+.brand-logo img {
+  display: block;
+  width: 208px;
+  height: auto;
+}
+.app-header .property-label {
+  margin-left: 20px;
+}
+.app-header .property-label span {
+  color: #dae0e4;
+}
+.app-header .utility-link {
+  color: #fff;
+}
+.app-header a:focus-visible {
+  outline-color: var(--light-blue);
+}
+.app-header .demo-badge {
+  background: #fff;
+  border-color: #fff;
+  color: var(--charcoal);
+}
+.hotel-summary {
+  padding: 12px;
+  gap: 16px;
+}
+.hotel-photo {
+  display: block;
+  width: 176px;
+  flex-shrink: 0;
+}
+.hotel-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.hotel-summary .sample-label {
+  color: var(--muted);
+}
+.chat-message.guest {
+  background: var(--pink-tint);
+  border-color: #efcbd2;
+}
+.assistant-avatar {
+  background: var(--charcoal);
+  color: #fff;
+  border-color: var(--charcoal);
+}
+@media (max-width: 900px) {
+  .app-header {
+    min-height: 80px;
+    padding-right: 20px;
+  }
+  .brand-logo img {
+    width: 180px;
+  }
+  .hotel-photo {
+    width: 128px;
+  }
+  .hotel-summary {
+    gap: 12px;
+  }
+  .hotel-summary .sample-label {
+    font-size: 12px;
+  }
+}
+@media (max-width: 360px) {
+  .app-header {
+    padding-right: 16px;
+  }
+  .hotel-photo {
+    width: 96px;
+  }
+  .hotel-summary {
+    gap: 10px;
+  }
+}
+@media (max-height: 540px) {
+  .app-header {
+    min-height: 64px;
+    padding-top: 0;
+  }
+  .brand-logo img {
+    width: 144px;
+  }
+  .chat-transcript {
+    min-height: 28px;
+  }
+}
