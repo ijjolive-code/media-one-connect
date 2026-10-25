@@ -206,3 +206,14 @@ D14 — Keep Supabase local for this independently verifiable slice; no external
 D15 — Assign venue editing access in a protected table, never self-editable user metadata. Public registration is disabled; trusted local setup grants only named fictional test accounts. Keep admin credentials out of application runtime.
 
 D16 — Preserve the corrected Node image from the latest reviewed branch. Add Docker support without reverting that fix, keep API/database internal, and never reset a database as a blind setup retry. Future hosted/production use needs an explicit separately configured project/operating plan.
+
+
+## Owner M1 preview and Codespaces sign-in origin fix — 25 October 2026
+
+Owner-provided logs confirm `npm ci`, local Supabase setup and production build/start succeeded in the Docker-enabled Codespace. Sign-in then failed with `Invalid Server Actions request.`, digest `2308781827`: `x-forwarded-host` was the forwarded Codespaces host while `origin` was exactly `localhost:3000`. This is a pre-authentication origin rejection, not evidence that the supplied password is incorrect.
+
+- Added a Codespaces-only `experimental.serverActions.allowedOrigins: ["localhost:3000"]` in `next.config.ts`, source commit `cadbd86ec517dc4c88a14cfb1c1e377eb8eb093c`. Other environments receive no extra origin allowance. No wildcard, rewritten incoming header, disabled CSRF protection, changed credential, role policy or database reset.
+- Official references: [Next.js serverActions.allowedOrigins](https://nextjs.org/docs/app/api-reference/config/next-config-js/serverActions) and [GitHub Codespaces default environment variables](https://docs.github.com/en/codespaces/developing-in-a-codespace/default-environment-variables-for-your-codespace); GitHub documents `CODESPACES=true` inside a Codespace.
+- Executed Node 24 imports of the actual revised TypeScript config with `CODESPACES=true`, `false` and unset. The exact origin allowance appears only for true; existing security/noindex headers and poweredByHeader setting are preserved. These configuration checks passed.
+- The full application/database/browser suites were not rerun in this separate troubleshooting environment, and a forwarded Codespaces sign-in was not accessible here. The earlier M1 suites remain historical evidence; this fix is configuration-checked, owner workflow confirmation pending.
+- Updated the M1 private review guide with the exact diagnosis and pull/build/restart steps. Next: owner stops only the app, pulls this branch, rebuilds the application and restarts it, reloads sign-in, and verifies sign-in/save/sign-out. No devcontainer rebuild or database setup/reset is needed for this fix.
