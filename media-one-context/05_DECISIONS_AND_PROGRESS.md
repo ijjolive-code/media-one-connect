@@ -58,8 +58,8 @@ This section is the authoritative current task-status record. The earlier sectio
 | Architecture and delivery plan | Recorded; recommendation | Document 06 recommends one Next.js/TypeScript app, shared server modules and Supabase data/auth. Nothing installed and no external account assumed. |
 | Tool availability | Verified | Node 24.19.0 and npm 11.9.0 rechecked during this task. Earlier onboarding verified Python, Git integrity and GitHub reads; those are environment checks, not product acceptance results. |
 | Official documentation review | Verified with access limitation | Official Next.js installation, Supabase server-side auth and RLS sources retrieved through raw.githubusercontent.com. Direct docs sites returned proxy 403; no TLS or trust checks disabled. Recheck stable versions at implementation. |
-| M0 runnable foundation | Implemented; cloud checks passed | Source commit `d8e9de71c9b2f9debb788d57fe2f9de632514efa`, branch `m0/media-one-foundation`. Five responsive routes, fictional shared content, scripted concierge and read-only staff shell. Owner preview launch remains unverified; see M0 evidence below. |
-| M1–M6 | Planned; not implemented | Acceptance gates and estimates in document 06. No product features, live connectors or deployed app exist. |
+| M0 runnable foundation | Implemented; cloud checks passed | Source commit `d8e9de71c9b2f9debb788d57fe2f9de632514efa`, branch `m0/media-one-foundation`. Five responsive routes, fictional shared content, scripted concierge and read-only staff shell. Owner reports the original M0 runs; app-first review evidence is recorded below. |
+| M1–M6 | Planned; not implemented | Acceptance gates and estimates in document 06. M0 is implemented; no M1–M6 backend capabilities or live connectors are established. |
 | A01–A32 | M0 subset checked; full product suite NOT RUN | A01 navigation/layout subset passed Chromium desktop/mobile automation. This does not establish real-device signoff, live answers, authentication or any later integration; full acceptance cases remain unexecuted. |
 | Capacity/calendar | Confirmed owner input; feasibility provisional | Ijlal confirmed 5 January 2027 and at least 14 hours/week. Ten full weeks from the assumed 26 October start give 140 owner hours at that minimum, followed by 4 January rehearsal. Engineering/review effort remains a separate estimate. |
 | Pilot venue | Confirmed: Media One Hotel | Selected by Ijlal. Start with clearly labelled fictional hotel data until actual content and benefit terms are approved. |
@@ -73,7 +73,7 @@ Decisions recorded for continuation:
 - D04 — Keep the expanded pilot as a target pending delivery evidence and access; owner availability is confirmed at at least 14 hours/week. Reduce conditional work first and discuss any core-scope change explicitly.
 - D05 — Keep this document as the single current implementation-status record. No Excel tracker is present. A future supplied tracker must be reconciled before adopting it.
 
-Next task: inspect M0 through the private preview guide, then begin M1 content persistence and staff roles when requested. Establish a tested local or controlled development database/auth route and approved content ownership first. No real staff controls or guest data may be added to the open demo shell.
+Next task: review the app-first home/concierge through the updated private preview guide, confirm outstanding approved assets and real-phone keyboard behaviour, then begin M1 content persistence and staff roles when requested. Establish a tested local or controlled development database/auth route and approved content ownership first. No real staff controls or guest data may be added to the open demo shell.
 
 Planning-task verification: `git diff --check` passed; relative Markdown links in the changed/new documents resolve; unchanged original context files were compared byte-for-byte with HEAD. README and this record were extended, not replaced. New files are root AGENTS.md and document 06. No application tests were executed because no implementation exists. Changes are local and uncommitted.
 
@@ -107,3 +107,32 @@ Owner: Codex, at Ijlal's request to proceed with M0. Build reference: `d8e9de71c
 | Early access preparation | Checklist recorded | `docs/ACCESS_CHECKLIST.md`; missing owners, content, database/model and separate test-number route are explicit. No credentials requested or provider contact made. |
 
 A01 has partial M0 evidence only; A02–A32 are not claimed passed. Full hotel facts, real AI, permissions, concurrent redemption and live-channel tests await their implementation gates. M0 owner inspection is pending; M1–M6 remain planned. No paid accounts, production deployment, main-number use, supplier contact, real guest data or public review actions occurred. Documentation/evidence changes after the source commit do not change the tested application.
+
+
+## App-first guest redesign evidence — 25 October 2026
+
+Source/build reference: `6af02e54fd7718fbfd41227eb94b0d5e0a18b9e3`, branch `design/app-first-guest`. Baseline: `cdd9649` (clean checkout). Ijlal reports the original M0 application runs and requested this guest-interface redesign. No milestone beyond M0 has been implemented by changing the UI.
+
+| Area | Result | Evidence / limitations |
+| --- | --- | --- |
+| Design system first | Documented before restyling | `docs/DESIGN_SYSTEM.md` specifies source precedence, palette/tokens, temporary type, touch sizes, guest structure, viewport handling and missing assets. Available brand source is the user's quoted older guide; no manual file or newer approved guide was present. An optional question about newer guidance remains unanswered; the palette is provisional. |
+| Missing assets | Explicit | No approved logo, font files/licences or photography present. Removed the invented m1 mark and promotional hero illustration. Header uses labelled plain text, Profile explains temporary system typography; no official artwork is invented. |
+| Guest home | Implemented | Compact welcome, prominent scripted-concierge entry, hotel guide and three planned journey links. Sample arrival/departure times remain on Hotel information, rather than repeated as home promotional content. |
+| Navigation | Implemented | Home, Explore, Concierge, My Stay, Profile. Persistent phone bottom bar, desktop sidebar, labelled icons and `aria-current`; hotel page belongs under Explore. Staff utility is separate under Profile; staff shell has no guest tabs. |
+| Planned areas | Navigation shells only | `/my-stay` explains bookings/requests; `/profile` explains membership. Links work but no booking/request/member record, sign-in or action is connected. |
+| Concierge | M0 scripted behaviour preserved | All four original replies, reset and reload-clear behaviour retained. Added local-only text entry to demonstrate conversation/keyboard layout; exact sample questions get existing scripted answers, all others get an explicit no-AI/no-action fallback. No provider call, persistence or backend was added. |
+| Keyboard/viewport handling | Implemented and simulated | Visible viewport sizing/offsets, dynamic viewport fallback, safe-area padding, internal transcript scrolling and 16px composer text. Latest reply stays visible after resize. Automated checks focus input at 390×460, 320×460 and 844×390, verify composer and all tabs fit, and navigate away while focused. This is not a native iOS/Android keyboard test. |
+| Verification | Passed | `npm run lint` (zero warnings), `npm run build`, `npm run typecheck`. Final browser run: 14 passed, 0 failed/skipped, desktop/mobile Chromium against production build. Covers seven routes, active states, 44px+ navigation targets, actual home journey links, scripted/local input/reset/reload behaviour, no message POST, transcript anchoring, staff separation, 404 and keyboard skip link. |
+| Contrast | Checked for core pairs | White/pink 4.85:1; charcoal/white 9.52:1; muted/canvas 5.53:1; teal/blue tint 5.70:1. Pink text on pink tint was below 4.5:1; selected tinted labels/badges now use charcoal while icons/indicators retain pink. This is not a full accessibility certification. |
+| Screenshot review | Six captures saved and inspected | `docs/screenshots/app-first/README.md`: phone/desktop Home and Concierge, phone conversation start, and reduced-height focused composer. Original M0 screenshots remain historical. Screenshots are static artifacts, not preview URLs or physical-device evidence. |
+| Private review | Instructions updated; launch not performed here | `docs/PRIVATE_PREVIEW.md` now targets the pushed redesign branch and covers both new and existing Codespaces, safe branch switching, rebuild/restart and Private port 3000. No public site/tunnel or paid resource created. Redesigned preview authentication, owner usability and real-phone keyboard checks remain pending. |
+| Reusable startup | Draft saved | Updated `start_skill` to describe the app-first routes and current homepage readiness text. Install script/dependencies unchanged. Configuration save confirmed; owner review/save and environment publication remain separate. |
+
+Decisions for continuation:
+
+- D08 — Use the supplied older Media One palette provisionally. Newer approved guidance supersedes it. Do not infer or create official brand assets.
+- D09 — Keep five guest destinations consistent across phone/desktop and separate staff utilities. Planned areas explain their status instead of implying operational controls.
+- D10 — The composer is a local UI demonstration, not a model integration. Do not describe redesigning Concierge/My Stay/Profile as completing M1 or later backend capabilities.
+- D11 — Owner review should prioritise actual phone keyboard reachability, conversation readability, compact home actions and brand-source confirmation. Keep the protected 5 January presentation plan and at least 14 owner hours/week unchanged.
+
+Full product acceptance cases beyond M0 remain unrun. No production data, real benefit, supplier contact, main-number connection, live booking or review action was introduced. The next backend slice still requires a tested database/auth route and content ownership; design review can proceed independently through the prepared private-preview method.
