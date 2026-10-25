@@ -23,9 +23,10 @@ export default function Profile() {
       <section className="profile-section">
         <h2>About this demonstration</h2>
         <p>
-          Hotel times and experiences are fictional. Concierge replies are
-          scripted and conversations clear on reload. No bookings, requests or
-          staff messages are sent.
+          Fictional offers and layout samples are labelled separately from
+          provisional sourced hotel information. Concierge answers require the
+          configured AI provider; conversations clear on reload. No bookings,
+          requests or staff messages are sent.
         </p>
         <h3>Brand reference & temporary type</h3>
         <p>

@@ -37,7 +37,7 @@ export default function Home() {
           <Icon name="chat" />
         </span>
         <span>
-          <span className="entry-tag">SCRIPTED DEMO</span>
+          <span className="entry-tag">ASK THE CONCIERGE</span>
           <strong>How can we help?</strong>
           <span>Open your concierge conversation</span>
         </span>

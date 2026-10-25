@@ -15,7 +15,11 @@
     "test:e2e": "playwright test",
     "db:cli": "node scripts/supabase.mjs",
     "setup:local": "node scripts/setup-local.mjs",
-    "test:permissions": "node scripts/test-permissions.mjs"
+    "test:permissions": "node scripts/test-permissions.mjs",
+    "concierge:trial": "node scripts/concierge-trial.mjs",
+    "import:knowledge": "node scripts/import-knowledge.mjs",
+    "test:answers": "node --test tests/answers.test.mjs",
+    "test:knowledge": "node scripts/test-knowledge.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",
@@ -23,7 +27,8 @@
     "next": "16.4.3",
     "react": "19.3.1",
     "react-dom": "19.3.1",
-    "server-only": "0.0.1"
+    "server-only": "0.0.1",
+    "undici": "8.12.3"
   },
   "devDependencies": {
     "@playwright/test": "1.64.1",

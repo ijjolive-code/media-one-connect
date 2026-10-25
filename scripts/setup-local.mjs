@@ -111,5 +111,7 @@ console.log(
   "Sign-in details are in .local/review-credentials.json (ignored, mode 600). Read them only inside your private editor; never paste them into chat or commit them.",
 );
 console.log(
-  "Runtime .env.local contains only the loopback URL and unprivileged app key, not an admin key. Existing offer edits were preserved.",
+  "Runtime Supabase bindings contain the loopback URL and unprivileged app key, not an admin key. Unrelated private settings and existing offer edits were preserved.",
 );
+
+await import("./import-knowledge.mjs");

@@ -76,3 +76,12 @@ No backend functionality changes: all requests, booking, membership, WhatsApp, s
 The later M1 slice adds real local Supabase Auth, venue-scoped permissions and persistent **fictional** offers. Earlier wording above about no backend changes describes the brand pass, not the current implementation. Staff now enters through a separate sign-in and editor, with 16px labelled fields, 48px controls, readable errors, explicit save state and guest-review guidance. No fake login, live promotion or booking is implied. Guest Home/Hotel information display persisted published/in-date demo offers on reload. Broader account/member/booking/request modules remain planned.
 
 Keep actor/revision metadata in the staff workflow and clear fictional labels in the guest view. Missing/unreachable data must not be replaced with a fixture claimed as saved. Full M1 evidence is in the authoritative progress record, and current private setup/review is in `docs/M1_PRIVATE_REVIEW.md`.
+
+
+## M2A managed knowledge and free-text extension
+
+The M0/brand-pass scripted behaviour described earlier is historical. M2A replaces it with a free-text server integration and explicit disconnected, configured/unverified, successful model-selected and failed states. Until a real provider answer succeeds, do not label the connection live. Model selection quotes source wording rather than generating facts; evidence carries source/review and provisional, staff-reviewed prototype or fictional labels. Each new question reads current eligible knowledge and M1 offers; no action confirmation is possible.
+
+The guest five-tab shell, original logo/photo, palette and temporary system fonts remain. Concierge retains a scrollable conversation with a 48px composer, venue control and clear source/error messages at phone/desktop widths. Short layouts hide nonessential question suggestions so the venue and composer remain reachable. Staff knowledge management stays outside guest navigation, with labelled 16px fields, source and date groups, explicit publication scope, save/reload status, replacement links and version history. The guest source browser uses expandable questions and a distinct venue selector. Long source references wrap; mobile management stacks the editor and record list. None of this creates production approval, a real entitlement or a booking service.
+
+Current review: `docs/M2A_PRIVATE_REVIEW.md`; screenshots: `docs/screenshots/m2a/`. Live provider selection and native device keyboards still need separate verification.

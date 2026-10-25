@@ -18,14 +18,24 @@ export default function Hotel() {
       <div className="notice">
         <strong>Fictional demonstration data</strong>
         <p>
-          The times and experiences below are invented for testing. They are not
+          The M0 sample cards below are invented for layout testing. They are not
           confirmed hotel policies, facilities, offers or availability.
         </p>
+      </div>
+      <div className="working-panel">
+        <h2>Published hotel knowledge</h2>
+        <p>
+          Browse eligible source-backed information, labelled provisional or
+          staff-reviewed for this private prototype.
+        </p>
+        <Link className="button primary" href="/hotel/knowledge">
+          Browse hotel knowledge
+        </Link>
       </div>
       <section className="section-block">
         <div className="section-heading">
           <h2>The little details.</h2>
-          <span className="status-tag">Sample content</span>
+          <span className="status-tag">M0 fictional samples</span>
         </div>
         <div className="facts-grid">
           {hotel.facts.map((fact) => (
@@ -46,13 +56,13 @@ export default function Hotel() {
         </div>
         <div>
           <p>
-            Rooms, dining and places to unwind are fictional examples in this
-            pilot. Real menus, contact details, directions and booking links
-            will be added once approved.
+            The layout samples on this page remain fictional. Use Published hotel
+            knowledge for separately labelled provisional source information.
+            Live availability and booking services are not connected.
           </p>
           <p>No reservations or guest requests can be made here yet.</p>
           <Link href="/concierge" className="text-link">
-            Try a sample hotel question <Icon name="arrow" />
+            Ask the concierge <Icon name="arrow" />
           </Link>
         </div>
       </section>

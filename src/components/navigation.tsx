@@ -18,7 +18,7 @@ export function Navigation() {
       {links.map((link) => {
         const active =
           pathname === link.href ||
-          (link.href === "/explore" && pathname === "/hotel");
+          (link.href === "/explore" && (pathname === "/hotel" || pathname.startsWith("/hotel/")));
         return (
           <Link
             key={link.href}

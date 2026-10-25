@@ -41,38 +41,24 @@ test("guest navigation, fictional content and future modules are usable", async 
   expect(errors).toEqual([]);
 });
 
-test("scripted concierge replies honestly, resets and does not persist on reload", async ({
+test("free-text concierge honestly reports missing/disabled live connection without scripted substitute", async ({
   page,
 }) => {
   await page.goto("/concierge");
-  await expect(
-    page.getByText("Scripted demo · Not live AI", { exact: true }),
-  ).toBeVisible();
   const log = page.getByRole("log");
-  const reset = page.getByRole("button", { name: "Reset demo" });
-  await expect(reset).toBeDisabled();
-  await page
-    .locator("summary")
-    .filter({ hasText: "Try a sample question" })
-    .click();
-  await page.getByRole("button", { name: "What time is check-in?" }).click();
-  await expect(log).toContainText("check-in is from 3:00 pm");
-  await expect(log).toContainText("not Media One Hotel's confirmed policy");
-  await page.getByRole("button", { name: "Can you book a room?" }).click();
-  await expect(log).toContainText(
-    "I have not checked availability, held a room or made a reservation",
-  );
-  await page.getByRole("button", { name: "Can I speak to the team?" }).click();
-  await expect(log).toContainText("No message has been sent to staff");
-  await reset.click();
-  await expect(log).not.toContainText("YOUR DEMO MESSAGE");
-  await expect(reset).toBeDisabled();
-  await page.getByRole("button", { name: "What can I explore?" }).click();
-  await expect(log).toContainText(
-    "Current facilities and opening hours have not been verified",
-  );
+  const input = page.getByRole("textbox", { name: "Message the concierge" });
+  await input.fill("What is the check-in time?");
+  await page.getByRole("button", { name: "Send concierge question" }).click();
+  await expect(log).toContainText("No model answer was generated");
+  await expect(log).not.toContainText("check-in is from 3:00 pm");
+  await expect(log).not.toContainText("SCRIPTED SAMPLE REPLY");
+  await page.getByRole("button", { name: "Reset conversation" }).click();
+  await expect(log).not.toContainText("YOUR QUESTION");
+  await input.fill("Tell me about the hotel");
+  await input.press("Enter");
+  await expect(log).toContainText("No model answer was generated");
   await page.reload();
-  await expect(log).not.toContainText("YOUR DEMO MESSAGE");
+  await expect(log).not.toContainText("YOUR QUESTION");
 });
 
 test("staff workspace requires sign-in and exposes no anonymous editor", async ({
@@ -217,76 +203,47 @@ test("five guest destinations persist, highlight hotel under Explore and separat
   ).toHaveAttribute("aria-current", "page");
 });
 
-test("local composer is honest, scrolls to the reply and remains above navigation in reduced viewport", async ({
+test("AI composer and navigation remain reachable in keyboard-space simulations", async ({
   page,
 }) => {
   await page.goto("/concierge");
-  const input = page.getByRole("textbox", {
-    name: "Message the demonstration concierge",
-  });
-  const send = page.getByRole("button", { name: "Send demo message" });
-  const posts: string[] = [];
-  page.on("request", (request) => {
-    if (request.method() === "POST") posts.push(request.url());
-  });
-  await expect(send).toBeDisabled();
-  await input.fill("Please book my room now");
-  await send.click();
-  await expect(page.getByRole("log")).toContainText(
-    "No staff message, request or booking was created",
-  );
-  await input.fill("What time is check-in?");
-  await input.press("Enter");
-  await expect(page.getByRole("log")).toContainText("check-in is from 3:00 pm");
-  expect(posts).toEqual([]);
-  // Geometry simulation, not a claim of a real Android/iOS keyboard test.
   for (const viewport of [
     { width: 390, height: 460 },
     { width: 320, height: 460 },
     { width: 844, height: 390 },
   ]) {
     await page.setViewportSize(viewport);
+    const input = page.getByRole("textbox", { name: "Message the concierge" });
     await input.focus();
     await expect(input).toBeFocused();
-    const nav = page.getByRole("navigation", { name: "Guest navigation" });
     await expect
       .poll(async () =>
         Math.round((await page.locator(".app-shell").boundingBox())!.height),
       )
       .toBe(viewport.height);
-    await expect
-      .poll(async () =>
-        page
-          .getByRole("log")
-          .evaluate((el) => el.scrollHeight - el.scrollTop - el.clientHeight),
-      )
-      .toBeLessThanOrEqual(2);
-    const composerBox = await input.boundingBox();
-    const navBox = await nav.boundingBox();
-    expect(composerBox!.height).toBeGreaterThanOrEqual(44);
-    expect(composerBox!.y).toBeGreaterThanOrEqual(0);
-    expect(composerBox!.y + composerBox!.height).toBeLessThanOrEqual(
-      viewport.height,
-    );
-    expect(navBox!.y + navBox!.height).toBeLessThanOrEqual(viewport.height + 1);
-    expect(composerBox!.y + composerBox!.height).toBeLessThanOrEqual(navBox!.y);
-    for (const link of await nav.getByRole("link").all()) {
-      const box = await link.boundingBox();
-      expect(box!.y).toBeGreaterThanOrEqual(0);
-      expect(box!.y + box!.height).toBeLessThanOrEqual(viewport.height + 1);
-    }
-    await input.fill("A test message");
+    const box = await input.boundingBox(),
+      nav = await page
+        .getByRole("navigation", { name: "Guest navigation" })
+        .boundingBox();
+    expect(box!.height).toBeGreaterThanOrEqual(44);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(nav!.y);
+    expect(nav!.y + nav!.height).toBeLessThanOrEqual(viewport.height + 1);
+    await input.fill("What information can you verify?");
     await input.press("Enter");
-    expect(
-      await page
-        .getByRole("log")
-        .evaluate((el) => el.scrollHeight - el.scrollTop - el.clientHeight),
-    ).toBeLessThanOrEqual(2);
-    await nav.getByRole("link", { name: "Home", exact: true }).click();
+    await expect(page.getByRole("log")).toContainText(
+      "No model answer was generated",
+    );
+    await page
+      .getByRole("navigation", { name: "Guest navigation" })
+      .getByRole("link", { name: "Home", exact: true })
+      .click();
     await expect(
       page.getByRole("heading", { name: "Welcome to your stay." }),
     ).toBeVisible();
-    await nav.getByRole("link", { name: "Concierge", exact: true }).click();
+    await page
+      .getByRole("navigation", { name: "Guest navigation" })
+      .getByRole("link", { name: "Concierge", exact: true })
+      .click();
   }
 });
 

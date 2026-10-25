@@ -50,6 +50,9 @@ export default async function Staff() {
           </button>
         </form>
       </header>
+      <Link className="button" href="/staff/knowledge">
+        Manage hotel knowledge
+      </Link>
       <div className="notice">
         <strong>Fictional content · Persistent test database</strong>
         <p>

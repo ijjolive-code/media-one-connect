@@ -4,6 +4,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
+  testMatch: "**/*.spec.ts",
   fullyParallel: true,
   workers: 2,
   reporter: [["list"], ["html", { open: "never" }]],
@@ -18,7 +19,7 @@ export default defineConfig({
   projects: [
     {
       name: "desktop-chromium",
-      testIgnore: "**/m1-workflow.spec.ts",
+      testIgnore: ["**/m1-workflow.spec.ts", "**/m2a-workflow.spec.ts"],
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1440, height: 1000 },
@@ -26,7 +27,7 @@ export default defineConfig({
     },
     {
       name: "mobile-chromium",
-      testIgnore: "**/m1-workflow.spec.ts",
+      testIgnore: ["**/m1-workflow.spec.ts", "**/m2a-workflow.spec.ts"],
       use: { ...devices["Pixel 7"], viewport: { width: 390, height: 844 } },
     },
     {
@@ -34,9 +35,16 @@ export default defineConfig({
       testMatch: "**/m1-workflow.spec.ts",
       use: { ...devices["Desktop Chrome"], trace: "off" },
     },
+    {
+      name: "m2a-workflow",
+      dependencies: ["m1-workflow"],
+      testMatch: "**/m2a-workflow.spec.ts",
+      use: { ...devices["Desktop Chrome"], trace: "off" },
+    },
   ],
   webServer: {
     command: "npm run start -- --port 3100",
+    env: { CONCIERGE_AI_ENABLED: "false" },
     url: "http://127.0.0.1:3100",
     reuseExistingServer: false,
     timeout: 60_000,

@@ -142,6 +142,7 @@ for (const viewport of [
       );
       await stale.close();
       await page.getByRole("button", { name: "Sign out", exact: true }).click();
+      await expect(page).toHaveURL(/\/staff\/sign-in$/);
       await page.goto("/staff");
       await expect(page).toHaveURL(/\/staff\/sign-in$/);
     } finally {
