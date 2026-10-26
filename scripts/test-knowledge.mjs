@@ -164,7 +164,7 @@ try {
   check(!update.error, "authorised staff content edit persists");
   const current = (await eligible()).find((r) => r.id === id);
   const fixtureAnswer = groundedAnswer(
-    { evidence_ids: [id], incomplete: false },
+    { reply: current.answer, intent: "factual", evidence_ids: [id], incomplete: false },
     [{ id, ...current, text: current.answer, label: "Fictional test" }],
   );
   check(

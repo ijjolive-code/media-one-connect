@@ -15,7 +15,7 @@ M1's authenticated staff offer editing remains working. M2A adds venue-scoped FA
 
 **Start with [the M2A private review guide](docs/M2A_PRIVATE_REVIEW.md).** Use branch `feature/m2a-knowledge-concierge`. It separates manual private-preview/key setup, the USD 5 total trial controls and live checks from completed local verification. No hosted Supabase account is needed for this local workflow.
 
-The server-side OpenAI integration accepts free text and selects eligible evidence, which is quoted exactly with source/review labels. **Live model access is not yet connected or verified:** a private API key and current rate confirmation remain required. Missing/provider-error states never substitute scripted answers. No paid calls have been made.
+The server-side OpenAI integration now composes concise replies with bounded conversation context, supporting eligible evidence and protected prices/conditions. See [the voice refinement review](docs/CONCIERGE_VOICE_REFINEMENT_REVIEW.md) for its conservative validation limits and exact private update steps. Owner-observed earlier live selection is recorded; the new composed voice still needs live review in the existing Codespace/allowance. A secure key binding is present in Codex, but no paid call was made in this refinement. Missing/provider-error states never substitute scripted answers.
 
 | Route | Current behaviour |
 | --- | --- |
@@ -61,3 +61,5 @@ Prepared Codex uses `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm r
 - Persistence is in the local development database volume, not browser memory. Reloads and service/database restarts preserve it; deleting a Codespace/volume does not. A hosted database/backup/production deployment is not claimed.
 - The USD 5 model trial has a persistent reservation ledger and no automatic reset/increase. See the review guide before enabling. Live model verification remains pending. Requests/handover, WhatsApp, membership, real booking and promotion entitlements remain outside this task. No public deployment or live number was connected.
 - The brand reference is still provisional, with labelled temporary system typography. Official font files/licences remain outstanding. Earlier M0/app-first/brand screenshot sets are historical.
+
+Voice source: [canonical working guide](CONCIERGE_VOICE.md). [M2B requests/handover plan](docs/M2B_REQUESTS_HANDOVER_PLAN.md) is proposed only, with purpose-limited contact collection and no working operational queue yet.

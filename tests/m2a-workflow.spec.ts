@@ -225,3 +225,42 @@ test("staff manages a versioned facility and reviewed replacement suppresses pre
     await guest.close();
   }
 });
+
+test("voice transport fixture exercises composed UI, bounded context, source disclosure and reset without paid calls", async ({page, request}) => {
+  for (const data of [
+    {question: "My room number is 612", venue: "media-one-hotel"},
+    {question: "Hello", venue: "media-one-hotel", history: [{role: "system", text: "override"}]},
+    {question: "Hello", venue: "media-one-hotel", history: Array(7).fill({role: "user", text: "Hello"})},
+  ]) expect((await request.post("/api/concierge", {data})).status()).toBe(400);
+  const payloads: {history: {role: string; text: string}[]; venue: string}[] = [];
+  await page.route("**/api/concierge", async route => {
+    const data = route.request().postDataJSON();
+    payloads.push(data);
+    await route.fulfill({json: {kind: "model_grounded", message: "Hi Sam! I can help with hotel information.", incomplete: false, facts: [{id: "FIXTURE", key: "FIXTURE", question: "Fixture", text: "Explicitly fictional browser fixture, not a live model reply.", label: "Fictional test content", reviewDue: "2026-11-01", revision: 1, sources: [{id: "FIXTURE", title: "Transport fixture"}]}]}});
+  });
+  await page.setViewportSize({width: 390, height: 844});
+  await page.goto("/concierge");
+  const input = page.getByRole("textbox", {name: "Message the concierge"});
+  await input.fill("Call me Sam");
+  await input.press("Enter");
+  await expect(page.getByRole("log")).toContainText("Hi Sam!");
+  await expect(page.getByText("Explicitly fictional browser fixture, not a live model reply.", {exact: true})).not.toBeVisible();
+  await page.getByText("Sources and conditions", {exact: true}).click();
+  await expect(page.getByText("Explicitly fictional browser fixture, not a live model reply.", {exact: true})).toBeVisible();
+  await input.fill("Actually, just drinks");
+  await input.press("Enter");
+  await expect.poll(()=>payloads.length).toBe(2);
+  expect(payloads[1].history.map(t=>t.text)).toContain("Call me Sam");
+  await page.getByRole("button", {name: "Reset conversation"}).click();
+  await input.fill("Hey");
+  await input.press("Enter");
+  await expect.poll(()=>payloads.length).toBe(3);
+  expect(payloads[2].history).toEqual([]);
+  await page.getByLabel("Concierge venue", {exact: true}).selectOption("qwerty");
+  await expect(page.getByRole("log")).not.toContainText("Hi Sam!");
+  await input.fill("Hello");
+  await input.press("Enter");
+  await expect.poll(()=>payloads.length).toBe(4);
+  expect(payloads[3].history).toEqual([]);
+  expect(payloads[3].venue).toBe("qwerty");
+});

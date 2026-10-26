@@ -1937,3 +1937,10 @@ select:focus-visible {
     display: none;
   }
 }
+
+/* Concierge voice refinement: guest reply first, expandable factual provenance. */
+.answer-qualification {font-size: 12px; color: var(--muted); margin-top: 12px;}
+.answer-sources summary {cursor: pointer; min-height: 44px; display: flex; align-items: center; color: var(--teal); font-size: 14px; text-decoration: underline;}
+.answer-sources {overflow-wrap: anywhere;}
+
+.ai-chat .chat-message p {white-space: pre-wrap; overflow-wrap: anywhere;}

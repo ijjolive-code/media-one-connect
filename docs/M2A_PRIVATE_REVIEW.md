@@ -2,15 +2,21 @@
 
 Branch: `feature/m2a-knowledge-concierge`, based on the latest M1 branch at `398d6c4`. M1 passed Ijlal's manual Codespaces review. The corrected Node devcontainer, Docker feature and Codespaces sign-in origin fix are retained.
 
+## Current voice refinement
+
+The guide branch is incorporated. Read [voice refinement review and exact update steps](CONCIERGE_VOICE_REFINEMENT_REVIEW.md) for guide v0.1/runtime `media-one-voice-0.2`. It adds composed replies, bounded context and protected factual checks. The original selection-only description below is superseded where indicated. Owner screenshots establish limited earlier live location/check-in/out selection; the new voice contract is not live-verified. A secure key binding is now present in Codex, but no paid call was made in this refinement and the remaining Codespaces allowance was not inspected. Continue using the existing private Codespace/ledger, never a second allowance.
+
+[Proposed M2B plan](M2B_REQUESTS_HANDOVER_PLAN.md) covers requests, ownership, proactive handover and purpose-limited contact; none is implemented by these guides.
+
 ## Implemented here
 
 - Real local Supabase persistence, staff authentication, venue permissions, FAQs/facilities/policies, sources, publication scope, Dubai validity/review dates and saved version history.
 - Additive import of **only 82 candidate records**, across six venues, from `origin/content/provisional-knowledge-2026-10-25` at `844eb0c292789d1ceaaac563cbbdfd00a02b92f7`. Original source metadata and import snapshots are retained privately. The 13 held records and conflict register are reference files only, never imported into guest retrieval.
-- A free-text Responses API integration using fixed model `gpt-4.1-mini-2025-04-14`, called only on the server. The model selects relevant eligible evidence; the app quotes its current database wording exactly. This deliberately provides AI-selected source answers rather than generated factual paraphrases. It does not calculate prices, infer conditions or execute actions. Each question is independent; conversation history is not sent to the model.
+- A free-text Responses API integration using fixed model `gpt-4.1-mini-2025-04-14`, called only on the server. The model composes a guest reply using eligible evidence. Protected monetary content and policy qualifications must remain intact; deterministic checks reject known unsupported values/actions and style violations, but do not prove semantic correctness. At most six recent messages/4,000 characters are untrusted context, never factual evidence. Every turn fetches current eligible facts. It does not calculate prices, infer conditions or execute actions.
 - Current published/in-date M1 offers are included from the existing database and remain explicitly fictional. The old M0 hotel sample fields are not AI evidence. Provisional sourced facts have their own label and private-prototype scope. Reviewed publication means reviewed for this prototype, not production approval.
 - Atomic replacement suppression, stale-edit detection, eligibility recheck before returning an answer, private credentials, persistent trial allowance and honest provider/error states.
 
-**Not live-connected yet:** no API key is available in this task and no provider calls have been made. Parsing/error tests use transport fixtures and are not evidence of a live model answer. Staff edits, replacement precedence and exact answer assembly have been verified with the real database; semantic model selection and the full live edit → question workflow still need the connection steps below. No scripted answer substitutes for a missing connection.
+**Live review status:** owner-observed location/check-in/out replies establish limited earlier connectivity. The composed voice revision remains unverified with a live model. Offline parsing/validation/UI fixtures are not actual generated conversations. No paid call was made here; Codespaces usage/reservations must be checked in that existing environment. The secure key requirement is already satisfied in this Codex runtime but trial flags remain disabled here.
 
 ## Manual setup: private Codespaces review
 
@@ -64,7 +70,7 @@ OpenAI API billing is separate from Codex/ChatGPT. Ijlal authorised **USD 5 tota
    npm run build && npm run start
    ```
 
-   Enabling does not itself call the provider. The page says **AI configured · connection not yet verified** until an actual answer succeeds. Authentication/quota/model errors remain failures; no alternate model or fake answer is substituted. Do not share full provider errors or request logs containing secrets.
+   Enabling does not itself call the provider. The page says **AI configured · not yet checked** until an actual answer succeeds. Authentication/quota/model errors remain failures; no alternate model or fake answer is substituted. Do not share full provider errors or request logs containing secrets.
 
 ## How the USD 5 allowance works
 
@@ -85,7 +91,7 @@ Start with the unconnected checks; complete the live section only after secure s
 - [ ] Draft/held/archived, future validity, review deadline reached, or expired validity must remove that record from eligible guest knowledge. Keep a short review window; a blank validity end is not permanent approval.
 - [ ] Select an imported topic, such as **K009** (check-in/out). Inspect sources/history and use **Create reviewed replacement**. Wait for that heading before editing. Enter confirmed prototype wording and source, choose **Staff-reviewed**, publish with current dates, save and reload. Confirm its predecessor says **Replaced** and the guest sees only the replacement. Do not claim invented test wording is a real hotel policy. Holding/expiring the replacement must not revive the old source. Restore a suitable reviewed replacement for any topic you change.
 - [ ] Choose each venue in guest knowledge/concierge. Information for unrelated venues must stay out of that venue's answers. Pool hours, parking charges and unverified allergens must not be invented. Source labels are provisional and remain visible.
-- [ ] **Live connection:** send “Where is the hotel?” in your own words. Expect **AI-selected source answer**, a source ID, exact database wording and the provisional label. This consumes one reservation. If the connection fails, record it as a failure, inspect private account/access setup and do not repeatedly retry without a diagnosis.
+- [ ] **Live connection:** send “Where is the hotel?” in your own words. Expect **AI CONCIERGE**, a composed reply, protected factual wording and a provisional qualification; open Sources and conditions for source IDs/original text. This consumes one reservation. If the connection fails, record it as a failure, inspect private account/access setup and do not repeatedly retry without a diagnosis.
 - [ ] **Live staff-change verification:** create/publish a uniquely named fictional facility, ask about it, change a distinctive price/time/condition, save, then ask a fresh question. The answer must quote the new version only. Repeat once after publishing its reviewed replacement and confirm the predecessor is absent. These are separate paid attempts within the same total budget.
 - [ ] **Live offers:** ask “What fictional demo offer is published?” Check exact current M1 title, dates and conditions. Change the offer and ask again; it must use the saved version. Unpublishing or expiring it must remove it from subsequent answers.
 - [ ] Ask about a missing/disputed fact, a different venue, an allergy guarantee and a booking confirmation. Expect missing/limited information and no completed action. Check the trial status and provider usage after the small review; stop if behaviour is incorrect.

@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { randomBytes, createHash } from "node:crypto";
 import { answer } from "@/modules/concierge/service";
+import { conversationContext, hasPrivateDetails } from "@/modules/concierge/context";
 import { venues } from "@/modules/knowledge/types";
 export const runtime = "nodejs";
 export async function POST(request: NextRequest) {
@@ -23,7 +24,7 @@ export async function POST(request: NextRequest) {
       { message: "Origin not allowed." },
       { status: 403 },
     );
-  if (Number(request.headers.get("content-length") ?? 0) > 6000)
+  if (Number(request.headers.get("content-length") ?? 0) > 18000)
     return NextResponse.json({ message: "Message too long." }, { status: 413 });
   let body;
   try {
@@ -35,7 +36,7 @@ export async function POST(request: NextRequest) {
       const part = await reader.read();
       if (part.done) break;
       length += part.value.byteLength;
-      if (length > 6000) {
+      if (length > 18000) {
         await reader.cancel();
         return NextResponse.json(
           { message: "Message too long." },
@@ -63,6 +64,10 @@ export async function POST(request: NextRequest) {
       },
       { status: 400 },
     );
+  let history;
+  try { history = conversationContext(body.history); }
+  catch { return NextResponse.json({ kind: "invalid_context", message: "This conversation is too long. Reset it and ask again." }, {status: 400}); }
+  if (hasPrivateDetails(body.question)) return NextResponse.json({ kind: "private_details", message: "Please leave contact, room, payment and sign in details out of this private test. Requests and callbacks are not available here yet." }, {status: 400});
   const raw = request.cookies.get("m2a-session")?.value;
   const session =
     raw && /^[a-f0-9]{64}$/.test(raw) ? raw : randomBytes(32).toString("hex");
@@ -70,6 +75,7 @@ export async function POST(request: NextRequest) {
     body.question.trim(),
     body.venue,
     createHash("sha256").update(session).digest("hex"),
+    history,
   );
   const response = NextResponse.json(result.body, {
     status: result.status,

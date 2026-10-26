@@ -1,4 +1,5 @@
 import "server-only";
+import type { ConversationTurn } from "./context";
 import { providerTransport } from "./provider-transport";
 import { answerEvidence } from "@/modules/knowledge/data";
 import { guestClient } from "@/lib/supabase/server";
@@ -16,7 +17,7 @@ export function providerState() {
     return "disabled";
   return "configured";
 }
-export async function answer(question: string, venue: string, session: string) {
+export async function answer(question: string, venue: string, session: string, history: ConversationTurn[] = []) {
   if (providerState() !== "configured")
     return {
       status: 503,
@@ -40,7 +41,7 @@ export async function answer(question: string, venue: string, session: string) {
   let attempt: string | null = null;
   try {
     const evidence = await answerEvidence(venue);
-    const prompt = makePrompt(question, venue, evidence);
+    const prompt = makePrompt(question, venue, evidence, history);
     const reserve = await client.rpc("reserve_concierge", {
       p_session: session,
       p_guard: guard,
@@ -81,12 +82,7 @@ export async function answer(question: string, venue: string, session: string) {
         kind: "model_grounded",
         facts: result.facts,
         incomplete: result.incomplete,
-        message: result.facts.length
-          ? "Published source wording is quoted below to preserve exact prices, dates and conditions."
-          : "I cannot verify that from the eligible published information. Please clarify or check with the hotel.",
-        notice: result.incomplete
-          ? "Some requested details are not confirmed by the available sources. No action, calculation or booking was completed."
-          : "Information only. No request, reservation or other action was created.",
+        message: result.reply,
       },
     };
   } catch (error) {
@@ -97,6 +93,7 @@ export async function answer(question: string, venue: string, session: string) {
         p_guard: guard,
       });
     const reason = error instanceof Error ? error.message : "";
+    if (reason === "context_too_large") return {status: 400, body: {kind: "context_limit", message: "There is more information than I can check in one turn. Reset the conversation and ask a shorter question. No model request was sent."}};
     return {
       status: 503,
       body: {
@@ -107,7 +104,7 @@ export async function answer(question: string, venue: string, session: string) {
         message:
           reason === "knowledge_changed"
             ? "Published information changed while answering. Please ask again; no stale answer was shown."
-            : "The AI provider or eligible knowledge is unavailable, timed out or returned unsupported output. No answer was substituted and no action was taken.",
+            : "I couldn’t verify a reply just now. No answer was substituted and nothing was sent to the team. You can browse the hotel information below.",
       },
     };
   }

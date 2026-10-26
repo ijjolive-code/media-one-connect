@@ -18,6 +18,14 @@ These instructions apply throughout this repository. They were adapted from `med
 - Before UI changes read root `DESIGN.md`, `BRAND_REFERENCE_README.md` and `CODEX_NEXT_TASK.md`. `docs/DESIGN_SYSTEM.md` points to the current canonical system. Use the supplied V1.02 manual provisionally; newer approved guidance takes precedence. Use the provided logo/photograph unchanged with documented clearance and natural aspect ratio. Official font binaries/licences remain missing; keep the fallback explicit and do not invent assets.
 - Guest navigation is Home, Explore, Concierge, My Stay and Profile. Keep staff access separate. Preserve clear demo/planned labels and test viewport/keyboard accessibility without claiming simulated layouts prove physical-device behaviour.
 
+## Concierge language and service behaviour
+
+- Before changing concierge instructions, generation or guest response copy, read `CONCIERGE_VOICE.md`. It is the canonical working voice specification; explicit owner preferences are distinct from example wording awaiting review.
+- Read `docs/CONCIERGE_SERVICE_BEHAVIOUR.md` for proactive escalation, concrete contact routes and gradual guest data collection. Optional preferred names must not block assistance; contact details need an implemented purpose. A service contact is not marketing opt in or verified identity.
+- Use `docs/CONCIERGE_VOICE_REVIEW.md` to assess whole conversations and `docs/CONCIERGE_VOICE_IMPLEMENTATION.md` for the implementation handoff. Do not insert these documents or example replies into factual hotel retrieval or treat them as production facts.
+- Preserve the confirmed no dash punctuation rule in ordinary guest prose while keeping exact factual URLs, names and identifiers intact. Keep a concise versioned runtime instruction derived from the guide rather than sending the entire guide with every question.
+- Current M2A information only behaviour is not the final service design. Future handover and contact capture need real capability checks, backend submission evidence, staff ownership and bot pause/resume. Never claim those actions exist because the guide describes them.
+
 ## Product architecture
 
 - Use one shared backend for web, WhatsApp and future native clients. Reuse content, identity, permissions, loyalty and action rules. Channel-specific presentation can differ.

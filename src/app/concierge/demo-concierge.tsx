@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Icon } from "@/components/icon";
 import { venues } from "@/modules/knowledge/types";
+import { MAX_HISTORY_CHARS, MAX_HISTORY_TURNS, hasPrivateDetails, type ConversationTurn } from "@/modules/concierge/context";
 import type { Evidence } from "@/modules/concierge/answer-core";
 type Reply = {
   kind: string;
@@ -52,6 +53,7 @@ export function DemoConcierge({
     controller.current?.abort();
     setPending(false);
     setConversation([]);
+    setConnected(false);
     setDraft("");
   }
   async function send(question: string) {
@@ -63,15 +65,23 @@ export function DemoConcierge({
     setDraft("");
     setConversation((p) => [...p.slice(-9), { question, pending: true }]);
     try {
+      const history: ConversationTurn[] = [];
+      let size = 0;
+      const previous = conversation.flatMap(m => m.reply?.kind === "model_grounded" ? [{role: "user" as const, text: m.question}, {role: "assistant" as const, text: m.reply.message}] : []);
+      for (const turn of previous.slice(-MAX_HISTORY_TURNS).reverse()) {
+        if (size + turn.text.length > MAX_HISTORY_CHARS) break;
+        history.unshift({ ...turn, text: hasPrivateDetails(turn.text) ? "[Private detail omitted]" : turn.text });
+        size += turn.text.length;
+      }
       const response = await fetch("/api/concierge", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, venue }),
+        body: JSON.stringify({ question, venue, history }),
         signal: abort.signal,
       });
       const reply = (await response.json()) as Reply;
       if (id !== requestId.current) return;
-      if (reply.kind === "model_grounded") setConnected(true);
+      setConnected(reply.kind === "model_grounded");
       setConversation((p) =>
         p.map((m, i) => (i === p.length - 1 ? { question, reply } : m)),
       );
@@ -103,9 +113,9 @@ export function DemoConcierge({
           <p>
             <span className="status-dot" />
             {connected
-              ? "AI connected · sources cited"
+              ? "AI concierge · connected"
               : configuration === "configured"
-                ? "AI configured · connection not yet verified"
+                ? "AI configured · not yet checked"
                 : "AI not connected · setup required"}
           </p>
         </div>
@@ -149,7 +159,7 @@ export function DemoConcierge({
             aria-live="polite"
           >
             <div className="conversation-date">
-              PRIVATE PROTOTYPE · CURRENT PUBLISHED KNOWLEDGE
+              PRIVATE PROTOTYPE · SOURCED FACTS ARE PROVISIONAL
             </div>
             <div className="assistant-group">
               <span className="assistant-avatar" aria-hidden="true">
@@ -158,14 +168,12 @@ export function DemoConcierge({
               <div className="chat-message assistant">
                 <span className="message-label">HOTEL CONCIERGE</span>
                 <p>
-                  Ask a question in your own words. Answers use eligible
-                  information for the selected venue and current published
-                  offers.
+                  Hi! What can I help you with? Choose a venue above if you’re asking about a restaurant.
                 </p>
                 <p>
                   {configuration === "configured"
-                    ? "The AI selects relevant evidence. Source wording is quoted to keep prices and conditions exact."
-                    : "The model connection is not enabled yet. There are no scripted answers standing in for AI."}
+                    ? "I can help with hotel information. I can’t make bookings or send requests to the team here yet."
+                    : "The AI connection isn’t enabled here yet. You can still browse the hotel information below."}
                 </p>
                 <Link
                   className="text-link"
@@ -188,9 +196,9 @@ export function DemoConcierge({
                   <div className="chat-message assistant">
                     <span className="message-label">
                       {exchange.pending
-                        ? "CHECKING PUBLISHED SOURCES"
+                        ? "CHECKING YOUR QUESTION"
                         : exchange.reply?.kind === "model_grounded"
-                          ? "AI-SELECTED SOURCE ANSWER"
+                          ? "AI CONCIERGE"
                           : "NO MODEL ANSWER"}
                     </span>
                     <p>
@@ -198,16 +206,22 @@ export function DemoConcierge({
                         ? "Checking the current published information…"
                         : exchange.reply?.message}
                     </p>
-                    {exchange.reply?.facts?.map((f) => (
-                      <article className="answer-evidence" key={f.id}>
-                        <span className="status-tag">{f.label}</span>
-                        <p>{f.text}</p>
-                        <small>
-                          {f.key} · {f.sources.map((s) => s.id).join(", ")}
-                          {f.reviewDue ? " · Review before " + f.reviewDue : ""}
-                        </small>
-                      </article>
-                    ))}
+                    {!!exchange.reply?.facts?.length && (
+                      <>
+                        <p className="answer-qualification">{exchange.reply.facts.some(f => /fictional/i.test(f.label)) ? "Includes fictional test content. " : ""}{exchange.reply.facts.some(f => /provisional/i.test(f.label)) ? "Provisional information for this private prototype." : "Reviewed for this private prototype."}</p>
+                        <details className="answer-sources">
+                          <summary>Sources and conditions</summary>
+                          {exchange.reply.facts.map(f => (
+                            <article className="answer-evidence" key={f.id}>
+                              <span className="status-tag">{f.label}</span>
+                              <p>{f.text}</p>
+                              <small>{f.key} · {f.sources.map(s => s.id).join(", ")}{f.reviewDue ? " · Review before " + f.reviewDue : ""}</small>
+                            </article>
+                          ))}
+                        </details>
+                      </>
+                    )}
+                    {exchange.reply?.incomplete && <p className="answer-notice">Some details aren’t confirmed. No request or booking was made.</p>}
                     {exchange.reply?.notice && (
                       <p className="answer-notice">{exchange.reply.notice}</p>
                     )}
@@ -256,16 +270,14 @@ export function DemoConcierge({
                 <Icon name="arrow" />
               </button>
             </div>
-            <p>Private prototype · Don’t enter personal details</p>
+            <p>Private test · No contact, stay or payment details</p>
           </form>
         </section>
         <aside className="demo-explainer">
           <span className="status-tag">Sourced information is provisional</span>
           <h2>Answers with evidence.</h2>
           <p>
-            The AI interprets each question and selects eligible records. Exact
-            source wording preserves prices, dates and conditions. Each question
-            is evaluated independently against current knowledge.
+            The AI uses recent conversation to understand follow ups and reads current eligible knowledge for each answer. Sources stay available below a reply. Protected prices and conditions are retained.
           </p>
           <h3>Separate content labels</h3>
           <p>
