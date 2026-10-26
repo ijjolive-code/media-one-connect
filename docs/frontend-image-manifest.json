@@ -1,0 +1,110 @@
+[
+  {
+    "id": "coco-pool-night",
+    "source": "design-handoff/assets/images/coco-pool-night.jpg",
+    "sha256": "892bb8c4611e16ed84de5b4a8a9dae2fae9cb89e52422c87cd729842c114e098",
+    "output": "public/media/coco-pool-night.webp",
+    "width": 1400,
+    "height": 921,
+    "bytes": 142502
+  },
+  {
+    "id": "garden-lifestyle",
+    "source": "design-handoff/assets/images/garden-lifestyle.jpg",
+    "sha256": "d0d88c319dfd3743b1c0c9779d02aa49788ce31808fdc6b260cc77a619187948",
+    "output": "public/media/garden-lifestyle.webp",
+    "width": 1120,
+    "height": 1400,
+    "bytes": 155550
+  },
+  {
+    "id": "ciao-bella-interior",
+    "source": "design-handoff/assets/images/ciao-bella-interior.png",
+    "sha256": "e7cdce231b099677ef3f126cb248a017ddf3bb6d3c6d250f6538580080e1c804",
+    "output": "public/media/ciao-bella-interior.webp",
+    "width": 1400,
+    "height": 939,
+    "bytes": 145498
+  },
+  {
+    "id": "qwerty-day",
+    "source": "design-handoff/assets/images/qwerty-day.jpg",
+    "sha256": "a099bd6529378ffed7c77b7da01a464a870f1770e9ea14f2f1ce07f0c12e5652",
+    "output": "public/media/qwerty-day.webp",
+    "width": 1400,
+    "height": 933,
+    "bytes": 193884
+  },
+  {
+    "id": "coco-terrace-day",
+    "source": "design-handoff/assets/images/coco-terrace-day.jpg",
+    "sha256": "621b63df6a205cbf41c67377ca22edb7ad747c4f3ae4e8d55418282be50542ae",
+    "output": "public/media/coco-terrace-day.webp",
+    "width": 1400,
+    "height": 788,
+    "bytes": 126376
+  },
+  {
+    "id": "ciao-bella-night",
+    "source": "design-handoff/assets/images/ciao-bella-night.jpg",
+    "sha256": "d8b2ef79f0141b4bbbbd6de501bf146011aebab8eff945f9702967ac84b6119a",
+    "output": "public/media/ciao-bella-night.webp",
+    "width": 1400,
+    "height": 939,
+    "bytes": 157920
+  },
+  {
+    "id": "qwerty-night",
+    "source": "design-handoff/assets/images/qwerty-night.jpg",
+    "sha256": "003253bf3cdf934b9e259c6375b2de0040f5c0f923ade3b0845bd1850adf8dd3",
+    "output": "public/media/qwerty-night.webp",
+    "width": 1400,
+    "height": 915,
+    "bytes": 195442
+  },
+  {
+    "id": "coco-poolside-day",
+    "source": "design-handoff/assets/images/coco-poolside-day.jpg",
+    "sha256": "f085b1d3d36a6cd5174f6933fcd8435dbc7f9968b05f8943067d31ddd7fa858a",
+    "output": "public/media/coco-poolside-day.webp",
+    "width": 1400,
+    "height": 788,
+    "bytes": 131578
+  },
+  {
+    "id": "garden-terrace-day",
+    "source": "design-handoff/assets/images/garden-terrace-day.jpg",
+    "sha256": "39318a23dfbcded2d1225923a326a6d23a9eb9cda766fd09288e048ed8d13ae7",
+    "output": "public/media/garden-terrace-day.webp",
+    "width": 1400,
+    "height": 933,
+    "bytes": 160136
+  },
+  {
+    "id": "hotel-exterior",
+    "source": "design-handoff/assets/images/hotel-exterior.jpg",
+    "sha256": "596e7cd24d7f2acbca24399be4c4ddf937dc5a2656b4db72c1b882abe1cf2538",
+    "output": "public/media/hotel-exterior.webp",
+    "width": 1400,
+    "height": 933,
+    "bytes": 112122
+  },
+  {
+    "id": "rooms-lifestyle-teal",
+    "source": "design-handoff/assets/images/rooms-lifestyle-teal.jpg",
+    "sha256": "8b345a2dab4fd3f94a50ec3e355e53cc00c24ee57f8ecca560f949ec00a70f7e",
+    "output": "public/media/rooms-lifestyle-teal.webp",
+    "width": 1400,
+    "height": 933,
+    "bytes": 163036
+  },
+  {
+    "id": "chill-out-bedroom",
+    "source": "design-handoff/assets/images/chill-out-bedroom.jpg",
+    "sha256": "b374c7e9e9ccf1c777c73c17d5bfff5b1af7d5aaef86d4ba5bfd6a62768fd257",
+    "output": "public/media/chill-out-bedroom.webp",
+    "width": 1400,
+    "height": 933,
+    "bytes": 121490
+  }
+]

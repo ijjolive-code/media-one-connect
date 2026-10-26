@@ -28,7 +28,7 @@ export async function GuestOffers() {
       ) : (
         offers.map((offer) => (
           <article className="offer-card" key={offer.id}>
-            <span className="eyebrow">MEDIA ONE HOTEL · FICTIONAL OFFER</span>
+            <span className="eyebrow">Media One Hotel · Fictional offer</span>
             <h3>{offer.title}</h3>
             <p>{offer.description}</p>
             <div className="offer-validity">
@@ -36,7 +36,8 @@ export async function GuestOffers() {
               <time dateTime={offer.starts_on}>
                 {offerDate(offer.starts_on)}
               </time>{" "}
-              – <time dateTime={offer.ends_on}>{offerDate(offer.ends_on)}</time>
+              to{" "}
+              <time dateTime={offer.ends_on}>{offerDate(offer.ends_on)}</time>
               <small>Inclusive dates · Asia/Dubai</small>
             </div>
             <details>

@@ -1,4 +1,13 @@
 import Link from "next/link";
 export default function NotFound() {
-  return <div className="page-wrap inner-page"><span className="eyebrow">A SMALL DETOUR</span><h1>This page isn’t here.</h1><p className="page-intro">Let’s take you back to the demonstration.</p><Link className="button dark" href="/">Back to Home</Link></div>;
+  return (
+    <div className="page-wrap not-found">
+      <p>A little detour.</p>
+      <h1>Let’s get you back.</h1>
+      <p>We couldn’t find that page.</p>
+      <Link className="button primary" href="/">
+        Back to Home
+      </Link>
+    </div>
+  );
 }

@@ -1,6 +1,14 @@
-# Media One Connect — provisional brand and mobile interface system
+# Media One Connect: implemented frontend design system
 
-Updated 25 October 2026. Read this before UI changes. The brand source is the supplied **Media One Design Manual Version 1.02**, as described in [BRAND_REFERENCE_README.md](BRAND_REFERENCE_README.md), with 20 unchanged original pages in [the excerpt](brand-reference/Media_One_Design_Manual_Excerpt.pdf). The pack was added in commit `00163ad`; its reported Drive modified date is 1 March 2022, not an approval date. Ijlal confirmed the same colours still apply provisionally. Newer approval, public-use rights and asset currentness remain unverified. This document supersedes the earlier missing-asset assumptions in `docs/DESIGN_SYSTEM.md`; that file points here for the current system.
+Updated 27 October 2026. Canonical interface specification for `design/media-one-app-redesign`, based on application checkpoint `e80d0aa`. This replaces historical M0 styling descriptions; those remain available in Git. Implementation is ready for owner review, **not owner-approved design or production approval**.
+
+## Direction and authority
+
+A social hotel companion built around the actual places inside Media One. A compact greeting and immediate Concierge action lead into real venue photography; condensed display lettering gives the interface its character without pushing useful actions below the phone viewport. Charcoal anchors the shell, pink identifies the main action, and cool neutral surfaces keep reading comfortable. Desktop uses the same application with a sidebar and deliberate split compositions.
+
+Read the supplied [brand reference](BRAND_REFERENCE_README.md), [font notes](design-handoff/FONT_NOTES.md) and [asset inventory](design-handoff/asset-inventory.json). The manual is **Version 1.02**, supplied provisionally. Ijlal confirmed its colours still apply provisionally; newer approval, public rights and asset currentness remain unconfirmed. The complete frontend instruction supersedes the older three-concept selection task in the handoff documents.
+
+Applied skill: [`.agents/skills/design-taste-frontend/SKILL.md`](.agents/skills/design-taste-frontend/SKILL.md), **tasteskill v2**, including its complete app-screen guidance. The original 39 skill files and `skills-lock.json` remain tracked unchanged. Installer: `skills@1.7.4`; source `Leonxlnx/taste-skill`; locked content hash `6ac8ba6089dcbc303744a507a4587113c5d845ca2f658b3ce2b0b5eab108fb0d`. App direction: **Editorial greeting**, seed **215653166**, no redraw. Explicit Media One typography, colours, photographic composition and mobile bottom navigation take precedence over generic workspace defaults. No dashboard metrics were invented.
 
 ## Source page map
 
@@ -20,73 +28,72 @@ Page numbers below are printed original page numbers, not the excerpt PDF's 1–
 | 31             | Media graphic device contains imagery/texture, not plain colour; not recreated or approximated for this app                                                                      |
 | 63–68          | Authentic, natural photography. Lobby guidance on p65 avoids added filters/effects and preserves natural light/colour/texture; do not replace supplied imagery with cliché stock |
 
-## Colour tokens
+## Tokens and typography
 
-| Role    | Token                        | Value                | Use                                                                                       |
-| ------- | ---------------------------- | -------------------- | ----------------------------------------------------------------------------------------- |
-| Primary | `--charcoal`                 | `#3C474F`            | App header, main text and conversation identity                                           |
-| Primary | `--pink`                     | `#D92745`            | Concierge/send actions, selected navigation, restrained message tints                     |
-| Accent  | `--teal`                     | `#31657E`            | Focus ring and occasional secondary links                                                 |
-| Accent  | `--light-blue`               | `#74CCD5`            | Optional small decorative accents with charcoal text; never essential light text on white |
-| Neutral | `--canvas`, `--surface`      | `#F5F6F7`, `#FFFFFF` | UI surfaces; implementation choices, not additional official brand colours                |
-| Neutral | `--muted`, `--line`          | `#59656D`, `#DCE1E4` | Secondary text and dividers                                                               |
-| Derived | `--pink-tint`, `--blue-tint` | `#FCECEF`, `#EAF4F6` | Low-emphasis UI surfaces, not extra official brand colours                                |
+| Role | CSS token | Value / use |
+| --- | --- | --- |
+| Brand primary | `--charcoal` | `#3C474F`, header, strong surfaces |
+| Brand primary | `--pink` | `#D92745`, primary actions and selected indicators |
+| Brand accent | `--teal` | `#31657E`, secondary links and keyboard focus |
+| Brand accent | `--light-blue` | `#74CCD5`, restrained detail on charcoal |
+| UI neutrals | `--canvas`, `--surface` | `#F5F6F7`, white |
+| Reading | `--ink`, `--muted` | `#28343C`, `#59656D` |
+| UI boundaries | `--line` | `#DCE1E4` |
+| Derived tints | `--pink-tint`, `--blue-tint` | `#FCECEF`, `#EAF4F6` |
 
-Checked normal-text contrast: white/pink 4.85:1; white/charcoal 9.52:1; muted/canvas 5.53:1; teal/blue tint 5.70:1. Pink on pink tint is only 4.25:1: use charcoal text with pink icon/indicator for selected tinted labels. A colour is never the sole signal for status or selection. These pair checks do not certify the whole app as accessible.
+Neutrals and tints are implementation choices, not new official brand colours. White on pink is approximately 4.85:1; white on charcoal 9.52:1. Selected tinted labels use charcoal, with shape/icon/`aria-current` as well as colour. These checks do not certify complete accessibility.
 
-## Typography and voice
+**Chartwell Bars Regular** (`ChartwellBarsWebW01-Regular`) supplies short h1/h2 and venue display names. **Geomanist Regular** supplies body, controls and navigation. Exact copies of the supplied binaries live in `src/fonts/` and load locally through `next/font/local`. Both declarations are **400, normal**, with `font-synthesis: none`. CSS custom properties are not variable-font declarations. No synthetic bold/italic or invented weights. Browser tests check actual loaded faces and weights, not just declared CSS.
 
-Official intended roles: **Chartwell Bars** for English headings/subheadings and **Geomanist** for body text. The manual's rendered Chartwell sample is condensed lettering; do not infer a downloadable font variant from the name alone. No font binaries or accompanying web licences are supplied. Do not fetch similarly named substitutes, declare nonexistent `@font-face` sources, rename Apple `._` metadata as fonts, or claim official type is installed. Before future installation, inspect internal family/style names and compare rendered samples with p26–28.
+Body and form inputs are 16px. Secondary reading is 13–15px; navigation/quiet status 12px or above at the required widths. Home display is 40px on phones and 46px desktop, a single compact line in this condensed face. General phone page headings are 36px; chat h1 is 28px. Use size, placement, family and surface contrast for hierarchy. Normal prose is left aligned and concise. Preserve `garden on 8` exactly, without an added article or CSS uppercase. Ordinary guest prose avoids dash punctuation; functional names, URLs, identifiers and protected source values remain intact.
 
-Current app uses an explicitly temporary Arial/Helvetica/system sans-serif stack, identified in Profile and preview notes. It is a readable development fallback, not the manual's official type or an assertion that p29 approves app use. Official Arabic type and fluent language review remain outstanding; no Arabic interface is claimed.
+## Original logo and photography
 
-App sizes: body/composer 16px with 1.5–1.65 line height; secondary text 14px; nav/badges at least 12px. Phone h1 28px (conversation 24px), section h2 20px, card labels 16px. Desktop h1 32px. Left-align UI/body copy. Do not mechanically apply p28's 11pt print body, 600 headline tracking, tight 4/5 leading or centred/justified blocks to chat or controls. Copy stays concise and practical; humour is optional, never forced.
+The supplied reverse logo is unchanged: **2424×1062 RGBA**, with original transparent padding. Alpha bounds x361–2063, y351–713. It sits on charcoal at 180px canvas width, around 126px visible artwork; compact-height 144px canvas retains about 101px visible artwork, above the conservative 95px example minimum. Natural proportions and padded clear space remain. No crop, filter, recolour or redraw. Link target is at least 44px.
 
-## Actual logo treatment
+All **27 photographs**, both fonts and **five visual references** remain available in the private source handoff. Actual photographs and reference compositions were visually inspected. Only **12 uncropped WebP derivatives**, maximum long side 1400px, quality 84, total **1,805,534 bytes**, are installed in `public/media/`. Source identities, SHA256 and derivative dimensions are in [the application image manifest](docs/frontend-image-manifest.json). Original assets remain unchanged. Next Image reserves geometry and negotiates smaller responsive images; above-fold priorities are limited to the logo and main photo. Offscreen images are lazy. Failed images retain their reserved geometry with a readable fallback.
 
-The supplied `media-one-logo.png` is **2424×1062 RGBA**, with white opaque artwork and transparent padding. Visible alpha bounds are x361–2063, y351–713. Preserve the entire canvas and original bytes; no cropping, recolouring, CSS filters, shadows or recreation. On the charcoal app header the white artwork has strong contrast. Do not place this white asset on a white surface.
+Home uses Coco Lounge at night. Venue discovery uses the inventory's Ciao Bella, Qwerty, garden on 8 and Coco Lounge identities and detail images. Hotel information uses the exterior and explicitly lifestyle photography. My Stay accurately describes the Chill Out Suite bedroom. No office tower lobby is shown as hotel reception, no suite is described as a standard room, and no historical event photograph establishes a current event. The supplied old lobby file remains preserved but is not used in the new composition. References, manuals, source JSON and unnecessary original photographs are outside public application assets.
 
-The original padding is retained as clear space. Approximate M height in source artwork is 261px; canvas margins are at least 349px, exceeding 1X. At normal phone width render the whole canvas 180px wide (visible artwork about 126px); desktop 208px (about 146px); compact-height screens 144px (about 101px visible). All exceed the conservative 95px visible minimum from p19's examples. Use intrinsic image proportions and `height:auto`. Keep badges and text outside the image canvas. The logo is a labelled home link with a 44px+ target. Staff uses separate text and return navigation.
+**Missing/remaining:** no dedicated M12go photograph was supplied; its text treatment is ordinary UI, not an invented official logo. Additional genuine font weights, Arabic fonts/localisation, vector master/alternate logo variants and confirmation of public distribution rights remain separate needs. Current regular fonts and original reverse PNG work in this private prototype.
 
-## Photography and assets
+## Navigation and composition
 
-`public/brand/media-one-lobby.jpg` is the supplied real 1730×974 lobby image, **not fictional**. Keep original bytes as the source, normal aspect ratio, natural colour and no generative edits, filters or overlaid logo/text. Present a compact, full-frame thumbnail beside hotel information; it must not become a large promotional hero. Next.js responsive image optimisation serves smaller negotiated web formats; verify an actual optimiser response and decoded image. The guest hotel information remains sample data even though the image is real. Warnings refer to demo information/services, not to the photograph as fictional.
+Phone header is compact with the original logo, one discreet **Private preview** indicator and an accessible utility button. Primary bottom tabs are **Home, Explore, Concierge**. My Stay and Profile remain supported routes in the utility sheet; staff sign-in is a separate hotel-team link. No fabricated reservation, membership or room identity. Desktop has a 200px sidebar and a content canvas capped at 1170px with even gutters. No phone frame, marketing footer, fake status bar or hamburger-only primary navigation.
 
-The original reference pack remains unchanged under `Media_One_Brand_Reference_Pack/`. Its contents are also placed at the requested root paths: notes/task at root, PDF under `brand-reference/`, runtime images only under `public/brand/`. Do not put the manual or private source notes in `public/`. Source links and provenance remain in the reference README. Inclusion permits this requested private development review; it does not establish public-use rights or latest approval.
+| Screen | Question / implemented composition |
+| --- | --- |
+| Home | Where should I go next? Compact greeting, immediate Concierge action, Coco image, three shortcuts and a photo venue strip |
+| Explore | Which venue suits my visit? Five identities, two-column mobile discovery with a garden on 8 feature; intentional three-plus-two desktop grid |
+| Venue details | What should I know before going? Back link, real photography, current eligible profile and expandable facts, correctly scoped Concierge entry |
+| Hotel | What do I need during my visit? Exterior/lifestyle split, current essentials, guide and stay help |
+| Knowledge | Where is the current answer? Venue selection, remembered per-venue search and expandable source-backed facts |
+| Concierge | What would I like to ask? Dedicated transcript, readable replies, source disclosures, in-place errors and keyboard-aware composer |
+| My Stay | How can I get help with a stay? Honest unavailable booking/request actions and links to hotel information |
+| Profile | Can I use this without an account? Welcome for staying guests and dining visitors, useful guide/staff utilities |
+| Staff sign-in | How do I enter my workspace? Branded, labelled real authentication form |
+| Staff offers | What can I edit and publish for testing? Existing editor, dates/revision/save feedback and protected review link |
+| Staff knowledge | Which fact needs an update? Record picker, labelled editor, sources/dates/status, replacements and history |
+| Private test view | Did the fictional publication persist? Authorised offer preview plus exact published knowledge for regression review |
 
-Remaining: actual licensed Chartwell Bars/Geomanist webfont files and matched internal names; Arabic type if selected; additional approved room/venue photographs and currentness/rights confirmation; latest brand-owner review. The supplied reverse PNG is usable now; a vector master and alternate supplied variants would improve future use but are not blockers to this private pass.
+Source facts and venue descriptors come from eligible published knowledge. Prices, conditions and date facts are not hardcoded into presentation. A single provisional notice sits beside factual content; sources can be expanded. Financial or conditional profile text is not used as a clamped card teaser. Expired, held, draft, replaced and unrelated-venue records remain excluded by existing backend rules.
 
-## Mobile structure, spacing and components
+Fictional offers are absent from normal Home/Hotel/discovery. Normal knowledge browsing filters fictional labels as a presentation boundary. A concierge result whose evidence contains a fictional offer is withheld in full and shown as unavailable offer details, with a useful alternative; it is never rewritten as a genuine promotion. The underlying API, database grants and model retrieval are unchanged. The authorised `/staff/review` uses the existing guest-eligible offer reader and exact source wording, with explicit fictional labels. This is presentation separation, not a new database secrecy guarantee.
 
-Keep the working five destinations: Home `/`, Explore `/explore` (hotel `/hotel` belongs here), Concierge `/concierge`, My Stay `/my-stay`, Profile `/profile`. Phone navigation is a persistent thumb-reachable bottom bar, desktop a sidebar. Staff is separate under Profile's hotel-team utility; `/staff` has no guest tabs. Selected tabs combine icon, label, tinted shape and `aria-current`.
+## Components, interaction and state
 
-Home stays compact: welcome, prominent concierge entry, real lobby thumbnail/hotel guide and three links to planned bookings/requests/membership explanations. No fake guest name, room number, stay or benefit. Photo is context, not a banner. Concierge has a compact header, clearly scripted status, scrollable bubbles, sample-question disclosure, 48px local composer/send control and reset. Preserve the four M0 replies and honest fallback; no new provider/database calls.
+Shared components: AppShell, Navigation, PageHeading, Photo, VenueCard, FactList, KnowledgeBrowser, Sheet, StaffTabs and the existing real editors. Standard space steps: 4/8/12/16/20/24/32px; phone gutters 20px, desktop 40px. Images/surfaces use 16px radius, controls 10px, main action buttons rounded. Reading groups are lists and open space, not a bordered card for every paragraph. Staff forms retain efficient panels and native controls, with intrinsic-width fixes for narrow date fields.
 
-Spacing scale 4/8/12/16/20/24/32px; screen gutters 20px (16px at narrow width); card padding 16–20px, radius 12–16px. Interactive targets at least 44×44px; composer/send 48px. Body/input 16px avoids iOS focus zoom. Focus outlines 3px teal with offset, visible on charcoal/white surfaces; safe-area padding; reduced motion respected.
+Primary controls are at least 44px, normally 48px. Visible 3px focus, skip link, accessible names and selected states remain. Native modal dialogs provide focus containment, Escape, a close button, backdrop dismissal, scrolling and focus return. Source panels use native details/summary. Bottom sheets use a brief 180ms transition; messages 160ms; pressed feedback is subtle. Reduced-motion removes these transitions/animations. No continuous animation, autoplay or scroll hijacking.
 
-The app shell follows the visual viewport (`100dvh` plus VisualViewport resize/offsets). Only main/transcript areas scroll; navigation and composer remain reachable when the keyboard reduces visible space. On short screens the logo scales proportionately but stays above the conservative minimum, nonessential copy reduces, and transcript can become shorter without clipping controls. Latest reply reanchors on resize. Automated focused-input viewport tests are simulations, not actual mobile IME verification.
+The shell follows VisualViewport with safe-area spacing. During chat keyboard reduction, header and tabs give way to the transcript/composer; normal navigation returns when the keyboard closes. Composer uses 16px input, bounded multiline height, Enter send and Shift+Enter newline, respecting IME composition. Transcript only follows messages when already near its bottom. Reading earlier messages stays stable; a new-reply control offers a deliberate jump.
 
-## Scope and evidence
+Conversation/draft stay in mounted React memory during ordinary navigation. Recent successful context is still bounded by the original server contract. Explicit clear, a different venue, reload or closing the tab clears appropriate conversation state. Per-route scroll and per-venue guide searches also stay in memory. No new localStorage, sessionStorage, persistent conversation/profile storage, or service worker. Native Safari keyboard/scroll behaviour still needs real iPhone review.
 
-No backend functionality changes: all requests, booking, membership, WhatsApp, staff auth and real AI remain unavailable/planned. Real logo/photo do not turn sample policies or scripted replies into live services. Preserve privacy/noindex metadata and Codespaces Private port 3000; no public deployment or live hotel number. Verify build/lint/types, existing browser tests, phone widths down to 320px, desktop, image loading/optimisation, logo geometry, keyboard layout and no horizontal overflow. Save current screenshots and authoritative results in document 05. Native iOS/Android and official brand approval remain owner checks.
+Loading skeletons reserve reading geometry. Search has a real no-match state. Missing/unavailable facts and image failures have useful alternatives. Provider/server failures stay visible and never become scripted successful replies. AI identity is explicit once in the header; technical diagnostics, allowance and implementation detail belong in protected review/documentation.
 
+## Capabilities and review
 
-## M1 staff/content extension
+Working Supabase authentication, offer editing, managed knowledge, versions, permissions, publication/replacement/expiry and server AI integration are preserved. This visual work does **not** fix or verify retrieval quality, generated voice accuracy, staff handover, booking, requests, accounts, loyalty or WhatsApp. No database reset, reseed, budget change, credential change, model call or public publication was performed. The original USD 5 **total** allowance remains subject to its existing ledger across environments.
 
-The later M1 slice adds real local Supabase Auth, venue-scoped permissions and persistent **fictional** offers. Earlier wording above about no backend changes describes the brand pass, not the current implementation. Staff now enters through a separate sign-in and editor, with 16px labelled fields, 48px controls, readable errors, explicit save state and guest-review guidance. No fake login, live promotion or booking is implied. Guest Home/Hotel information display persisted published/in-date demo offers on reload. Broader account/member/booking/request modules remain planned.
-
-Keep actor/revision metadata in the staff workflow and clear fictional labels in the guest view. Missing/unreachable data must not be replaced with a fixture claimed as saved. Full M1 evidence is in the authoritative progress record, and current private setup/review is in `docs/M1_PRIVATE_REVIEW.md`.
-
-
-## M2A managed knowledge and free-text extension
-
-The M0/brand-pass scripted behaviour described earlier is historical. M2A replaces it with a free-text server integration and explicit disconnected, configured/unverified, successful model-selected and failed states. Until a real provider answer succeeds, do not label the connection live. Model selection quotes source wording rather than generating facts; evidence carries source/review and provisional, staff-reviewed prototype or fictional labels. Each new question reads current eligible knowledge and M1 offers; no action confirmation is possible.
-
-The guest five-tab shell, original logo/photo, palette and temporary system fonts remain. Concierge retains a scrollable conversation with a 48px composer, venue control and clear source/error messages at phone/desktop widths. Short layouts hide nonessential question suggestions so the venue and composer remain reachable. Staff knowledge management stays outside guest navigation, with labelled 16px fields, source and date groups, explicit publication scope, save/reload status, replacement links and version history. The guest source browser uses expandable questions and a distinct venue selector. Long source references wrap; mobile management stacks the editor and record list. None of this creates production approval, a real entitlement or a booking service.
-
-Current review: `docs/M2A_PRIVATE_REVIEW.md`; screenshots: `docs/screenshots/m2a/`. Live provider selection and native device keyboards still need separate verification.
-
-
-## Concierge voice refinement, guide 0.1 / runtime 0.2
-
-The guide-driven extension supersedes the selection-only description above. A composed guest reply appears first; original source wording/metadata is in an expandable disclosure. Keep a visible private-prototype/provisional qualification and an explicit fictional label when fictional offers are discussed. Greetings and thanks can stay short without forced hotel facts. Recent session context is bounded and clears on reset/reload/venue change; no persistent contact profile is added. Protected prices and conditions limit free rewriting; no live voice quality or factual approval is inferred from the design. Review source: `CONCIERGE_VOICE.md`; current evidence and private update: `docs/CONCIERGE_VOICE_REFINEMENT_REVIEW.md`. Requests/handover/contact capture remain proposed in the M2B plan.
+Read [the current private review guide](docs/FRONTEND_PRIVATE_REVIEW.md) and [visual verification record](docs/FRONTEND_VISUAL_REVIEW.md). Design choices above are implemented proposals for owner review; official brand/factual approval and physical-device acceptance are not inferred.

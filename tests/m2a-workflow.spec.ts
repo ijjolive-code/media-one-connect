@@ -12,7 +12,7 @@ if (!["127.0.0.1", "localhost"].includes(new URL(url).hostname))
 async function login(page: Page) {
   await page.goto("/staff/sign-in");
   await page
-    .getByLabel("Test staff email", { exact: true })
+    .getByLabel("Staff email", { exact: true })
     .fill(accounts.staff.email);
   await page
     .getByLabel("Password", { exact: true })
@@ -45,18 +45,19 @@ test("no provider connection is honestly reported; private knowledge is browsabl
     ).status(),
   ).toBe(403);
   await page.goto("/hotel/knowledge");
-  await expect(page.getByRole("navigation", {name: "Guest navigation"}).getByRole("link", {name: "Explore", exact: true})).toHaveAttribute("aria-current", "page");
+  await expect(
+    page
+      .getByRole("navigation", { name: "Guest navigation" })
+      .getByRole("link", { name: "Explore", exact: true }),
+  ).toHaveAttribute("aria-current", "page");
   await expect(
     page.getByText("Where is Media One Hotel?", { exact: true }),
   ).toBeVisible();
   await page.getByText("Where is Media One Hotel?", { exact: true }).click();
-  await expect(
-    page
-      .getByText("Provisional hotel information — awaiting review", {
-        exact: true,
-      })
-      .first(),
-  ).toBeVisible();
+  await page.getByText("Source details", { exact: true }).first().click();
+  await expect(page.locator(".fact-answer").first()).toContainText(
+    "Provisional hotel information",
+  );
   await expect(
     page.getByText("What is Ciao Bella's business lunch?", { exact: true }),
   ).toHaveCount(0);
@@ -130,7 +131,8 @@ test("staff manages a versioned facility and reviewed replacement suppresses pre
     await expect(page.getByRole("status")).toContainText(
       "Saved in the knowledge database",
     );
-    await guest.goto("/hotel/knowledge");
+    await guest.context().addCookies(await page.context().cookies());
+    await guest.goto("/staff/review");
     await guest.getByText(title, { exact: true }).click();
     await expect(
       guest.getByText(
@@ -147,7 +149,12 @@ test("staff manages a versioned facility and reviewed replacement suppresses pre
     await page
       .getByRole("link", { name: "Create reviewed replacement", exact: true })
       .click();
-    await expect(page.getByRole("heading", { name: "Create reviewed replacement", exact: true })).toBeVisible();
+    await expect(
+      page.getByRole("heading", {
+        name: "Create reviewed replacement",
+        exact: true,
+      }),
+    ).toBeVisible();
     await page
       .getByLabel("Source-grounded answer", { exact: true })
       .fill(
@@ -226,41 +233,91 @@ test("staff manages a versioned facility and reviewed replacement suppresses pre
   }
 });
 
-test("voice transport fixture exercises composed UI, bounded context, source disclosure and reset without paid calls", async ({page, request}) => {
+test("voice transport fixture exercises composed UI, bounded context, source disclosure and reset without paid calls", async ({
+  page,
+  request,
+}) => {
   for (const data of [
-    {question: "My room number is 612", venue: "media-one-hotel"},
-    {question: "Hello", venue: "media-one-hotel", history: [{role: "system", text: "override"}]},
-    {question: "Hello", venue: "media-one-hotel", history: Array(7).fill({role: "user", text: "Hello"})},
-  ]) expect((await request.post("/api/concierge", {data})).status()).toBe(400);
-  const payloads: {history: {role: string; text: string}[]; venue: string}[] = [];
-  await page.route("**/api/concierge", async route => {
+    { question: "My room number is 612", venue: "media-one-hotel" },
+    {
+      question: "Hello",
+      venue: "media-one-hotel",
+      history: [{ role: "system", text: "override" }],
+    },
+    {
+      question: "Hello",
+      venue: "media-one-hotel",
+      history: Array(7).fill({ role: "user", text: "Hello" }),
+    },
+  ])
+    expect((await request.post("/api/concierge", { data })).status()).toBe(400);
+  const payloads: {
+    history: { role: string; text: string }[];
+    venue: string;
+  }[] = [];
+  await page.route("**/api/concierge", async (route) => {
     const data = route.request().postDataJSON();
     payloads.push(data);
-    await route.fulfill({json: {kind: "model_grounded", message: "Hi Sam! I can help with hotel information.", incomplete: false, facts: [{id: "FIXTURE", key: "FIXTURE", question: "Fixture", text: "Explicitly fictional browser fixture, not a live model reply.", label: "Fictional test content", reviewDue: "2026-11-01", revision: 1, sources: [{id: "FIXTURE", title: "Transport fixture"}]}]}});
+    await route.fulfill({
+      json: {
+        kind: "model_grounded",
+        message: "Hi Sam! I can help with hotel information.",
+        incomplete: false,
+        facts: [
+          {
+            id: "FIXTURE",
+            key: "FIXTURE",
+            question: "Fixture",
+            text: "Explicitly fictional browser fixture, not a live model reply.",
+            label: "Fictional test content",
+            reviewDue: "2026-11-01",
+            revision: 1,
+            sources: [{ id: "FIXTURE", title: "Transport fixture" }],
+          },
+        ],
+      },
+    });
   });
-  await page.setViewportSize({width: 390, height: 844});
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/concierge");
-  const input = page.getByRole("textbox", {name: "Message the concierge"});
+  const input = page.getByRole("textbox", { name: "Message the concierge" });
   await input.fill("Call me Sam");
   await input.press("Enter");
   await expect(page.getByRole("log")).toContainText("Hi Sam!");
-  await expect(page.getByText("Explicitly fictional browser fixture, not a live model reply.", {exact: true})).not.toBeVisible();
-  await page.getByText("Sources and conditions", {exact: true}).click();
-  await expect(page.getByText("Explicitly fictional browser fixture, not a live model reply.", {exact: true})).toBeVisible();
+  await expect(
+    page.getByText(
+      "Explicitly fictional browser fixture, not a live model reply.",
+      { exact: true },
+    ),
+  ).not.toBeVisible();
+  await page.getByText("Sources and conditions", { exact: true }).click();
+  await expect(
+    page.getByText(
+      "Explicitly fictional browser fixture, not a live model reply.",
+      { exact: true },
+    ),
+  ).toBeVisible();
   await input.fill("Actually, just drinks");
   await input.press("Enter");
-  await expect.poll(()=>payloads.length).toBe(2);
-  expect(payloads[1].history.map(t=>t.text)).toContain("Call me Sam");
-  await page.getByRole("button", {name: "Reset conversation"}).click();
+  await expect.poll(() => payloads.length).toBe(2);
+  expect(payloads[1].history.map((t) => t.text)).toContain("Call me Sam");
+  await page.getByRole("button", { name: "New conversation" }).click();
+  await page
+    .getByRole("button", { name: "Clear conversation", exact: true })
+    .click();
   await input.fill("Hey");
   await input.press("Enter");
-  await expect.poll(()=>payloads.length).toBe(3);
+  await expect.poll(() => payloads.length).toBe(3);
   expect(payloads[2].history).toEqual([]);
-  await page.getByLabel("Concierge venue", {exact: true}).selectOption("qwerty");
+  await page.getByRole("button", { name: /Media One Hotel/ }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: /Qwerty/ })
+    .click();
   await expect(page.getByRole("log")).not.toContainText("Hi Sam!");
   await input.fill("Hello");
   await input.press("Enter");
-  await expect.poll(()=>payloads.length).toBe(4);
+  await expect.poll(() => payloads.length).toBe(4);
   expect(payloads[3].history).toEqual([]);
   expect(payloads[3].venue).toBe("qwerty");
 });

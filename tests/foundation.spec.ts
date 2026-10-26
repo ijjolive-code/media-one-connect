@@ -1,136 +1,367 @@
 import { test, expect } from "@playwright/test";
-
-test("guest navigation, fictional content and future modules are usable", async ({
+const routes = [
+  "/",
+  "/explore",
+  "/hotel",
+  "/hotel/knowledge",
+  "/explore/ciao-bella",
+  "/explore/qwerty",
+  "/explore/garden-on-8",
+  "/explore/coco-lounge",
+  "/explore/m12go",
+  "/concierge",
+  "/my-stay",
+  "/profile",
+  "/staff/sign-in",
+];
+test("guest Home has useful actions, three destinations and no fictional promotion or roadmap", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const nav = page.getByRole("navigation", { name: "Guest navigation" });
+  await expect(nav.locator(":scope > a")).toHaveText([
+    "Home",
+    "Explore",
+    "Concierge",
+  ]);
+  await expect(
+    page.getByRole("heading", { name: "Your kind of place." }),
+  ).toBeVisible();
+  await expect(
+    page.locator(".home-assist").getByRole("link", { name: /Ask Concierge/ }),
+  ).toBeVisible();
+  await expect(page.getByText("Private preview", { exact: true })).toHaveCount(
+    1,
+  );
+  await expect(page.locator("main")).not.toContainText(
+    /Planned modules|Working in M0|Demo offers|Trial limits|Brand reference/,
+  );
+  await page.getByRole("link", { name: "Eat & drink", exact: true }).click();
+  await expect(page).toHaveURL(/explore$/);
+  await expect(
+    nav.getByRole("link", { name: "Explore", exact: true }),
+  ).toHaveAttribute("aria-current", "page");
+});
+test("all guest routes, venue details and sign in render without clipping or JavaScript errors", async ({
   page,
 }) => {
   const errors: string[] = [];
-  page.on("pageerror", (error) => errors.push(error.message));
+  page.on("pageerror", (e) => errors.push(e.message));
+  for (const route of routes) {
+    await page.goto(route);
+    await expect(
+      page.getByRole("main").getByRole("heading", { level: 1 }),
+    ).toBeVisible();
+    expect(
+      await page
+        .locator("main")
+        .evaluate((el) => el.scrollWidth <= el.clientWidth),
+    ).toBe(true);
+  }
+  expect(errors).toEqual([]);
+});
+test("supplied fonts actually load at regular weight and the original logo stays proportional", async ({
+  page,
+}) => {
   await page.goto("/");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "Welcome to your stay.",
+  await page.evaluate(() => document.fonts.ready);
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        [...document.fonts].some(
+          (f) =>
+            /geomanist/i.test(f.family) &&
+            f.status === "loaded" &&
+            f.weight === "400",
+        ),
+      ),
+    )
+    .toBe(true);
+  await expect
+    .poll(() =>
+      page.evaluate(() =>
+        [...document.fonts].some(
+          (f) =>
+            /chartwell/i.test(f.family) &&
+            f.status === "loaded" &&
+            f.weight === "400",
+        ),
+      ),
+    )
+    .toBe(true);
+  expect(
+    await page
+      .locator("body")
+      .evaluate((el) => getComputedStyle(el).fontSynthesis),
+  ).toBe("none");
+  const image = page.getByRole("img", { name: "Media One Hotel", exact: true });
+  const b = await image.boundingBox();
+  expect(b!.width / b!.height).toBeCloseTo(2424 / 1062, 2);
+  expect(
+    (await page.request.get("/design-handoff/asset-inventory.json")).status(),
+  ).toBe(404);
+  expect(
+    (
+      await page.request.get("/design-handoff/references/reference-6049.jpg")
+    ).status(),
+  ).toBe(404);
+});
+test("unavailable AI remains a real failure with a useful alternative, without scripted answers", async ({
+  page,
+}) => {
+  await page.goto("/concierge");
+  await page
+    .getByRole("textbox", { name: "Message the concierge" })
+    .fill("Where is the hotel?");
+  const response = page.waitForResponse((r) =>
+    r.url().endsWith("/api/concierge"),
+  );
+  await page.getByRole("button", { name: "Send concierge question" }).click();
+  expect((await response).status()).toBe(503);
+  await expect(page.getByRole("log")).toContainText(
+    "Concierge isn’t available right now",
+  );
+  await expect(page.getByRole("log")).not.toContainText(
+    /NO MODEL ANSWER|No answer was substituted|check.in is from/,
   );
   await expect(
-    page.getByText("Demo information · No live services or bookings"),
+    page
+      .getByRole("log")
+      .getByRole("link", { name: "Hotel guide", exact: true }),
   ).toBeVisible();
-  await page.getByRole("link", { name: /Hotel information/ }).click();
-  await expect(page).toHaveURL(/\/hotel$/);
-  await expect(
-    page.getByText("Fictional demonstration data", { exact: true }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("heading", { name: "From 3:00 pm" }),
-  ).toBeVisible();
+});
+test("conversation and draft survive tab navigation in memory; source details, venue sheet and clear work", async ({
+  page,
+}) => {
+  const payloads: { history: unknown[]; venue: string }[] = [];
+  await page.route("**/api/concierge", async (route) => {
+    payloads.push(route.request().postDataJSON());
+    await route.fulfill({
+      json: {
+        kind: "model_grounded",
+        message: "A fictional browser reply. No live model was called.",
+        facts: [
+          {
+            id: "FIXTURE",
+            key: "FIXTURE",
+            text: "Fictional source text for this browser test.",
+            label: "Fictional test content",
+            reviewDue: null,
+            sources: [],
+          },
+        ],
+        incomplete: false,
+      },
+    });
+  });
+  await page.goto("/concierge");
+  const input = page.getByRole("textbox", { name: "Message the concierge" });
+  await input.fill("Hello");
+  await input.press("Enter");
+  await expect(page.getByRole("log")).toContainText(
+    "A fictional browser reply",
+  );
+  await input.fill("My unfinished question");
   await page
     .getByRole("navigation", { name: "Guest navigation" })
     .getByRole("link", { name: "Explore", exact: true })
     .click();
+  await page
+    .getByRole("navigation", { name: "Guest navigation" })
+    .getByRole("link", { name: "Concierge", exact: true })
+    .click();
+  await expect(input).toHaveValue("My unfinished question");
+  await expect(page.getByRole("log")).toContainText(
+    "A fictional browser reply",
+  );
   await expect(
-    page.getByRole("heading", { name: "Planned modules." }),
+    page.getByText("Fictional source text for this browser test.", {
+      exact: true,
+    }),
+  ).not.toBeVisible();
+  await page.getByText("Sources and conditions", { exact: true }).click();
+  await expect(
+    page.getByText("Fictional source text for this browser test.", {
+      exact: true,
+    }),
   ).toBeVisible();
+  await page.getByRole("button", { name: /Media One Hotel/ }).click();
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(dialog).not.toBeVisible();
   await expect(
-    page.getByText("Not connected in this demo", { exact: true }),
-  ).toHaveCount(5);
-  await expect(
-    page
-      .getByRole("navigation", { name: "Guest navigation" })
-      .getByRole("link", { name: "Explore", exact: true }),
-  ).toHaveAttribute("aria-current", "page");
-  await expect(
-    page.getByRole("button", { name: /book|redeem|submit request/i }),
-  ).toHaveCount(0);
-  expect(errors).toEqual([]);
-});
-
-test("free-text concierge honestly reports missing/disabled live connection without scripted substitute", async ({
-  page,
-}) => {
-  await page.goto("/concierge");
-  const log = page.getByRole("log");
-  const input = page.getByRole("textbox", { name: "Message the concierge" });
-  await input.fill("What is the check-in time?");
-  await page.getByRole("button", { name: "Send concierge question" }).click();
-  await expect(log).toContainText("No model answer was generated");
-  await expect(log).not.toContainText("check-in is from 3:00 pm");
-  await expect(log).not.toContainText("SCRIPTED SAMPLE REPLY");
-  await page.getByRole("button", { name: "Reset conversation" }).click();
-  await expect(log).not.toContainText("YOUR QUESTION");
-  await input.fill("Tell me about the hotel");
+    page.getByRole("button", { name: /Media One Hotel/ }),
+  ).toBeFocused();
+  await page.getByRole("button", { name: /Media One Hotel/ }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: /Qwerty/ })
+    .click();
+  await expect(input).toHaveValue("");
+  await expect(page.getByRole("log")).not.toContainText(
+    "A fictional browser reply",
+  );
+  await input.fill("Hi again");
   await input.press("Enter");
-  await expect(log).toContainText("No model answer was generated");
+  await expect.poll(() => payloads.length).toBe(2);
+  expect(payloads[1]).toMatchObject({ history: [], venue: "qwerty" });
+  await expect(page.getByRole("log")).toContainText(
+    "A fictional browser reply",
+  );
+  await page.getByRole("button", { name: "New conversation" }).click();
+  await page
+    .getByRole("button", { name: "Clear conversation", exact: true })
+    .click();
+  await expect(page.getByRole("log")).not.toContainText(
+    "A fictional browser reply",
+  );
   await page.reload();
-  await expect(log).not.toContainText("YOUR QUESTION");
+  await expect(input).toHaveValue("");
+  expect(
+    await page.evaluate(() => ({
+      local: localStorage.length,
+      session: sessionStorage.length,
+    })),
+  ).toEqual({ local: 0, session: 0 });
 });
-
-test("staff workspace requires sign-in and exposes no anonymous editor", async ({
+test("incoming reply does not drag a reader away from earlier messages", async ({
   page,
 }) => {
-  await page.goto("/staff");
-  await expect(page).toHaveURL(/\/staff\/sign-in$/);
-  await expect(
-    page.getByRole("heading", { name: "Staff sign-in" }),
-  ).toBeVisible();
-  await expect(
-    page.getByRole("button", { name: "Save demo offer" }),
-  ).toHaveCount(0);
+  let calls = 0;
+  let deliver: (() => void) | undefined;
+  await page.route("**/api/concierge", async (route) => {
+    calls++;
+    if (calls === 3)
+      await new Promise<void>((resolve) => {
+        deliver = resolve;
+      });
+    await route.fulfill({
+      json: {
+        kind: "model_grounded",
+        message:
+          calls === 3
+            ? "The new fictional reply arrived."
+            : "Fictional test text. ".repeat(100),
+        facts: [],
+        incomplete: false,
+      },
+    });
+  });
+  await page.goto("/concierge");
+  const input = page.getByRole("textbox", { name: "Message the concierge" });
+  for (const q of ["First question", "Another question"]) {
+    await input.fill(q);
+    await input.press("Enter");
+    await expect(
+      page.getByRole("button", { name: "Send concierge question" }),
+    ).toBeDisabled();
+    await expect(
+      page.getByRole("status", { name: "Concierge is replying" }),
+    ).not.toBeVisible();
+  }
+  await input.fill("A third question");
+  await input.press("Enter");
+  await expect.poll(() => !!deliver).toBe(true);
+  const log = page.getByRole("log");
+  await log.evaluate((el) => (el.scrollTop = 0));
+  await page.waitForTimeout(100);
+  deliver!();
+  await expect(log).toContainText("The new fictional reply arrived.");
+  expect(await log.evaluate((el) => el.scrollTop)).toBeLessThan(5);
+  await expect(page.getByRole("button", { name: /New reply/ })).toBeVisible();
+  await page.getByRole("button", { name: /New reply/ }).click();
+  expect(
+    await log.evaluate(
+      (el) => el.scrollHeight - el.scrollTop - el.clientHeight,
+    ),
+  ).toBeLessThan(5);
+});
+test("mobile keyboard-space simulation prioritises the composer and leaves navigation reachable afterwards", async ({
+  page,
+}) => {
+  await page.route("**/api/concierge", async (route) =>
+    route.fulfill({
+      json: {
+        kind: "model_grounded",
+        message: "Fictional keyboard test reply. ".repeat(35),
+        facts: [],
+        incomplete: false,
+      },
+    }),
+  );
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/concierge");
+  const input = page.getByRole("textbox", { name: "Message the concierge" });
+  await input.fill("Keyboard layout fixture");
+  await input.press("Enter");
+  await expect(page.getByRole("log")).toContainText(
+    "Fictional keyboard test reply.",
+  );
+  await input.focus();
+  await page.setViewportSize({ width: 375, height: 440 });
+  await expect(page.locator(".app-shell")).toHaveAttribute(
+    "data-keyboard",
+    "true",
+  );
   await expect(
     page.getByRole("navigation", { name: "Guest navigation" }),
-  ).toHaveCount(0);
-  await page.getByRole("link", { name: "Return to guest app" }).click();
-  await expect(page).toHaveURL(/\/profile$/);
+  ).not.toBeVisible();
+  const b = await input.boundingBox();
+  expect(b!.y).toBeGreaterThan(0);
+  expect(b!.y + b!.height).toBeLessThan(440);
+  await expect
+    .poll(() =>
+      page
+        .getByRole("log")
+        .evaluate((el) => el.scrollHeight - el.scrollTop - el.clientHeight),
+    )
+    .toBeLessThan(5);
+  await input.blur();
+  await page.setViewportSize({ width: 375, height: 812 });
+  await expect(
+    page.getByRole("navigation", { name: "Guest navigation" }),
+  ).toBeVisible();
 });
-
-test("all routes fit the viewport and expose a main heading", async ({
+test("search, browser back and useful screen scroll position remain predictable", async ({
   page,
-}, testInfo) => {
-  for (const route of [
-    "/",
-    "/hotel",
-    "/concierge",
-    "/staff",
-    "/explore",
-    "/my-stay",
-    "/profile",
-  ]) {
-    await page.goto(route);
-    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
-    await expect(page.getByRole("main")).toBeVisible();
-    const fits = await page.evaluate(
-      () =>
-        document.documentElement.scrollWidth <= window.innerWidth &&
-        document.querySelector("main")!.scrollWidth <=
-          document.querySelector("main")!.clientWidth,
-    );
-    expect(fits, `${route} must not overflow horizontally`).toBe(true);
-    if (route === "/")
-      await page.screenshot({
-        path: testInfo.outputPath("homepage.png"),
-        fullPage: true,
-      });
-  }
-  await page.setViewportSize({ width: 320, height: 740 });
-  for (const route of [
-    "/",
-    "/hotel",
-    "/concierge",
-    "/staff",
-    "/explore",
-    "/my-stay",
-    "/profile",
-  ]) {
-    await page.goto(route);
-    expect(
-      await page.evaluate(
-        () =>
-          document.documentElement.scrollWidth <= window.innerWidth &&
-          document.querySelector("main")!.scrollWidth <=
-            document.querySelector("main")!.clientWidth,
-      ),
-      `${route} at 320px`,
-    ).toBe(true);
-  }
+}) => {
+  await page.goto("/hotel/knowledge");
+  await page.getByRole("searchbox").fill("cancellation");
+  await expect(
+    page.getByText("What is the cancellation policy?", { exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Where is Media One Hotel?", { exact: true }),
+  ).not.toBeVisible();
+  await page
+    .getByRole("navigation", { name: "Guest navigation" })
+    .getByRole("link", { name: "Home", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/$/);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/hotel\/knowledge$/);
+  await expect(page.getByRole("searchbox")).toHaveValue("cancellation");
+  await page.getByRole("searchbox").fill("nonsensicalquery");
+  await expect(
+    page.getByRole("heading", { name: "Try another question." }),
+  ).toBeVisible();
+  await page.getByRole("button", { name: "Clear search" }).click();
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto("/explore");
+  await page.evaluate(() => document.fonts.ready);
+  await page.getByRole("link", { name: /M12go/ }).scrollIntoViewIfNeeded();
+  await page.locator("main").evaluate((el) => (el.scrollTop = el.scrollHeight));
+  const top = await page.locator("main").evaluate((el) => el.scrollTop);
+  await page.getByRole("link", { name: /M12go/ }).click();
+  await expect(page).toHaveURL(/\/explore\/m12go$/);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/explore$/);
+  await expect
+    .poll(() => page.locator("main").evaluate((el) => el.scrollTop))
+    .toBeGreaterThan(top - 10);
 });
-
-test("keyboard skip link works and unknown routes give a recovery link", async ({
+test("keyboard entry, sheet focus, unavailable routes and reduced motion have real fallbacks", async ({
   page,
 }) => {
   await page.goto("/");
@@ -139,168 +370,128 @@ test("keyboard skip link works and unknown routes give a recovery link", async (
     page.getByRole("link", { name: "Skip to content" }),
   ).toBeFocused();
   await page.keyboard.press("Enter");
-  await expect(page.getByRole("main")).toBeFocused();
-  const response = await page.goto("/not-a-page");
-  expect(response?.status()).toBe(404);
-  await page.getByRole("link", { name: "Back to Home" }).click();
-  await expect(page).toHaveURL("/");
-});
-
-test("five guest destinations persist, highlight hotel under Explore and separate staff access", async ({
-  page,
-}) => {
-  await page.goto("/");
-  const nav = page.getByRole("navigation", { name: "Guest navigation" });
-  await expect(nav.getByRole("link")).toHaveText([
-    "Home",
-    "Explore",
-    "Concierge",
-    "My Stay",
-    "Profile",
-  ]);
-  await expect(nav.getByRole("link", { name: /staff/i })).toHaveCount(0);
-  for (const link of await nav.getByRole("link").all()) {
-    const box = await link.boundingBox();
-    expect(box!.width).toBeGreaterThanOrEqual(44);
-    expect(box!.height).toBeGreaterThanOrEqual(44);
-  }
-  await page.getByRole("link", { name: /Bookings Room/ }).click();
-  await expect(page).toHaveURL(/\/my-stay#bookings$/);
-  await expect(
-    page.getByText("No reservation has been retrieved or created.", {
-      exact: false,
-    }),
-  ).toBeVisible();
-  await nav.getByRole("link", { name: "Home", exact: true }).click();
-  await page.getByRole("link", { name: /Requests Help/ }).click();
-  await expect(page).toHaveURL(/\/my-stay#requests$/);
-  await expect(
-    page.getByRole("heading", { name: "Your requests", exact: true }),
-  ).toBeVisible();
-  await nav.getByRole("link", { name: "Home", exact: true }).click();
-  await page.getByRole("link", { name: /Membership Your future/ }).click();
-  await expect(page).toHaveURL(/\/profile#membership$/);
-  await nav.getByRole("link", { name: "Home", exact: true }).click();
-  await page.getByRole("link", { name: /Hotel information/ }).click();
-  await expect(
-    nav.getByRole("link", { name: "Explore", exact: true }),
-  ).toHaveAttribute("aria-current", "page");
-  await nav.getByRole("link", { name: "My Stay", exact: true }).click();
-  await expect(
-    page.getByRole("heading", { name: "Your requests", exact: true }),
-  ).toBeVisible();
-  await expect(
-    nav.getByRole("link", { name: "My Stay", exact: true }),
-  ).toHaveAttribute("aria-current", "page");
-  await nav.getByRole("link", { name: "Profile", exact: true }).click();
+  await expect(page.locator("main")).toBeFocused();
   await page
-    .getByRole("link", { name: "Staff offer workspace", exact: true })
+    .getByRole("button", { name: "Your visit and hotel information" })
     .click();
-  await expect(nav).toHaveCount(0);
-  await page.getByRole("link", { name: "Return to guest app" }).click();
-  await expect(
-    nav.getByRole("link", { name: "Profile", exact: true }),
-  ).toHaveAttribute("aria-current", "page");
-});
-
-test("AI composer and navigation remain reachable in keyboard-space simulations", async ({
-  page,
-}) => {
-  await page.goto("/concierge");
-  for (const viewport of [
-    { width: 390, height: 460 },
-    { width: 320, height: 460 },
-    { width: 844, height: 390 },
-  ]) {
-    await page.setViewportSize(viewport);
-    const input = page.getByRole("textbox", { name: "Message the concierge" });
-    await input.focus();
-    await expect(input).toBeFocused();
-    await expect
-      .poll(async () =>
-        Math.round((await page.locator(".app-shell").boundingBox())!.height),
-      )
-      .toBe(viewport.height);
-    const box = await input.boundingBox(),
-      nav = await page
-        .getByRole("navigation", { name: "Guest navigation" })
-        .boundingBox();
-    expect(box!.height).toBeGreaterThanOrEqual(44);
-    expect(box!.y + box!.height).toBeLessThanOrEqual(nav!.y);
-    expect(nav!.y + nav!.height).toBeLessThanOrEqual(viewport.height + 1);
-    await input.fill("What information can you verify?");
-    await input.press("Enter");
-    await expect(page.getByRole("log")).toContainText(
-      "No model answer was generated",
-    );
-    await page
-      .getByRole("navigation", { name: "Guest navigation" })
-      .getByRole("link", { name: "Home", exact: true })
-      .click();
-    await expect(
-      page.getByRole("heading", { name: "Welcome to your stay." }),
-    ).toBeVisible();
-    await page
-      .getByRole("navigation", { name: "Guest navigation" })
-      .getByRole("link", { name: "Concierge", exact: true })
-      .click();
-  }
-});
-
-test("supplied brand artwork stays proportional and imagery is optimised without serving the manual", async ({
-  page,
-  request,
-}) => {
-  await page.goto("/");
-  const logo = page.getByRole("img", { name: "Media One Hotel", exact: true });
-  const photo = page.getByRole("img", {
-    name: "Seating and ring pendant lights in the Media One Hotel lobby",
-  });
-  for (const image of [logo, photo]) {
-    await expect(image).toBeVisible();
-    await expect
-      .poll(async () =>
-        image.evaluate(
-          (el) =>
-            (el as HTMLImageElement).complete &&
-            (el as HTMLImageElement).naturalWidth > 0,
-        ),
-      )
-      .toBe(true);
-  }
-  for (const viewport of [
-    { width: 390, height: 844 },
-    { width: 320, height: 460 },
-    { width: 1440, height: 1000 },
-  ]) {
-    await page.setViewportSize(viewport);
-    const box = await logo.boundingBox();
-    expect(box!.width / box!.height).toBeCloseTo(2424 / 1062, 1);
-    // Visible source artwork is 1702px wide inside the untouched 2424px canvas.
-    expect((box!.width * 1702) / 2424).toBeGreaterThanOrEqual(95);
-    expect(await logo.evaluate((el) => getComputedStyle(el).filter)).toBe(
-      "none",
-    );
-  }
-  const photoBox = await photo.boundingBox();
-  expect(photoBox!.width / photoBox!.height).toBeCloseTo(1730 / 974, 1);
-  const optimised = await request.get(
-    "/_next/image?url=%2Fbrand%2Fmedia-one-lobby.jpg&w=384&q=75",
-    { headers: { Accept: "image/webp" } },
-  );
-  expect(optimised.status()).toBe(200);
-  expect(optimised.headers()["content-type"]).toContain("image/webp");
-  expect((await optimised.body()).length).toBeLessThan(2001221);
+  const dialog = page.getByRole("dialog");
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press("Tab");
   expect(
-    (
-      await request.get("/brand-reference/Media_One_Design_Manual_Excerpt.pdf")
-    ).status(),
-  ).toBe(404);
-  await page.goto("/profile");
+    await page.evaluate(() => !!document.activeElement?.closest("dialog")),
+  ).toBe(true);
+  await page.keyboard.press("Escape");
+  await page.goto("/does-not-exist");
   await expect(
-    page.getByText("Chartwell Bars and Geomanist", { exact: false }),
+    page.getByRole("heading", { name: "Let’s get you back." }),
   ).toBeVisible();
+  await page.getByRole("link", { name: "Back to Home" }).click();
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/concierge");
+  expect(
+    await page
+      .locator(".header-menu")
+      .evaluate((el) => getComputedStyle(el).transitionDuration),
+  ).toBe("0s");
+});
+test("a failed photograph has a useful fallback and keeps its reserved layout", async ({
+  page,
+}) => {
+  await page.route("**/_next/image?*", async (route) => {
+    if (
+      new URL(route.request().url()).searchParams
+        .get("url")
+        ?.includes("coco-pool-night")
+    )
+      await route.fulfill({ status: 404, body: "Unavailable" });
+    else await route.continue();
+  });
+  await page.goto("/");
+  await expect(page.locator(".home-feature .photo-fallback")).toContainText(
+    "Image unavailable",
+  );
+  const b = await page.locator(".home-feature .photo").boundingBox();
+  expect(b!.height).toBeGreaterThan(150);
+  expect(
+    await page
+      .locator("main")
+      .evaluate((el) => el.scrollWidth <= el.clientWidth),
+  ).toBe(true);
+});
+test("a venue detail opens the correct concierge scope and an explicit venue change clears old context", async ({
+  page,
+}) => {
+  const payloads: { venue: string; history: unknown[] }[] = [];
+  await page.route("**/api/concierge", async (route) => {
+    payloads.push(route.request().postDataJSON());
+    await route.fulfill({
+      json: {
+        kind: "model_grounded",
+        message: "A fictional venue scope test reply.",
+        facts: [],
+        incomplete: false,
+      },
+    });
+  });
+  await page.goto("/explore/ciao-bella");
+  await page
+    .getByRole("link", { name: "Ask about Ciao Bella", exact: true })
+    .click();
+  await expect(page.getByRole("button", { name: /Ciao Bella/ })).toBeVisible();
+  const input = page.getByRole("textbox", { name: "Message the concierge" });
+  await input.fill("Tell me about this venue");
+  await input.press("Enter");
+  await expect.poll(() => payloads.length).toBe(1);
+  expect(payloads[0].venue).toBe("ciao-bella");
+  await expect(page.getByRole("log")).toContainText(
+    "A fictional venue scope test reply.",
+  );
+  await page.getByRole("button", { name: /Ciao Bella/ }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: /Qwerty/ })
+    .click();
+  await input.fill("And this venue?");
+  await input.press("Enter");
+  await expect.poll(() => payloads.length).toBe(2);
+  expect(payloads[1]).toMatchObject({ venue: "qwerty", history: [] });
+});
+
+test("fictional promotion evidence is withheld from normal concierge presentation without rewriting it as a real offer", async ({
+  page,
+}) => {
+  await page.route("**/api/concierge", async (route) =>
+    route.fulfill({
+      json: {
+        kind: "model_grounded",
+        message: "A fictional promotion with AED 99 test credit.",
+        facts: [
+          {
+            id: "offer-fixture",
+            key: "FICTIONAL-OFFER",
+            text: "Fictional offer conditions.",
+            label: "Fictional test offer",
+            sources: [],
+          },
+        ],
+        incomplete: false,
+      },
+    }),
+  );
+  await page.goto("/concierge");
+  await page
+    .getByRole("textbox", { name: "Message the concierge" })
+    .fill("Any offers?");
+  await page.getByRole("button", { name: "Send concierge question" }).click();
+  await expect(page.getByRole("log")).toContainText(
+    "Current offer details aren’t available here",
+  );
+  await expect(page.getByRole("log")).not.toContainText(
+    /AED 99|fictional promotion/i,
+  );
   await expect(
-    page.getByText("not been supplied or installed", { exact: false }),
+    page
+      .getByRole("log")
+      .getByRole("link", { name: "Hotel guide", exact: true }),
   ).toBeVisible();
 });

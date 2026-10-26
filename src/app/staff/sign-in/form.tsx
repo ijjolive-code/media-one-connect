@@ -5,7 +5,7 @@ export function SignInForm() {
   const [state, action, pending] = useActionState(signIn, {});
   return (
     <form action={action} className="staff-form sign-in-form">
-      <label htmlFor="staff-email">Test staff email</label>
+      <label htmlFor="staff-email">Staff email</label>
       <input
         id="staff-email"
         name="email"

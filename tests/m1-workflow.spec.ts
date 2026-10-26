@@ -13,7 +13,7 @@ const offerId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
 async function login(page: Page, role: string) {
   await page.goto("/staff/sign-in");
   await page
-    .getByRole("textbox", { name: "Test staff email" })
+    .getByRole("textbox", { name: "Staff email" })
     .fill(accounts[role].email);
   await page
     .getByLabel("Password", { exact: true })
@@ -32,6 +32,10 @@ test("non-staff sign-in grants no editor and logout clears the browser session",
   await expect(
     page.getByRole("button", { name: "Save demo offer" }),
   ).toHaveCount(0);
+  await page.goto("/staff/review");
+  await expect(
+    page.getByRole("heading", { name: "Access not granted" }),
+  ).toBeVisible();
   await page.getByRole("button", { name: "Sign out" }).click();
   await expect(page).toHaveURL(/\/staff\/sign-in$/);
   await page.goto("/staff");
@@ -40,9 +44,10 @@ test("non-staff sign-in grants no editor and logout clears the browser session",
 
 for (const viewport of [
   { width: 1440, height: 1000 },
-  { width: 390, height: 844 },
+  { width: 375, height: 812 },
+  { width: 430, height: 932 },
 ]) {
-  test(`authorised staff edit persists into a separate anonymous guest reload at ${viewport.width}px`, async ({
+  test(`authorised staff edit persists in the protected test view and stays out of normal guest presentation at ${viewport.width}px`, async ({
     page,
     browser,
   }) => {
@@ -58,6 +63,7 @@ for (const viewport of [
     if (!original) throw new Error("Local seeded offer not readable.");
     const guest = await browser.newContext({ viewport });
     const guestPage = await guest.newPage();
+    const reviewer = await page.context().newPage();
     const title = `Fictional staff-edited offer ${viewport.width}px`;
     try {
       await login(page, "staff");
@@ -93,14 +99,23 @@ for (const viewport of [
       await guestPage.goto("/hotel");
       await expect(
         guestPage.getByRole("heading", { name: title, exact: true }),
-      ).toBeVisible();
-      await guestPage.reload();
-      await expect(
-        guestPage.getByRole("heading", { name: title, exact: true }),
-      ).toBeVisible();
+      ).toHaveCount(0);
       await guestPage.goto("/");
       await expect(
         guestPage.getByRole("heading", { name: title, exact: true }),
+      ).toHaveCount(0);
+      await guestPage.goto("/staff/review");
+      await expect(guestPage).toHaveURL(/staff\/sign-in$/);
+      await reviewer.goto("/staff/review");
+      await expect(
+        reviewer.getByRole("heading", { name: title, exact: true }),
+      ).toBeVisible();
+      await reviewer.reload();
+      await expect(
+        reviewer.getByRole("heading", { name: title, exact: true }),
+      ).toBeVisible();
+      await expect(
+        reviewer.getByText("Fictional content", { exact: true }),
       ).toBeVisible();
       const fresh = (
         await api.from("offers").select("*").eq("id", offerId).single()
@@ -159,6 +174,7 @@ for (const viewport of [
         .eq("id", offerId);
       if (restored.error)
         throw new Error("M1 browser fixture restoration failed.");
+      await reviewer.close();
       await guest.close();
     }
   });

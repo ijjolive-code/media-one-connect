@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { DemoConcierge } from "./demo-concierge";
-import { providerState } from "@/modules/concierge/service";
-export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Concierge" };
+// The shared app shell keeps this conversation in memory across ordinary navigation.
 export default function ConciergePage() {
-  return (
-    <div className="conversation-page">
-      <DemoConcierge configuration={providerState()} />
-    </div>
-  );
+  return null;
 }

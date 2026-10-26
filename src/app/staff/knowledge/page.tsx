@@ -6,6 +6,8 @@ import {
   type KnowledgeRecord,
   provenanceLabel,
 } from "@/modules/knowledge/types";
+import { StaffTabs } from "@/components/staff-tabs";
+import { KnowledgePicker } from "./picker";
 import { KnowledgeEditor } from "./editor";
 import { signOut } from "../actions";
 export const dynamic = "force-dynamic";
@@ -56,44 +58,48 @@ export default async function KnowledgePage({
     <div className="page-wrap staff-page">
       <div className="staff-page-header">
         <div>
-          <span className="eyebrow">MANAGED HOTEL KNOWLEDGE</span>
-          <h1>Facts guests can rely on.</h1>
+          <span className="eyebrow">Media One Hotel</span>
+          <h1>Hotel knowledge</h1>
           <p>FAQs, facilities and policies · Media One Hotel</p>
         </div>
         <Link className="text-link" href="/staff">
           Offer workspace
         </Link>
       </div>
-      <div className="notice">
-        <strong>Provisional sources are not production-approved</strong>
+      <StaffTabs />
+      <details className="staff-notes">
+        <summary>Source and publication guidance</summary>
         <p>
-          Only the 82 candidate records were imported across six venues. You see
-          the records for your assigned hotel. Held research/conflicts remain
-          outside guest retrieval. Review due dates are enforced.
+          82 provisional candidate records were imported across six venues. You
+          manage the records for your assigned hotel. Held research and
+          conflicts stay outside guest retrieval. Review deadlines are enforced.
+          Publication here is for private review and is not production approval.
         </p>
-      </div>
+      </details>
       <div className="knowledge-management">
-        <aside className="knowledge-list">
-          <Link className="button primary" href="/staff/knowledge">
-            New hotel knowledge
-          </Link>
-          {records.map((r) => (
-            <Link
-              href={"/staff/knowledge?id=" + r.id}
-              key={r.id}
-              aria-current={record?.id === r.id ? "page" : undefined}
-            >
-              <strong>
-                {r.record_key} · {r.question}
-              </strong>
-              <span>
-                {r.status}
-                {r.replaced_by ? " · Replaced" : ""} · Review before{" "}
-                {r.review_due}
-              </span>
+        <KnowledgePicker>
+          <aside className="knowledge-list">
+            <Link className="button primary" href="/staff/knowledge">
+              New hotel knowledge
             </Link>
-          ))}
-        </aside>
+            {records.map((r) => (
+              <Link
+                href={"/staff/knowledge?id=" + r.id}
+                key={r.id}
+                aria-current={record?.id === r.id ? "page" : undefined}
+              >
+                <strong>
+                  {r.record_key} · {r.question}
+                </strong>
+                <span>
+                  {r.status}
+                  {r.replaced_by ? " · Replaced" : ""} · Review before{" "}
+                  {r.review_due}
+                </span>
+              </Link>
+            ))}
+          </aside>
+        </KnowledgePicker>
         <section>
           <KnowledgeEditor
             key={
@@ -118,7 +124,12 @@ export default async function KnowledgePage({
                 Collected: {record.collected_on || "Staff-authored"} · Topic{" "}
                 {record.topic_key}
               </p>
-              {record.supersedes && <p>Replaces record {record.supersedes}; original source and earlier versions are retained.</p>}
+              {record.supersedes && (
+                <p>
+                  Replaces record {record.supersedes}; original source and
+                  earlier versions are retained.
+                </p>
+              )}
               {record.replaced_by ? (
                 <p>
                   This predecessor is permanently suppressed by replacement{" "}

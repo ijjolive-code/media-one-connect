@@ -1,100 +1,96 @@
 import Link from "next/link";
-import { GuestOffers } from "@/components/guest-offers";
-export const dynamic = "force-dynamic";
-import Image from "next/image";
+import { Photo } from "@/components/photo";
+import { VenueCard } from "@/components/venue-card";
 import { Icon } from "@/components/icon";
-
-const journeys = [
-  {
-    href: "/my-stay#bookings",
-    title: "Bookings",
-    detail: "Room & dining journeys",
-    icon: "stay",
-  },
-  {
-    href: "/my-stay#requests",
-    title: "Requests",
-    detail: "Help during your stay",
-    icon: "request",
-  },
-  {
-    href: "/profile#membership",
-    title: "Membership",
-    detail: "Your future benefits",
-    icon: "member",
-  },
-] as const;
+import { places } from "@/modules/discovery";
+export const dynamic = "force-dynamic";
 export default function Home() {
   return (
-    <div className="page-wrap guest-home">
-      <header className="welcome">
-        <span className="eyebrow">YOUR GUEST SPACE</span>
-        <h1>Welcome to your stay.</h1>
-        <p>A first look at your Media One Hotel companion.</p>
+    <div className="page-wrap home-page">
+      <header className="home-greeting">
+        <div>
+          <p>Make yourself at home.</p>
+          <h1>Your kind of place.</h1>
+        </div>
+        <Link
+          className="round-link"
+          href="/hotel"
+          aria-label="Hotel information"
+        >
+          <Icon name="hotel" />
+        </Link>
       </header>
-      <Link className="concierge-entry" href="/concierge">
-        <span className="concierge-entry-icon">
-          <Icon name="chat" />
-        </span>
-        <span>
-          <span className="entry-tag">ASK THE CONCIERGE</span>
-          <strong>How can we help?</strong>
-          <span>Open your concierge conversation</span>
-        </span>
-        <Icon name="arrow" />
-      </Link>
-      <section className="home-section" aria-labelledby="essentials-title">
+      <div className="home-layout">
+        <section className="home-feature">
+          <Link
+            href="/explore/coco-lounge"
+            className="feature-photo"
+            aria-label="Discover Coco Lounge"
+          >
+            <Photo
+              name="coco-pool-night"
+              alt="Coco Lounge pool and terrace in the evening"
+              priority
+              sizes="(max-width: 700px) 100vw, 65vw"
+            />
+          </Link>
+          <div className="feature-caption">
+            <div>
+              <p>A different view.</p>
+              <h2>Meet Coco Lounge.</h2>
+            </div>
+            <Link
+              className="round-link"
+              href="/explore/coco-lounge"
+              aria-label="Explore Coco Lounge"
+            >
+              <Icon name="arrow" />
+            </Link>
+          </div>
+        </section>
+        <section className="home-assist">
+          <span className="assist-symbol">
+            <Icon name="chat" />
+          </span>
+          <div>
+            <h2>Ask Concierge</h2>
+            <p>Hotel questions. Dining ideas. Your next move.</p>
+          </div>
+          <Link className="button primary" href="/concierge">
+            Ask Concierge <Icon name="arrow" />
+          </Link>
+        </section>
+        <section className="quick-links" aria-label="Guest shortcuts">
+          <Link href="/explore">
+            <Icon name="compass" />
+            <span>Eat & drink</span>
+            <Icon name="arrow" />
+          </Link>
+          <Link href="/hotel">
+            <Icon name="hotel" />
+            <span>Hotel guide</span>
+            <Icon name="arrow" />
+          </Link>
+          <Link href="/hotel/knowledge">
+            <Icon name="request" />
+            <span>Good to know</span>
+            <Icon name="arrow" />
+          </Link>
+        </section>
+      </div>
+      <section className="discovery-section">
         <div className="section-heading">
-          <h2 id="essentials-title">Hotel essentials</h2>
-          <Link className="inline-link" href="/hotel">
-            View all <Icon name="arrow" />
+          <h2>Find your spot.</h2>
+          <Link className="text-link" href="/explore">
+            Explore all <Icon name="arrow" />
           </Link>
         </div>
-        <Link className="hotel-summary" href="/hotel">
-          <span className="hotel-photo">
-            <Image
-              src="/brand/media-one-lobby.jpg"
-              alt="Seating and ring pendant lights in the Media One Hotel lobby"
-              width={1730}
-              height={974}
-              sizes="(max-width: 360px) 96px, (max-width: 900px) 128px, 176px"
-            />
-          </span>
-          <span>
-            <strong>Hotel information</strong>
-            <span>Your hotel guide</span>
-            <span className="sample-label">
-              Sample details · Real lobby photo
-            </span>
-          </span>
-          <Icon name="arrow" />
-        </Link>
-      </section>
-      <section className="home-section" aria-labelledby="journeys-title">
-        <div className="section-heading">
-          <h2 id="journeys-title">During your stay</h2>
-          <span className="small-label">Planned journeys</span>
-        </div>
-        <div className="journey-grid">
-          {journeys.map((journey) => (
-            <Link
-              className="journey-card"
-              href={journey.href}
-              key={journey.title}
-            >
-              <Icon name={journey.icon} />
-              <strong>{journey.title}</strong>
-              <span>{journey.detail}</span>
-              <span className="status-tag">Planned</span>
-            </Link>
+        <div className="home-venues">
+          {[places[2], places[0], places[1], places[3]].map((p) => (
+            <VenueCard key={p.slug} place={p} />
           ))}
         </div>
       </section>
-      <GuestOffers />
-      <p className="home-footnote">
-        This is a demonstration. Bookings, requests and membership are not
-        connected.
-      </p>
     </div>
   );
 }

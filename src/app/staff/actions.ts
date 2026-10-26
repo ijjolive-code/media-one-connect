@@ -109,9 +109,10 @@ export async function saveOffer(
   revalidatePath("/");
   revalidatePath("/hotel");
   revalidatePath("/staff");
+  revalidatePath("/staff/review");
   return {
     success:
-      "Saved to the demo database. Reload the guest app to inspect the updated offer.",
+      "Saved to the demo database. Reload the private test view to inspect the updated offer.",
     revision: data.revision,
   };
 }

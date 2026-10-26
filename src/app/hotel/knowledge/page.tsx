@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { eligibleKnowledge } from "@/modules/knowledge/data";
+import { guestKnowledge } from "@/modules/guest-knowledge";
 import { venues } from "@/modules/knowledge/types";
+import { PageHeading, EmptyState } from "@/components/page-heading";
+import { KnowledgeBrowser } from "@/components/knowledge-browser";
 export const dynamic = "force-dynamic";
 export default async function PublishedKnowledge({
   searchParams,
@@ -9,53 +11,54 @@ export default async function PublishedKnowledge({
 }) {
   const requested = (await searchParams).venue;
   const venue = venues.find((v) => v.slug === requested) || venues[0];
-  let records;
+  let facts;
   try {
-    records = await eligibleKnowledge(venue.slug);
+    facts = await guestKnowledge(venue.slug);
   } catch {}
   return (
-    <div className="page-wrap inner-page">
-      <span className="eyebrow">PUBLISHED PRIVATE-PROTOTYPE KNOWLEDGE</span>
-      <h1>{venue.name}</h1>
-      <p className="page-intro">
-        Sourced information is provisional until reviewed. Fictional test
-        content is labelled separately. No live availability or action is
-        confirmed here.
-      </p>
+    <div className="page-wrap knowledge-page">
+      <PageHeading
+        title="Good to know."
+        description={venue.name}
+        back={
+          venue.slug === "media-one-hotel" ? "/hotel" : `/explore/${venue.slug}`
+        }
+        backLabel={
+          venue.slug === "media-one-hotel" ? "Hotel guide" : venue.name
+        }
+      />
       <nav className="venue-links" aria-label="Knowledge venue">
         {venues.map((v) => (
           <Link
             key={v.slug}
-            href={"/hotel/knowledge?venue=" + v.slug}
+            href={`/hotel/knowledge?venue=${v.slug}`}
             aria-current={v.slug === venue.slug ? "page" : undefined}
           >
             {v.name}
           </Link>
         ))}
       </nav>
-      {!records ? (
-        <div className="notice">
-          <strong>Knowledge unavailable</strong>
-          <p>The eligible knowledge database could not be reached.</p>
-        </div>
-      ) : records.length === 0 ? (
-        <p>
-          No eligible published facts are within their validity and review
-          windows for this venue.
+      <div className="knowledge-content">
+        <p className="section-description">
+          Information is provisional. Source details are available with each
+          answer.
         </p>
-      ) : (
-        records.map((r) => (
-          <details className="published-fact" key={r.id}>
-            <summary>{r.question}</summary>
-            <span className="status-tag">{r.label}</span>
-            <p>{r.text}</p>
-            <small>
-              Review before {r.reviewDue} · Sources{" "}
-              {r.sources.map((s) => s.id).join(", ")}
-            </small>
-          </details>
-        ))
-      )}
+        {!facts ? (
+          <EmptyState
+            title="Answers are unavailable right now."
+            href={`/hotel/knowledge?venue=${venue.slug}`}
+            action="Try again"
+          >
+            Please try again or ask about another venue.
+          </EmptyState>
+        ) : facts.length ? (
+          <KnowledgeBrowser key={venue.slug} facts={facts} scope={venue.slug} />
+        ) : (
+          <EmptyState title="We don’t have current details here yet.">
+            Ask Concierge or explore another venue.
+          </EmptyState>
+        )}
+      </div>
     </div>
   );
 }

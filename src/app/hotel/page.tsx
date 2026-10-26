@@ -1,71 +1,84 @@
-import { GuestOffers } from "@/components/guest-offers";
-export const dynamic = "force-dynamic";
-import type { Metadata } from "next";
 import Link from "next/link";
-import { hotel } from "@/modules/content/hotel";
+import type { Metadata } from "next";
+import { guestKnowledge } from "@/modules/guest-knowledge";
+import { Photo } from "@/components/photo";
+import { PageHeading, EmptyState } from "@/components/page-heading";
+import { FactList } from "@/components/fact-list";
 import { Icon } from "@/components/icon";
-export const metadata: Metadata = { title: "Hotel information" };
-export default function Hotel() {
+export const dynamic = "force-dynamic";
+export const metadata: Metadata = { title: "Hotel guide" };
+export default async function Hotel() {
+  let facts;
+  try {
+    facts = await guestKnowledge("media-one-hotel");
+  } catch {}
+  const keys = ["K001", "K002", "K004", "K009", "K010", "K011", "K014", "K020"];
   return (
-    <div className="page-wrap inner-page">
-      <span className="eyebrow">GET TO KNOW YOUR STAY</span>
-      <h1>
-        Media One Hotel.
-        <br />
-        <span className="muted">Your first look.</span>
-      </h1>
-      <p className="page-intro">{hotel.summary}</p>
-      <div className="notice">
-        <strong>Fictional demonstration data</strong>
-        <p>
-          The M0 sample cards below are invented for layout testing. They are not
-          confirmed hotel policies, facilities, offers or availability.
-        </p>
-      </div>
-      <div className="working-panel">
-        <h2>Published hotel knowledge</h2>
-        <p>
-          Browse eligible source-backed information, labelled provisional or
-          staff-reviewed for this private prototype.
-        </p>
-        <Link className="button primary" href="/hotel/knowledge">
-          Browse hotel knowledge
-        </Link>
-      </div>
-      <section className="section-block">
-        <div className="section-heading">
-          <h2>The little details.</h2>
-          <span className="status-tag">M0 fictional samples</span>
-        </div>
-        <div className="facts-grid">
-          {hotel.facts.map((fact) => (
-            <article className="fact-card" key={fact.label}>
-              <Icon name={fact.label === "Local time" ? "clock" : "hotel"} />
-              <span className="eyebrow">{fact.label}</span>
-              <h3>{fact.value}</h3>
-              <p>{fact.note}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-      <GuestOffers />
-      <section className="info-panel">
-        <div>
-          <span className="eyebrow">GOOD TO KNOW</span>
-          <h2>Explore first. Connect later.</h2>
-        </div>
-        <div>
-          <p>
-            The layout samples on this page remain fictional. Use Published hotel
-            knowledge for separately labelled provisional source information.
-            Live availability and booking services are not connected.
+    <div className="page-wrap hotel-page">
+      <PageHeading
+        title="Make yourself at home."
+        back="/"
+        backLabel="Home"
+        description="Your guide to Media One Hotel."
+      />
+      <div className="hotel-layout">
+        <section>
+          <Photo
+            className="hotel-arrival"
+            name="hotel-exterior"
+            alt="The exterior of Media One Hotel in Dubai Media City"
+            priority
+          />
+          <div className="section-heading">
+            <h2>The essentials.</h2>
+            <Link className="text-link" href="/hotel/knowledge">
+              View all <Icon name="arrow" />
+            </Link>
+          </div>
+          <p className="section-description">
+            Information is provisional. Confirm details with the hotel before
+            making plans.
           </p>
-          <p>No reservations or guest requests can be made here yet.</p>
-          <Link href="/concierge" className="text-link">
-            Ask the concierge <Icon name="arrow" />
+          {facts ? (
+            <FactList
+              facts={facts.filter(
+                (f) =>
+                  keys.includes(f.key) ||
+                  /check.in|check.out|cancellation|how can I contact the hotel/i.test(
+                    f.question,
+                  ),
+              )}
+            />
+          ) : (
+            <EmptyState
+              title="The guide is unavailable."
+              href="/hotel"
+              action="Reload guide"
+            >
+              Please try again in a moment.
+            </EmptyState>
+          )}
+        </section>
+        <aside className="hotel-side">
+          <Photo
+            className="hotel-lifestyle"
+            name="rooms-lifestyle-teal"
+            alt="A lifestyle photograph in a Media One Hotel room"
+          />
+          <div className="hotel-side-copy">
+            <h2>A space to call your own.</h2>
+            <p>
+              Get to know the hotel, explore its venues or ask us a question.
+            </p>
+            <Link className="button" href="/concierge">
+              Ask Concierge <Icon name="arrow" />
+            </Link>
+          </div>
+          <Link className="text-link" href="/my-stay">
+            Need help with a stay? <Icon name="arrow" />
           </Link>
-        </div>
-      </section>
+        </aside>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,5 @@
 # Media One Connect design system
 
-The current system is maintained in [DESIGN.md](../DESIGN.md) at the repository root. Read that file before UI changes.
+The canonical implemented system is [DESIGN.md](../DESIGN.md). It covers provisional brand authority, the supplied regular Chartwell/Geomanist fonts, original logo, actual photo derivatives, guest/staff components and interaction rules.
 
-The first app-first pass used a quoted palette and missing-asset assumptions. The actual reference pack has now been supplied: [BRAND_REFERENCE_README.md](../BRAND_REFERENCE_README.md), [CODEX_NEXT_TASK.md](../CODEX_NEXT_TASK.md), the manual excerpt and original reverse logo/lobby photo. Those assumptions are superseded. `DESIGN.md` records the inspected page numbers, current asset treatment, component rules, mobile keyboard handling and remaining fonts/approval gaps in one place.
-
-The manual remains a **provisional reference**, not newly approved guidance. The palette remains charcoal `#3C474F`, pink `#D92745`, teal `#31657E` and light blue `#74CCD5`. Official Chartwell Bars/Geomanist font files and web licences are not supplied or installed. Guest behaviour is still a demonstration, with no live integrations.
+The full redesign on `design/media-one-app-redesign` supersedes historical M0 typography and five-tab assumptions. Current navigation is Home, Explore and Concierge; utility routes remain supported. [Private review](FRONTEND_PRIVATE_REVIEW.md) separates working features, verification and manual iPhone checks. Source guidance remains provisional and does not establish production approval.

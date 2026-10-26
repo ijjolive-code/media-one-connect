@@ -1,50 +1,45 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeading } from "@/components/page-heading";
 import { Icon } from "@/components/icon";
-export const metadata: Metadata = { title: "Profile" };
 export default function Profile() {
   return (
-    <div className="page-wrap inner-page">
-      <span className="eyebrow">YOUR OWN LITTLE CORNER</span>
-      <h1>Profile</h1>
-      <p className="page-intro">
-        You’re exploring as a demo guest. No account, identity or membership is
-        connected.
-      </p>
-      <section className="placeholder-card" id="membership">
-        <Icon name="member" />
-        <span className="status-tag">Planned · Not connected</span>
-        <h2>Membership & benefits</h2>
+    <div className="page-wrap profile-page">
+      <PageHeading
+        title="You’re welcome here."
+        back="/"
+        backLabel="Home"
+        description="Staying the night or stopping by. Make it your visit."
+      />
+      <section className="visit-panel">
+        <h2>Explore at your own pace.</h2>
         <p>
-          Verified membership and controlled benefits are planned. No
-          registration, digital ID or redeemable benefit is available yet.
+          You don’t need an account to explore our venues or ask Concierge.
+          Guest accounts and memberships aren’t available here yet.
         </p>
-      </section>
-      <section className="profile-section">
-        <h2>About this demonstration</h2>
-        <p>
-          Fictional offers and layout samples are labelled separately from
-          provisional sourced hotel information. Concierge answers require the
-          configured AI provider; conversations clear on reload. No bookings,
-          requests or staff messages are sent.
-        </p>
-        <h3>Brand reference & temporary type</h3>
-        <p>
-          The header uses the supplied Media One Hotel logo and Home shows a
-          real lobby photograph. The supplied older manual is a provisional
-          reference; newer approval and public-use rights are not confirmed.
-          Typography still uses a temporary system fallback: Chartwell Bars and
-          Geomanist webfont files and licences have not been supplied or
-          installed.
-        </p>
-      </section>
-      <section className="staff-utility">
-        <span className="eyebrow">FOR THE HOTEL TEAM</span>
-        <Link className="utility-link" href="/staff">
-          Staff offer workspace <Icon name="arrow" />
+        <Link className="button primary" href="/explore">
+          Find your spot <Icon name="arrow" />
         </Link>
-        <p>Separate staff sign-in · Authorised test users only</p>
       </section>
+      <div className="utility-menu">
+        <Link href="/my-stay">
+          <span>
+            Help with a stay<small>Booking and hotel information</small>
+          </span>
+          <Icon name="arrow" />
+        </Link>
+        <Link href="/hotel/knowledge">
+          <span>
+            Good to know<small>Useful answers for your visit</small>
+          </span>
+          <Icon name="arrow" />
+        </Link>
+        <Link href="/staff">
+          <span>
+            For the hotel team<small>Separate staff sign in</small>
+          </span>
+          <Icon name="arrow" />
+        </Link>
+      </div>
     </div>
   );
 }

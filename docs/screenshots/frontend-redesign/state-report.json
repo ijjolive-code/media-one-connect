@@ -1,0 +1,176 @@
+[
+  {
+    "name": "utility-sheet",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "search-empty",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "knowledge-expanded",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-unavailable",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-pending-fixture",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-reply-fixture",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-keyboard-simulation",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-knowledge-edit",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-knowledge-history",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-denied",
+    "width": 375,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "utility-sheet",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "search-empty",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "knowledge-expanded",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-unavailable",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-pending-fixture",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-reply-fixture",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-keyboard-simulation",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-knowledge-edit",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-knowledge-history",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-denied",
+    "width": 430,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "utility-sheet",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "search-empty",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "knowledge-expanded",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-unavailable",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-pending-fixture",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "concierge-reply-fixture",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-knowledge-edit",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-knowledge-history",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "name": "staff-denied",
+    "width": 1440,
+    "errors": [],
+    "overflow": false
+  }
+]

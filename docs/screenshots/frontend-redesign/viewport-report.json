@@ -1,0 +1,1175 @@
+[
+  {
+    "route": "/",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Your kind of place.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Where to next?",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/hotel",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Make yourself at home.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/hotel/knowledge",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Good to know.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/ciao-bella",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Ciao Bella",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/qwerty",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Qwerty",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/garden-on-8",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "garden on 8",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/coco-lounge",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Coco Lounge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/m12go",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "M12go",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/concierge",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Concierge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/my-stay",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Here for a stay?",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/profile",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "You\u2019re welcome here.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/not-a-route",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Let\u2019s get you back.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/sign-in",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Staff sign-in",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Hotel offers",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/knowledge",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Hotel knowledge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/review",
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
+    "heading": "Private test view",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Your kind of place.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Where to next?",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/hotel",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Make yourself at home.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/hotel/knowledge",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Good to know.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/ciao-bella",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Ciao Bella",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/qwerty",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Qwerty",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/garden-on-8",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "garden on 8",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/coco-lounge",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Coco Lounge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/m12go",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "M12go",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/concierge",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Concierge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/my-stay",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Here for a stay?",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/profile",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "You\u2019re welcome here.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/not-a-route",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Let\u2019s get you back.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/sign-in",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Staff sign-in",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Hotel offers",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/knowledge",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Hotel knowledge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/review",
+    "viewport": {
+      "width": 430,
+      "height": 932
+    },
+    "heading": "Private test view",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Your kind of place.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Where to next?",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/hotel",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Make yourself at home.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/hotel/knowledge",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Good to know.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/ciao-bella",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Ciao Bella",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/qwerty",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Qwerty",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/garden-on-8",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "garden on 8",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/coco-lounge",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Coco Lounge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/explore/m12go",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "M12go",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/concierge",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Concierge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/my-stay",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Here for a stay?",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/profile",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "You\u2019re welcome here.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/not-a-route",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Let\u2019s get you back.",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/sign-in",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Staff sign-in",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Hotel offers",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/knowledge",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Hotel knowledge",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "route": "/staff/review",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "heading": "Private test view",
+    "horizontalOverflow": false,
+    "pageErrors": [],
+    "failedVisibleImages": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      }
+    ]
+  }
+]

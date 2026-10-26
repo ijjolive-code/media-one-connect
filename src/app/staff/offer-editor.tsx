@@ -82,10 +82,10 @@ export function OfferEditor({ offer }: { offer: Offer }) {
           defaultChecked={offer.is_published}
         />
         <span>
-          Display in the guest demo
+          Publish in private test view
           <small>
-            Visible only within its display dates. This does not approve a real
-            hotel promotion.
+            Visible in the protected test view during these dates. It remains a
+            fictional promotion.
           </small>
         </span>
       </label>

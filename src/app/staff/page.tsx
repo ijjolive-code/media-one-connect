@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 import { staffAccess } from "@/modules/offers/data";
 import { DEMO_OFFER_ID, type Offer } from "@/modules/offers/types";
 import { signOut } from "./actions";
+import { StaffTabs } from "@/components/staff-tabs";
 import { OfferEditor } from "./offer-editor";
 export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Staff offers" };
@@ -40,9 +41,9 @@ export default async function Staff() {
     <div className="page-wrap staff-page">
       <header className="staff-page-header">
         <div>
-          <span className="eyebrow">AUTHORISED TEST STAFF</span>
+          <span className="eyebrow">Media One Hotel</span>
           <h1>Hotel offers</h1>
-          <p>One useful update. A guest experience that stays in sync.</p>
+          <p>Edit content and control its publication.</p>
         </div>
         <form action={signOut}>
           <button className="reset-button" type="submit">
@@ -50,14 +51,12 @@ export default async function Staff() {
           </button>
         </form>
       </header>
-      <Link className="button" href="/staff/knowledge">
-        Manage hotel knowledge
-      </Link>
+      <StaffTabs />
       <div className="notice">
         <strong>Fictional content · Persistent test database</strong>
         <p>
-          This editor changes the guest demonstration. No real offer, booking or
-          benefit is created.
+          This offer is fictional. Published changes can be inspected in the
+          protected private test view.
         </p>
       </div>
       <div className="staff-editor-layout">
@@ -75,13 +74,13 @@ export default async function Staff() {
           )}
         </section>
         <aside className="editor-guide">
-          <h2>Check the guest view</h2>
+          <h2>Review the published result</h2>
           <p>
-            After saving, open the guest app and reload it. Published offers
-            appear only during their Dubai display dates.
+            After saving, open the private test view and reload. Offers appear
+            there only during their Dubai display dates.
           </p>
-          <Link className="text-link" href="/hotel">
-            View guest hotel information
+          <Link className="text-link" href="/staff/review">
+            Open private test view
           </Link>
           <p className="form-hint">
             An existing editor tab can become out of date. Reload if another

@@ -1,37 +1,39 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHeading } from "@/components/page-heading";
+import { Photo } from "@/components/photo";
 import { Icon } from "@/components/icon";
-export const metadata: Metadata = { title: "My Stay" };
 export default function MyStay() {
   return (
-    <div className="page-wrap inner-page">
-      <span className="eyebrow">YOUR STAY, IN ONE PLACE</span>
-      <h1>My Stay</h1>
-      <p className="page-intro">
-        A home for your future bookings and requests. No stay or guest account
-        is connected to this demonstration.
-      </p>
-      <section className="placeholder-card" id="bookings">
-        <Icon name="stay" />
-        <span className="status-tag">Planned · Not connected</span>
-        <h2>Your bookings</h2>
-        <p>
-          Room and dining journeys will live here. No reservation has been
-          retrieved or created. There is no live availability in this demo.
-        </p>
-      </section>
-      <section className="placeholder-card" id="requests">
-        <Icon name="request" />
-        <span className="status-tag">Planned · Not connected</span>
-        <h2>Your requests</h2>
-        <p>
-          Request creation and staff progress updates are planned. This screen
-          cannot send a request or contact hotel staff.
-        </p>
-      </section>
-      <Link className="button primary" href="/concierge">
-        Try the concierge demo <Icon name="arrow" />
-      </Link>
+    <div className="page-wrap utility-page">
+      <PageHeading
+        title="Here for a stay?"
+        back="/profile"
+        backLabel="Your visit"
+      />
+      <div className="utility-layout">
+        <Photo
+          className="utility-photo"
+          name="chill-out-bedroom"
+          alt="The bedroom of a Chill Out Suite at Media One Hotel"
+        />
+        <section className="utility-copy">
+          <h2>Let’s point you in the right direction.</h2>
+          <p id="bookings">
+            Your booking is managed with the hotel. This app can’t retrieve or
+            change a reservation.
+          </p>
+          <p id="requests">
+            For something you need during your stay, contact the hotel directly.
+            Requests can’t be sent from this app yet.
+          </p>
+          <Link className="button primary" href="/hotel/knowledge">
+            Find hotel contact details <Icon name="arrow" />
+          </Link>
+          <Link className="text-link" href="/concierge">
+            Ask a hotel question <Icon name="arrow" />
+          </Link>
+        </section>
+      </div>
     </div>
   );
 }

@@ -12,3 +12,5 @@ next-env.d.ts
 .local/
 supabase/.temp/
 supabase/.branches/
+# Local Taste Skill direction/inspection output; the installed skill remains tracked.
+.taste-skill/
