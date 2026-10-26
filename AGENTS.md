@@ -15,8 +15,10 @@ These instructions apply throughout this repository. They were adapted from `med
 
 ## Guest interface design
 
-- Before UI changes read root `DESIGN.md`, `BRAND_REFERENCE_README.md` and `CODEX_NEXT_TASK.md`. `docs/DESIGN_SYSTEM.md` points to the current canonical system. Use the supplied V1.02 manual provisionally; newer approved guidance takes precedence. Use the provided logo/photograph unchanged with documented clearance and natural aspect ratio. Official font binaries/licences remain missing; keep the fallback explicit and do not invent assets.
+- Before UI changes read root `DESIGN.md`, `BRAND_REFERENCE_README.md` and `CODEX_NEXT_TASK.md`. `docs/DESIGN_SYSTEM.md` points to the current canonical system. Use the supplied V1.02 manual provisionally; newer approved guidance takes precedence. Use the provided logo/photograph unchanged with documented clearance and natural aspect ratio. Regular Chartwell Bars and Geomanist webfonts are now supplied under `design-handoff/assets/fonts/`; read `design-handoff/FONT_NOTES.md` for actual names, weight 400 and licence limits. They are verified in the asset review page, not yet installed in the guest app. Do not invent weights/assets or infer public licence scope.
 - Guest navigation is Home, Explore, Concierge, My Stay and Profile. Keep staff access separate. Preserve clear demo/planned labels and test viewport/keyboard accessibility without claiming simulated layouts prove physical-device behaviour.
+
+- The 27 October design-handoff is preparation material. Ijlal explicitly deferred the older three-concept task in `design-handoff/CODEX_START_HERE.md`; wait for his full frontend redesign instruction before executing it. Keep the installed project-local Taste Skill and `skills-lock.json` in Git; explicit owner/Media One requirements take precedence over skill defaults.
 
 ## Concierge language and service behaviour
 
