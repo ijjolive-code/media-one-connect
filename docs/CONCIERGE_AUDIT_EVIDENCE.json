@@ -1,0 +1,260 @@
+{
+  "scope": "offline constructed output probes, not live generated answers",
+  "checks": [
+    {
+      "name": "Hotel fresh turn",
+      "result": "fits",
+      "bytes": 23725
+    },
+    {
+      "name": "Hotel follow up with a normal prior exchange",
+      "result": "context_too_large"
+    },
+    {
+      "name": "Naively combine all venues",
+      "result": "context_too_large"
+    },
+    {
+      "name": "Correct partial check out answer missing unrelated required rate clause",
+      "result": "missing_condition",
+      "reply": "Check out is at 12:00, Dubai time.",
+      "keys": [
+        "K009"
+      ]
+    },
+    {
+      "name": "Equivalent rate qualification is still rejected",
+      "result": "missing_condition",
+      "reply": "Standard check out is at 12:00, Dubai time. Arrangements can differ with your booked rate.",
+      "keys": [
+        "K009"
+      ]
+    },
+    {
+      "name": "Natural requested late departure time absent from evidence",
+      "result": "unsupported_value",
+      "reply": "For 15:00, please ask reservations to confirm availability and any charge. The existing hotel FAQ says early check in and late check out depend on availability and may incur a charge.",
+      "keys": [
+        "K010"
+      ]
+    },
+    {
+      "name": "Normal punctuation is reported as provider failure upstream",
+      "result": "voice_punctuation",
+      "reply": "We\u2019re on Al Falak Street \u2014 in Dubai Media City.",
+      "keys": [
+        "K001"
+      ]
+    },
+    {
+      "name": "Ordinary unsupported venue claim is not semantically verified",
+      "result": "accepted",
+      "reply": "Ciao Bella has a Michelin star and a quiet terrace.",
+      "keys": [
+        "K049"
+      ]
+    },
+    {
+      "name": "Outsider wording is accepted",
+      "result": "accepted",
+      "reply": "Ciao Bella is our Italian restaurant. Their menu covers breakfast, lunch and dinner.",
+      "keys": [
+        "K049"
+      ]
+    },
+    {
+      "name": "Publishing language is accepted",
+      "result": "accepted",
+      "reply": "Published listings describe a starter and main for AED 95, Monday to Friday 12:00 to 15:00, with an optional glass of wine for AED 35.",
+      "keys": [
+        "K053"
+      ]
+    },
+    {
+      "name": "False action caught",
+      "result": "unsupported_action",
+      "reply": "I have contacted reception.",
+      "keys": [
+        "K002"
+      ]
+    },
+    {
+      "name": "False action paraphrase slips lexical guard",
+      "result": "accepted",
+      "reply": "Reception has your message and a colleague is coming.",
+      "keys": [
+        "K002"
+      ]
+    },
+    {
+      "name": "Phone paraphrase with same digits changes segmentation",
+      "result": "unsupported_value",
+      "reply": "Please call +97144271000.",
+      "keys": [
+        "K002"
+      ]
+    }
+  ],
+  "requiredWholeText": [
+    "K014",
+    "K017",
+    "K028",
+    "K029",
+    "K032",
+    "K034",
+    "FICTIONAL-OFFER",
+    "K053",
+    "K054",
+    "K055",
+    "K060",
+    "K061",
+    "K062",
+    "K072",
+    "K075",
+    "K076",
+    "K077",
+    "K078",
+    "K084",
+    "K085",
+    "K087",
+    "K088",
+    "K089"
+  ],
+  "sourceEditorialLanguage": [
+    "K003",
+    "K008",
+    "K010",
+    "K012",
+    "K015",
+    "K016",
+    "K017",
+    "K018",
+    "K019",
+    "K024",
+    "K025",
+    "K026",
+    "K027",
+    "K032",
+    "K040",
+    "K041",
+    "K042",
+    "K048",
+    "K094",
+    "K095",
+    "K051",
+    "K052",
+    "K053",
+    "K058",
+    "K060",
+    "K062",
+    "K063",
+    "K068",
+    "K069",
+    "K072",
+    "K073",
+    "K074",
+    "K075",
+    "K076",
+    "K078",
+    "K080",
+    "K081",
+    "K082",
+    "K084",
+    "K085",
+    "K087",
+    "K088",
+    "K090",
+    "K093"
+  ],
+  "context": {
+    "sixTurns": 6,
+    "omittedEntireTurn": [
+      {
+        "role": "user",
+        "text": "[Private detail omitted]"
+      }
+    ],
+    "inputRoomKeywordBlocked": true
+  },
+  "auditDateDubai": "2026-10-28",
+  "codeBaseline": "416f7ce1bf7eec4dd40cee7b73e746b0b5435a0c",
+  "paidModelCalls": 0,
+  "databaseWrites": 0,
+  "dataSnapshot": "local Supabase; not owner Codespace",
+  "totalKnowledgeRecords": 82,
+  "candidateKeysMatch": true,
+  "allKnowledgeProvenance": "provisional",
+  "allKnowledgeStatus": "prototype",
+  "heldRecordsImported": 0,
+  "privatePrototype": true,
+  "venueInventory": [
+    {
+      "venue": "media-one-hotel",
+      "knowledge": 43,
+      "fictionalM1Offers": 1,
+      "freshQuestionBytes": 23729
+    },
+    {
+      "venue": "ciao-bella",
+      "knowledge": 7,
+      "fictionalM1Offers": 0,
+      "freshQuestionBytes": 7068
+    },
+    {
+      "venue": "qwerty",
+      "knowledge": 7,
+      "fictionalM1Offers": 0,
+      "freshQuestionBytes": 6979
+    },
+    {
+      "venue": "garden-on-8",
+      "knowledge": 12,
+      "fictionalM1Offers": 0,
+      "freshQuestionBytes": 9634
+    },
+    {
+      "venue": "coco-lounge",
+      "knowledge": 10,
+      "fictionalM1Offers": 0,
+      "freshQuestionBytes": 8547
+    },
+    {
+      "venue": "m12go",
+      "knowledge": 3,
+      "fictionalM1Offers": 0,
+      "freshQuestionBytes": 4917
+    }
+  ],
+  "reviewDeadlines": [
+    {
+      "date": "2026-11-01",
+      "records": 27,
+      "exclusive": true
+    },
+    {
+      "date": "2026-11-24",
+      "records": 55,
+      "exclusive": true
+    }
+  ],
+  "naiveAllVenueBodyBytes": 41744,
+  "requestByteCeiling": 24000,
+  "denials": {
+    "hotelKnowledgeRowsWhenPrototypeFalse": 0,
+    "rawAnonymousKnowledgeDenied": true,
+    "invalidGuardDenied": true
+  },
+  "preservation": {
+    "knowledge": "unchanged",
+    "offerBusinessFields": "unchanged",
+    "staffAccess": "unchanged",
+    "budgetConfig": "unchanged",
+    "allAttemptLedgerRows": "unchanged",
+    "importedOriginals": "unchanged"
+  },
+  "existingAnswerContractTests": {
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0
+  }
+}

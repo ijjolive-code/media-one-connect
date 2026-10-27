@@ -9,6 +9,10 @@ This repository contains the Media One Connect project handoff, implementation p
 - Check [current decisions and progress](media-one-context/05_DECISIONS_AND_PROGRESS.md) for actual status and the next task.
 - Follow [repository working instructions](AGENTS.md) during development.
 
+## Current functional priority
+
+28 October: UI baseline **416f7ce** is accepted provisionally for continued development, not as a final design. Further visual/motion work is deferred. [Concierge answer-quality audit and correction plan](docs/CONCIERGE_ANSWER_QUALITY_AUDIT.md) is the next priority, followed by M2B requests/staff handover. [Evaluation conversations](docs/CONCIERGE_AUDIT_CONVERSATIONS.md) and [deferred usability backlog](docs/DEFERRED_UI_BACKLOG.md) distinguish proposed work from current capability. This audit changes no application code/data/permissions and makes no paid calls; preserve the original USD 5 total allowance and reservations.
+
 ## Current visual and motion review
 
 Use **`design/media-one-motion-refinement`** and [the current private review guide](docs/MOTION_PRIVATE_REVIEW.md). It preserves the working redesign/backend and adds a compact phone header, coordinated controllable venue autoplay, carried-photo detail transitions and quieter interaction feedback. [Recordings and screenshots](docs/screenshots/motion-refinement/README.md), [verification](docs/MOTION_VERIFICATION.md), and an implemented-feature presentation walkthrough are included. Keep port 3000 Private and paid calls disabled for visual review. No database reset or new key is needed.

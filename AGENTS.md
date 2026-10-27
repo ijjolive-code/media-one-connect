@@ -22,6 +22,8 @@ These instructions apply throughout this repository. They were adapted from `med
 
 - Latest visual/motion refinement: `design/media-one-motion-refinement`, from `3abd362`. Use `docs/MOTION_PRIVATE_REVIEW.md`. Keep the single autoplay coordinator, explicit manual-stop/Play semantics, reduced-motion handling, native focus return and bounded photo-transition fallback. A single nonpersonal session flag controls Home entrance replay; never store guest drafts/conversations there. Explicit owner motion requirements supersede generic static-app skill defaults. Existing backend and total allowance remain unchanged.
 
+- Owner direction, 28 October 2026: **416f7ce is the provisional UI baseline for continued development, not final design approval**. Preserve newer work. Further visual/motion refinement is deferred; fix usability defects that obstruct a task. Concierge answer quality is the next priority, then M2B requests/staff handover. Read `docs/CONCIERGE_ANSWER_QUALITY_AUDIT.md`, its evaluation conversations and `docs/DEFERRED_UI_BACKLOG.md` before that work. The audit implemented no corrections or new features and made no paid calls. Preserve all existing data, permissions, functionality and the original USD 5 total allowance/reservations. Do not confuse proposed corrections/examples with implemented or live-verified behaviour.
+
 ## Concierge language and service behaviour
 
 - Before changing concierge instructions, generation or guest response copy, read `CONCIERGE_VOICE.md`. It is the canonical working voice specification; explicit owner preferences are distinct from example wording awaiting review.
