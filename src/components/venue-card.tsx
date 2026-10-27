@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { VenueLink } from "./venue-link";
 import { Photo } from "./photo";
 import { Icon } from "./icon";
 import { guestSourceText } from "@/modules/concierge/validation";
@@ -25,9 +25,9 @@ export async function VenueCard({
       ? profile.text
       : null;
   return (
-    <Link
+    <VenueLink
       className={`venue-card ${featured ? "venue-featured" : ""}`}
-      href={`/explore/${place.slug}`}
+      slug={place.slug}
     >
       {place.photo ? (
         <Photo
@@ -56,6 +56,6 @@ export async function VenueCard({
         </span>
         <Icon name="arrow" />
       </span>
-    </Link>
+    </VenueLink>
   );
 }

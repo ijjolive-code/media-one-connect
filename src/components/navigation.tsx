@@ -9,8 +9,22 @@ const links = [
 ] as const;
 export function Navigation() {
   const path = usePathname();
+  const activeIndex = links.findIndex(
+    (link) =>
+      path === link.href ||
+      (link.href === "/explore" &&
+        (path.startsWith("/explore/") || path.startsWith("/hotel"))),
+  );
   return (
     <nav className="guest-navigation" aria-label="Guest navigation">
+      <span className="nav-motion-track" aria-hidden="true">
+        <span
+          style={{
+            transform: `translateX(${Math.max(0, activeIndex) * 100}%)`,
+            opacity: activeIndex < 0 ? 0 : 1,
+          }}
+        />
+      </span>
       {links.map((link) => {
         const active =
           path === link.href ||

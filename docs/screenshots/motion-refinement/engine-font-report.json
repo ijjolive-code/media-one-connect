@@ -1,0 +1,110 @@
+[
+  {
+    "engine": "chromium",
+    "width": 375,
+    "errors": [],
+    "overflow": false,
+    "fonts": [
+      {
+        "family": "geomanist",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "engine": "chromium",
+    "width": 430,
+    "errors": [],
+    "overflow": false,
+    "fonts": [
+      {
+        "family": "geomanist",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "engine": "chromium",
+    "width": 1440,
+    "errors": [],
+    "overflow": false,
+    "fonts": [
+      {
+        "family": "geomanist",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "width": 375,
+    "errors": [],
+    "overflow": false,
+    "fonts": [
+      {
+        "family": "geomanist",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "width": 430,
+    "errors": [],
+    "overflow": false,
+    "fonts": [
+      {
+        "family": "geomanist",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "weight": "400"
+      }
+    ]
+  },
+  {
+    "engine": "webkit",
+    "width": 1440,
+    "errors": [],
+    "overflow": false,
+    "fonts": [
+      {
+        "family": "geomanist",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "weight": "400"
+      }
+    ]
+  }
+]

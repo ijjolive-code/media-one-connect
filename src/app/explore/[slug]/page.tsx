@@ -4,6 +4,7 @@ import { guestSourceText } from "@/modules/concierge/validation";
 import { places } from "@/modules/discovery";
 import { guestKnowledge } from "@/modules/guest-knowledge";
 import { Photo } from "@/components/photo";
+import { VenueHero } from "@/components/venue-hero";
 import { PageHeading, EmptyState } from "@/components/page-heading";
 import { FactList } from "@/components/fact-list";
 import { Icon } from "@/components/icon";
@@ -27,16 +28,7 @@ export default async function Venue({
       <PageHeading title={place.name} />
       <div className="venue-detail-layout">
         <section className="venue-story">
-          {place.gallery ? (
-            <Photo
-              className="detail-photo"
-              name={place.gallery}
-              alt={`Seating and atmosphere at ${place.name}`}
-              priority
-            />
-          ) : (
-            <div className="venue-type-art detail-photo">M12go</div>
-          )}
+          <VenueHero place={place} />
           <div className="venue-intro">
             {profile ? (
               <p>{guestSourceText(profile.text, [profile])}</p>

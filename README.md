@@ -9,6 +9,10 @@ This repository contains the Media One Connect project handoff, implementation p
 - Check [current decisions and progress](media-one-context/05_DECISIONS_AND_PROGRESS.md) for actual status and the next task.
 - Follow [repository working instructions](AGENTS.md) during development.
 
+## Current visual and motion review
+
+Use **`design/media-one-motion-refinement`** and [the current private review guide](docs/MOTION_PRIVATE_REVIEW.md). It preserves the working redesign/backend and adds a compact phone header, coordinated controllable venue autoplay, carried-photo detail transitions and quieter interaction feedback. [Recordings and screenshots](docs/screenshots/motion-refinement/README.md), [verification](docs/MOTION_VERIFICATION.md), and an implemented-feature presentation walkthrough are included. Keep port 3000 Private and paid calls disabled for visual review. No database reset or new key is needed.
+
 ## Current frontend review
 
 **Use [the frontend private review guide](docs/FRONTEND_PRIVATE_REVIEW.md) and branch `design/media-one-app-redesign`.** It updates your existing Codespace without resetting data or changing API credentials. Keep port 3000 Private. Visual review disables paid calls only for that process.

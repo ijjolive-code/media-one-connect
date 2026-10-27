@@ -8,6 +8,8 @@ export function Photo({
   position = "50% 50%",
   sizes = "(max-width: 700px) 100vw, 50vw",
   className = "",
+  transitionName,
+  venueHero,
 }: {
   name: string;
   alt: string;
@@ -15,10 +17,17 @@ export function Photo({
   position?: string;
   sizes?: string;
   className?: string;
+  transitionName?: string;
+  venueHero?: string;
 }) {
   const [failed, setFailed] = useState(false);
   return (
-    <span className={`photo ${className}`}>
+    <span
+      className={`photo ${className}`}
+      data-photo-name={name}
+      data-venue-hero={venueHero}
+      style={{ viewTransitionName: transitionName }}
+    >
       {failed ? (
         <span className="photo-fallback">
           {alt}

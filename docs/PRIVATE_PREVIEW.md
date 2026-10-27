@@ -1,7 +1,7 @@
 # Current private preview
 
-Use [the frontend private review guide](FRONTEND_PRIVATE_REVIEW.md) for the complete redesigned application on **`design/media-one-app-redesign`**. It gives exact commands for your existing Codespace, protected staff offer testing, screenshots and the real iPhone checklist.
+Use [the motion refinement private review guide](MOTION_PRIVATE_REVIEW.md) on **`design/media-one-motion-refinement`**, based on redesign `3abd362`. It provides exact existing-Codespace branch/build/start commands, screenshots/interaction recordings, iPhone checks and an 87 second presentation walkthrough.
 
-Keep the same working Codespace, Supabase volumes, private credentials, API configuration and original USD 5 total ledger. No setup/reset/import, devcontainer rebuild, new key or trial re-enablement is needed. For visual review, build and run with the temporary `CONCIERGE_AI_ENABLED=false` override. Keep port **3000 Private**, then use **Ports → Open in Browser**; Codex localhost is not your review URL.
+Keep the same working Codespace, data volumes, staff edits, private credentials and original USD 5 total ledger. No setup/reset/import, container rebuild, new key or application dependency change is required. Run visual review with `CONCIERGE_AI_ENABLED=false`; keep **port 3000 Private → Open in Browser**. Codex localhost is not your preview URL.
 
-[M2A setup](M2A_PRIVATE_REVIEW.md), [voice refinement review](CONCIERGE_VOICE_REFINEMENT_REVIEW.md) and earlier screenshots remain historical/backend references. Their branch-specific startup instructions do not replace the current frontend guide. No public deployment, live booking, loyalty, WhatsApp or M2B handover is claimed.
+The [previous frontend guide](FRONTEND_PRIVATE_REVIEW.md), [M2A setup](M2A_PRIVATE_REVIEW.md) and [voice review](CONCIERGE_VOICE_REFINEMENT_REVIEW.md) remain backend/historical references. New concierge voice/answer quality and M2B operations remain separate workstreams. No public deployment or live hotel number was connected.

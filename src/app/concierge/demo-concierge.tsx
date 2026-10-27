@@ -1,6 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { Icon } from "@/components/icon";
 import { Sheet } from "@/components/sheet";
 import { venues } from "@/modules/knowledge/types";
@@ -57,33 +63,55 @@ export function DemoConcierge({ active }: { active: boolean }) {
     controller = useRef<AbortController | null>(null),
     pinned = useRef(true),
     savedScroll = useRef(0),
+    anchorTop = useRef(0),
     isActive = useRef(active);
   const appliedRoute = useRef("");
   const selected = venues.find((v) => v.slug === venue) || venues[0];
   useEffect(() => {
     isActive.current = active;
   }, [active]);
+  // Scroll events may arrive after ResizeObserver in WebKit. Compare the actual
+  // position with our last anchor before following, allowing for native clamping.
+  const capturePosition = useCallback(() => {
+    const element = log.current;
+    if (!element) return;
+    const maximum = Math.max(0, element.scrollHeight - element.clientHeight);
+    const expected = Math.min(anchorTop.current, maximum);
+    const nearBottom = maximum - element.scrollTop < 64;
+    if (nearBottom) pinned.current = true;
+    else if (Math.abs(element.scrollTop - expected) > 2) pinned.current = false;
+    savedScroll.current = element.scrollTop;
+    anchorTop.current = element.scrollTop;
+  }, []);
+  const placeTranscript = useCallback((top: number) => {
+    if (!log.current) return;
+    log.current.scrollTop = top;
+    savedScroll.current = log.current.scrollTop;
+    anchorTop.current = log.current.scrollTop;
+  }, []);
   useLayoutEffect(() => {
     if (!active || !log.current) return;
+    capturePosition();
     if (pinned.current) {
-      log.current.scrollTop = log.current.scrollHeight;
+      placeTranscript(log.current.scrollHeight);
       setUnread(false);
-    } else log.current.scrollTop = savedScroll.current;
-  }, [conversation, active]);
+    } else placeTranscript(savedScroll.current);
+  }, [conversation, active, capturePosition, placeTranscript]);
   useEffect(() => {
-    const el = content.current;
-    if (!el) return;
+    const element = content.current;
+    if (!element) return;
     const observer = new ResizeObserver(() => {
-      if (isActive.current && pinned.current && log.current)
-        log.current.scrollTop = log.current.scrollHeight;
+      if (!isActive.current || !log.current) return;
+      capturePosition();
+      if (pinned.current) placeTranscript(log.current.scrollHeight);
     });
-    observer.observe(el);
+    observer.observe(element);
     if (log.current) observer.observe(log.current);
     return () => {
       observer.disconnect();
       controller.current?.abort();
     };
-  }, []);
+  }, [capturePosition, placeTranscript]);
   function reset() {
     requestId.current++;
     controller.current?.abort();
@@ -166,6 +194,7 @@ export function DemoConcierge({ active }: { active: boolean }) {
           ? data
           : { kind: data.kind || "unavailable", message: errorCopy(data.kind) };
       if (id !== requestId.current) return;
+      capturePosition();
       if (!pinned.current) setUnread(true);
       setConversation((p) =>
         p.map((m, i) => (i === p.length - 1 ? { question, reply } : m)),
@@ -224,13 +253,7 @@ export function DemoConcierge({ active }: { active: boolean }) {
             aria-live="polite"
             tabIndex={0}
             onScroll={() => {
-              if (!log.current) return;
-              savedScroll.current = log.current.scrollTop;
-              pinned.current =
-                log.current.scrollHeight -
-                  log.current.scrollTop -
-                  log.current.clientHeight <
-                64;
+              capturePosition();
               if (pinned.current) setUnread(false);
             }}
           >
@@ -442,7 +465,22 @@ export function DemoConcierge({ active }: { active: boolean }) {
               }}
             >
               {v.name}
-              <span aria-hidden="true">{venue === v.slug ? "✓" : "→"}</span>
+              <span aria-hidden="true">
+                {venue === v.slug ? (
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                ) : (
+                  <Icon name="arrow" />
+                )}
+              </span>
             </button>
           ))}
         </div>

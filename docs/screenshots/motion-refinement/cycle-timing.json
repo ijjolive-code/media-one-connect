@@ -1,0 +1,30 @@
+[
+  {
+    "time": 1346.1000000014901,
+    "index": "0"
+  },
+  {
+    "time": 6975.199999999255,
+    "index": "1",
+    "name": "garden on 8",
+    "href": "/explore/garden-on-8"
+  },
+  {
+    "time": 12958,
+    "index": "2",
+    "name": "Ciao Bella",
+    "href": "/explore/ciao-bella"
+  },
+  {
+    "time": 19002.800000000745,
+    "index": "3",
+    "name": "Qwerty",
+    "href": "/explore/qwerty"
+  },
+  {
+    "time": 25029.60000000149,
+    "index": "0",
+    "name": "Coco Lounge",
+    "href": "/explore/coco-lounge"
+  }
+]

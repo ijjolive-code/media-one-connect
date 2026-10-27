@@ -20,6 +20,8 @@ These instructions apply throughout this repository. They were adapted from `med
 
 - The full 27 October frontend redesign instruction supersedes the older three-Home-concept selection task in `design-handoff/CODEX_START_HERE.md`. The implementation is one integrated direction on `design/media-one-app-redesign`; source assets and the installed project-local Taste Skill/lockfile remain in Git. Explicit owner/Media One requirements take precedence over skill defaults. Read `docs/FRONTEND_PRIVATE_REVIEW.md` for current preview and verification. Fictional M1 offers are visible only in the authorised `/staff/review` presentation, while their original backend/testing permissions remain unchanged. Normal guest presentation filters fictional knowledge; no factual approval is inferred from a visual design.
 
+- Latest visual/motion refinement: `design/media-one-motion-refinement`, from `3abd362`. Use `docs/MOTION_PRIVATE_REVIEW.md`. Keep the single autoplay coordinator, explicit manual-stop/Play semantics, reduced-motion handling, native focus return and bounded photo-transition fallback. A single nonpersonal session flag controls Home entrance replay; never store guest drafts/conversations there. Explicit owner motion requirements supersede generic static-app skill defaults. Existing backend and total allowance remain unchanged.
+
 ## Concierge language and service behaviour
 
 - Before changing concierge instructions, generation or guest response copy, read `CONCIERGE_VOICE.md`. It is the canonical working voice specification; explicit owner preferences are distinct from example wording awaiting review.

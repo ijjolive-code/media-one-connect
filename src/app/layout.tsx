@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { AppShell } from "@/components/app-shell";
+import { MotionProvider } from "@/components/motion-provider";
 import "./globals.css";
 const geomanist = localFont({
   src: "../fonts/geomanist-regular.woff",
@@ -34,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geomanist.variable} ${chartwell.variable}`}>
       <body>
-        <AppShell>{children}</AppShell>
+        <MotionProvider>
+          <AppShell>{children}</AppShell>
+        </MotionProvider>
       </body>
     </html>
   );

@@ -43,22 +43,29 @@ test("guest Home has useful actions, three destinations and no fictional promoti
   ).toHaveAttribute("aria-current", "page");
 });
 test("all guest routes, venue details and sign in render without clipping or JavaScript errors", async ({
-  page,
+  context,
 }) => {
-  const errors: string[] = [];
-  page.on("pageerror", (e) => errors.push(e.message));
+  // Each direct URL gets its own document. Closing a document must not be mistaken
+  // for a runtime failure in the next one when WebKit aborts its idle prefetches.
   for (const route of routes) {
-    await page.goto(route);
-    await expect(
-      page.getByRole("main").getByRole("heading", { level: 1 }),
-    ).toBeVisible();
-    expect(
-      await page
-        .locator("main")
-        .evaluate((el) => el.scrollWidth <= el.clientWidth),
-    ).toBe(true);
+    const page = await context.newPage();
+    const errors: string[] = [];
+    page.on("pageerror", (e) => errors.push(e.message));
+    try {
+      await page.goto(route, { waitUntil: "networkidle" });
+      await expect(
+        page.getByRole("main").getByRole("heading", { level: 1 }),
+      ).toBeVisible();
+      expect(
+        await page
+          .locator("main")
+          .evaluate((el) => el.scrollWidth <= el.clientWidth),
+      ).toBe(true);
+      expect(errors).toEqual([]);
+    } finally {
+      await page.close();
+    }
   }
-  expect(errors).toEqual([]);
 });
 test("supplied fonts actually load at regular weight and the original logo stays proportional", async ({
   page,
@@ -410,7 +417,10 @@ test("a failed photograph has a useful fallback and keeps its reserved layout", 
   await expect(page.locator(".home-feature .photo-fallback")).toContainText(
     "Image unavailable",
   );
-  const b = await page.locator(".home-feature .photo").boundingBox();
+  const b = await page
+    .getByRole("region", { name: "Featured venues" })
+    .locator(".photo")
+    .boundingBox();
   expect(b!.height).toBeGreaterThan(150);
   expect(
     await page

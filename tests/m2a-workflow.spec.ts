@@ -133,18 +133,22 @@ test("staff manages a versioned facility and reviewed replacement suppresses pre
     );
     await guest.context().addCookies(await page.context().cookies());
     await guest.goto("/staff/review");
-    await guest.getByText(title, { exact: true }).click();
+    await guest.getByRole("main").getByText(title, { exact: true }).click();
     await expect(
-      guest.getByText(
-        "Fictional updated corner: AED 23, 10:00–11:00. Conditions unchanged; no real benefit.",
-        { exact: true },
-      ),
+      guest
+        .getByRole("main")
+        .getByText(
+          "Fictional updated corner: AED 23, 10:00–11:00. Conditions unchanged; no real benefit.",
+          { exact: true },
+        ),
     ).toBeVisible();
     await expect(
-      guest.getByText(
-        "Fictional quiet corner: AED 17, 09:00–10:00. No real benefit.",
-        { exact: true },
-      ),
+      guest
+        .getByRole("main")
+        .getByText(
+          "Fictional quiet corner: AED 17, 09:00–10:00. No real benefit.",
+          { exact: true },
+        ),
     ).toHaveCount(0);
     await page
       .getByRole("link", { name: "Create reviewed replacement", exact: true })
@@ -177,19 +181,25 @@ test("staff manages a versioned facility and reviewed replacement suppresses pre
       .click();
     created.push(new URL(page.url()).searchParams.get("id")!);
     await guest.reload();
-    await expect(guest.getByText(title, { exact: true })).toHaveCount(1);
-    await guest.getByText(title, { exact: true }).click();
     await expect(
-      guest.getByText(
-        "Staff-reviewed private test replacement: AED 29, 11:00–12:00. Confirm conditions; no actual benefit.",
-        { exact: true },
-      ),
+      guest.getByRole("main").getByText(title, { exact: true }),
+    ).toHaveCount(1);
+    await guest.getByRole("main").getByText(title, { exact: true }).click();
+    await expect(
+      guest
+        .getByRole("main")
+        .getByText(
+          "Staff-reviewed private test replacement: AED 29, 11:00–12:00. Confirm conditions; no actual benefit.",
+          { exact: true },
+        ),
     ).toBeVisible();
     await expect(
-      guest.getByText(
-        "Fictional updated corner: AED 23, 10:00–11:00. Conditions unchanged; no real benefit.",
-        { exact: true },
-      ),
+      guest
+        .getByRole("main")
+        .getByText(
+          "Fictional updated corner: AED 23, 10:00–11:00. Conditions unchanged; no real benefit.",
+          { exact: true },
+        ),
     ).toHaveCount(0);
     expect(
       await page

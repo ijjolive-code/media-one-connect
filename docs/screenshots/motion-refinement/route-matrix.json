@@ -1,0 +1,1430 @@
+[
+  {
+    "route": "/",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/hotel",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/hotel/knowledge",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/ciao-bella",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/qwerty",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/garden-on-8",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/coco-lounge",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/m12go",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/concierge",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/my-stay",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/profile",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/not-a-route",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/sign-in",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/knowledge",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/review",
+    "width": 375,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/hotel",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/hotel/knowledge",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/ciao-bella",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/qwerty",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/garden-on-8",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/coco-lounge",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/m12go",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/concierge",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/my-stay",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/profile",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/not-a-route",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/sign-in",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/knowledge",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/review",
+    "width": 430,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/hotel",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/hotel/knowledge",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/ciao-bella",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/qwerty",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/garden-on-8",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/coco-lounge",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/explore/m12go",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/concierge",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/my-stay",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/profile",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "error",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/not-a-route",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/sign-in",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/knowledge",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  },
+  {
+    "route": "/staff/review",
+    "width": 1440,
+    "overflow": false,
+    "errors": [],
+    "fonts": [
+      {
+        "family": "geomanist",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "geomanist Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      },
+      {
+        "family": "chartwell",
+        "status": "loaded",
+        "weight": "400"
+      },
+      {
+        "family": "chartwell Fallback",
+        "status": "unloaded",
+        "weight": "normal"
+      }
+    ]
+  }
+]

@@ -4,6 +4,9 @@ import type { Evidence } from "@/modules/concierge/answer-core";
 import { FactList } from "./fact-list";
 // A small per-tab memory store. Reload clears it; no URL, browser storage or profile writes.
 const queries = new Map<string, string>();
+const subscribeReady = () => () => {};
+const clientReady = () => true;
+const serverReady = () => false;
 const listeners = new Set<() => void>();
 const subscribe = (callback: () => void) => {
   listeners.add(callback);
@@ -18,6 +21,7 @@ export function KnowledgeBrowser({
   facts: Evidence[];
   scope: string;
 }) {
+  const ready = useSyncExternalStore(subscribeReady, clientReady, serverReady);
   const query = useSyncExternalStore(
     subscribe,
     () => queries.get(scope) || "",
@@ -38,6 +42,8 @@ export function KnowledgeBrowser({
         <span>Find an answer</span>
         <input
           type="search"
+          disabled={!ready}
+          aria-busy={!ready}
           value={query}
           maxLength={120}
           onChange={(e) => setQuery(e.target.value)}

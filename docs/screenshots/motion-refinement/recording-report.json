@@ -1,0 +1,56 @@
+[
+  {
+    "file": "phone-interactions.mp4",
+    "fixture": false,
+    "providerCalls": 0,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 430,
+        "height": 932
+      }
+    ],
+    "format": {
+      "duration": "25.400000",
+      "size": "965841"
+    }
+  },
+  {
+    "file": "desktop-interactions.mp4",
+    "fixture": false,
+    "providerCalls": 0,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 1000
+      }
+    ],
+    "format": {
+      "duration": "26.400000",
+      "size": "1996313"
+    }
+  },
+  {
+    "file": "chat-fixture.mp4",
+    "fixture": true,
+    "providerCalls": 0,
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 430,
+        "height": 932
+      }
+    ],
+    "format": {
+      "duration": "6.360000",
+      "size": "207253"
+    }
+  }
+]

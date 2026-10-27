@@ -115,7 +115,9 @@ for (const viewport of [
         reviewer.getByRole("heading", { name: title, exact: true }),
       ).toBeVisible();
       await expect(
-        reviewer.getByText("Fictional content", { exact: true }),
+        reviewer
+          .getByRole("main")
+          .getByText("Fictional content", { exact: true }),
       ).toBeVisible();
       const fresh = (
         await api.from("offers").select("*").eq("id", offerId).single()

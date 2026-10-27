@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useId } from "react";
+import { useLayoutEffect, useEffect, useRef, useId } from "react";
 export function Sheet({
   open,
   onClose,
@@ -13,15 +13,19 @@ export function Sheet({
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const id = useId();
-  useEffect(() => {
+  // Native close returns focus and removes modality immediately. CSS owns the visual exit.
+  useLayoutEffect(() => {
     const dialog = ref.current;
     if (!dialog) return;
     if (open && !dialog.open) dialog.showModal();
-    if (!open && dialog.open) dialog.close();
-    return () => {
-      if (dialog.open) dialog.close();
-    };
+    else if (!open && dialog.open) dialog.close();
   }, [open]);
+  useEffect(() => {
+    const dialog = ref.current;
+    return () => {
+      if (dialog?.open) dialog.close();
+    };
+  }, []);
   return (
     <dialog
       ref={ref}
